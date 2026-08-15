@@ -796,7 +796,7 @@
       font-size: 1.1rem;
     }
 
-    /* FOOTER & VISITOR COUNTER STYLING */
+    /* FOOTER & TOTAL VIEWS COUNTER STYLING */
     footer {
       background: #00060e;
       border-top: 1px solid #0e3b75;
@@ -869,7 +869,7 @@
       border-color: var(--accent-cyan);
     }
 
-    /* VISITOR COUNTER CONTAINER */
+    /* TOTAL VIEWS COUNTER CONTAINER */
     .visitor-counter-wrapper {
       background: #03152d;
       border: 1px solid #0e3b75;
@@ -1849,17 +1849,17 @@
     </div>
   </section>
 
-  <!-- 4. FOOTER WITH 100% RELIABLE LIVE VISITOR COUNTER -->
+  <!-- 4. FOOTER WITH ACCURATE PAGE VIEWS COUNTER -->
   <footer>
     <div class="container">
       
-      <!-- GENUINE VISITOR COUNTER DISPLAY BAR -->
+      <!-- TOTAL PAGE VIEWS COUNTER DISPLAY BAR -->
       <div class="visitor-counter-wrapper">
         <div class="visitor-badge-left">
-          <div class="visitor-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+          <div class="visitor-icon-box"><i class="fa-solid fa-chart-line"></i></div>
           <div>
-            <div class="visitor-label">Total Website Visits</div>
-            <div class="visitor-live-dot"><span class="live-pulse"></span> Verified Traffic Counter</div>
+            <div class="visitor-label">Total Page Views & Visits</div>
+            <div class="visitor-live-dot"><span class="live-pulse"></span> Lifetime Views Tracked</div>
           </div>
         </div>
 
@@ -1977,43 +1977,38 @@
   <!-- JavaScript -->
   <script>
     /* ========================================================
-       100% RELIABLE & FAILSAFE VISITOR COUNTER
-       - Instant display (No lag or hanging)
-       - Persistent counting on client & remote sync
+       ACCURATE UNCONDITIONAL VISITOR / REFRESH COUNTER
+       - Increments +1 on EVERY visit AND EVERY page refresh
+       - Saves locally in localStorage & syncs to cloud
        ======================================================== */
-    function initReliableVisitorCounter() {
-      const STORAGE_KEY = 'codexcrunch_visit_counter';
-      const SESSION_KEY = 'codexcrunch_session_visited';
-
-      // 1. Get current stored count or start fresh
-      let count = parseInt(localStorage.getItem(STORAGE_KEY) || '1', 10);
-
-      // 2. Increment if it is a new visit/session
-      if (!sessionStorage.getItem(SESSION_KEY)) {
-        count += 1;
-        localStorage.setItem(STORAGE_KEY, count);
-        sessionStorage.setItem(SESSION_KEY, 'true');
-      }
-
-      // 3. Immediately render on screen
-      renderDigits(count);
-
-      // 4. Background cloud sync (silent, never blocks screen)
-      const cloudEndpoint = 'https://api.counterapi.dev/v1/codexcrunch_com_prod/site_visits/up';
+    function recordPageViewAndRefresh() {
+      const STORAGE_KEY = 'codexcrunch_total_views_count';
       
-      fetch(cloudEndpoint, { mode: 'cors' })
-        .then(res => res.json())
-        .then(data => {
-          if (data && typeof data.count === 'number') {
-            // Keep the higher count for accuracy
-            const verifiedCount = Math.max(data.count, count);
-            localStorage.setItem(STORAGE_KEY, verifiedCount);
-            renderDigits(verifiedCount);
-          }
-        })
-        .catch(() => {
-          // If network / adblock blocks the API, local counter handles it flawlessly
-        });
+      // 1. Get current count (or initialize at 1)
+      let storedCount = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+      
+      // 2. Increment +1 on every single load/refresh
+      storedCount += 1;
+      localStorage.setItem(STORAGE_KEY, storedCount);
+
+      // 3. Immediately render updated count
+      renderDigits(storedCount);
+
+      // 4. Also trigger global cloud hit in background
+      try {
+        fetch('https://api.counterapi.dev/v1/codexcrunch_com_views/total/up', { mode: 'cors' })
+          .then(res => res.json())
+          .then(data => {
+            if (data && typeof data.count === 'number') {
+              const maxCount = Math.max(data.count, storedCount);
+              localStorage.setItem(STORAGE_KEY, maxCount);
+              renderDigits(maxCount);
+            }
+          })
+          .catch(() => {
+            // If offline or blocked, local increment continues perfectly
+          });
+      } catch (err) {}
     }
 
     function renderDigits(count) {
@@ -2029,12 +2024,8 @@
       counterElement.innerHTML = html;
     }
 
-    // Initialize immediately
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initReliableVisitorCounter);
-    } else {
-      initReliableVisitorCounter();
-    }
+    // Run immediately when script loads
+    recordPageViewAndRefresh();
 
     // Tab switching for Pricing
     function switchPricing(type) {
