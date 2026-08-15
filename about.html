@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Site Favicon / Logo -->
+  <link rel="icon" type="image/png" href="Assets/Codex Crunch site logo.png">
+
+  <!-- SEO Primary Meta Tags -->
+  <title>About CodexCrunch | Web Development, SEO & SMM</title>
+  <meta name="title" content="About CodexCrunch | Web Development, SEO & SMM">
+  <meta name="description" content="Learn about CodexCrunch, a digital services company providing web development, SEO, and social media marketing solutions to help businesses grow online.">
+  <meta name="keywords" content="CodexCrunch, web development, SEO services, social media marketing, digital services, website development, search engine optimization, social media marketing services, digital marketing services">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://codexcrunch.com/about">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codexcrunch.com/about">
+  <meta property="og:title" content="About CodexCrunch | Web Development, SEO & SMM">
+  <meta property="og:description" content="Learn about CodexCrunch, a digital services company providing web development, SEO, and social media marketing solutions to help businesses grow online.">
+  <meta property="og:image" content="Codex Crunch logo.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@codexcrunch">
+  <meta name="twitter:title" content="About CodexCrunch | Web Development, SEO & SMM">
+  <meta name="twitter:description" content="Learn about CodexCrunch, a digital services company providing web development, SEO, and social media marketing solutions to help businesses grow online.">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://codexcrunch.com/#website",
+        "url": "https://codexcrunch.com/",
+        "name": "CodexCrunch"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://codexcrunch.com/about#webpage",
+        "url": "https://codexcrunch.com/about",
+        "name": "About CodexCrunch | Web Development, SEO & SMM",
+        "isPartOf": {
+          "@id": "https://codexcrunch.com/#website"
+        },
+        "description": "Learn about CodexCrunch, a digital services company providing web development, SEO, and social media marketing solutions to help businesses grow online."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://codexcrunch.com/#organization",
+        "name": "CodexCrunch",
+        "url": "https://codexcrunch.com",
+        "logo": "https://codexcrunch.com/Codex%20Crunch%20logo.png",
+        "sameAs": [
+          "https://instagram.com/codexcrunch",
+          "https://facebook.com/codexcrunch",
+          "https://twitter.com/codexcrunch",
+          "https://linkedin.com/company/codexcrunch"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #03152d;
+      --bg-darker: #010a17;
+      --card-solid: #071e3d;
+      --card-border: #0e3b75;
+      --card-border-hover: #01b4ff;
+      --primary-blue: #034ebc;
+      --accent-cyan: #01b4ff;
+      --accent-red: #7c0000;
+      --pure-black: #000000;
+      --pure-white: #ffffff;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--pure-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: var(--bg-darker);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    /* Crisp Typography */
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--pure-white);
+      letter-spacing: -0.3px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--accent-cyan);
+      margin-bottom: 14px;
+      background: rgba(1, 180, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 30px;
+      border: 1px solid var(--accent-cyan);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+      color: var(--pure-white);
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto 50px auto;
+      font-weight: 400;
+    }
+
+    .text-center { text-align: center; }
+
+    /* Solid Clean Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #034ebc;
+      color: var(--pure-white);
+      border: 1px solid #01b4ff;
+    }
+
+    .btn-primary:hover {
+      background: #01b4ff;
+      color: #03152d;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: #071e3d;
+      border: 1px solid #01b4ff;
+      color: var(--pure-white);
+    }
+
+    .btn-outline:hover {
+      background: #01b4ff;
+      color: #03152d;
+      transform: translateY(-2px);
+    }
+
+    /* Top Bar Container */
+    .top-bar-container {
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.85rem;
+      padding: 9px 0;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .top-bar-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-contacts {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .top-contacts a {
+      color: #334155;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .top-contacts a:hover {
+      color: var(--primary-blue);
+    }
+
+    .top-contacts i {
+      color: var(--primary-blue);
+    }
+
+    .top-socials {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .top-socials span {
+      color: #64748b;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .top-socials a {
+      color: #334155;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+    }
+
+    .top-socials a:hover {
+      background: var(--primary-blue);
+      color: #ffffff;
+      border-color: var(--primary-blue);
+    }
+
+    /* Sticky Navbar */
+    header.sticky-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      max-height: 48px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links > li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-blue);
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 280px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 0;
+      list-style: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1002;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #334155;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu a i {
+      color: var(--primary-blue);
+      font-size: 0.95rem;
+      width: 18px;
+      text-align: center;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f1f5f9;
+      color: var(--primary-blue);
+      padding-left: 22px;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #1e293b;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 85px;
+      padding-bottom: 85px;
+      background: #03152d;
+      border-bottom: 1px solid #0e3b75;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.4rem;
+      line-height: 1.18;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .hero h1 span.highlight {
+      color: var(--accent-cyan);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+      line-height: 1.65;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Clean Card System */
+    .clean-card {
+      background: var(--card-solid);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .clean-card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px);
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .card-grid-5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      background: #03152d;
+      border: 1px solid var(--accent-cyan);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+    }
+
+    .service-card h2, .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .card-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: var(--transition);
+      margin-top: auto;
+    }
+
+    .card-action-link:hover {
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    /* About Two-Column Layout */
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-card {
+      padding: 36px;
+    }
+
+    .about-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+      color: var(--accent-cyan);
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 0;
+    }
+
+    .plan-features li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.5;
+    }
+
+    .plan-features li:last-child {
+      margin-bottom: 0;
+    }
+
+    .plan-features li i {
+      color: var(--accent-cyan);
+      margin-top: 4px;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Process Timeline Cards */
+    .process-card {
+      padding: 28px 24px;
+      position: relative;
+    }
+
+    .process-step-num {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      background: rgba(1, 180, 255, 0.1);
+      border: 1px solid var(--accent-cyan);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .process-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* Audience Badge / Box Cards */
+    .audience-card {
+      padding: 24px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .audience-icon {
+      font-size: 1.8rem;
+      color: var(--accent-cyan);
+    }
+
+    .audience-card h3 {
+      font-size: 1.1rem;
+    }
+
+    /* FAQ Accordion Component */
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--card-solid);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--card-border-hover);
+    }
+
+    .faq-header {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      font-family: inherit;
+    }
+
+    .faq-header i {
+      color: var(--accent-cyan);
+      font-size: 0.95rem;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.active .faq-header i {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 0 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-body {
+      padding: 0 24px 22px 24px;
+      max-height: 250px;
+    }
+
+    /* Pre-Footer / Contact Form */
+    .pre-footer-section {
+      background: #03152d;
+      padding: 90px 0 60px 0;
+    }
+
+    .pre-footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+    }
+
+    .form-card-box {
+      padding: 36px;
+    }
+
+    .form-card-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .form-card-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      background: #010a17;
+      border: 1px solid #0e3b75;
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      background: #071e3d;
+    }
+
+    .newsletter-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .newsletter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(124, 0, 0, 0.4);
+      color: #ff9999;
+      border: 1px solid var(--accent-red);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .quick-contact-pills {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid #0e3b75;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pill-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .pill-item i {
+      color: var(--accent-cyan);
+      font-size: 1.1rem;
+    }
+
+    /* Footer Styling */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      padding: 60px 0 0 0;
+      color: #1e293b;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .brand-footer-logo-img {
+      max-height: 48px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .footer-col p {
+      color: #475569;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      color: var(--primary-blue);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-blue);
+      padding-left: 3px;
+    }
+
+    .footer-social-strip {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .footer-social-btn {
+      width: 36px;
+      height: 36px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #334155;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-social-btn:hover {
+      background: var(--primary-blue);
+      color: #ffffff;
+      border-color: var(--primary-blue);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #e2e8f0;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* Ultra-Bottom Views Strip */
+    .ultra-bottom-views-strip {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 16px 0;
+    }
+
+    .views-strip-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .views-strip-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+
+    .views-strip-left i {
+      color: var(--primary-blue);
+      font-size: 1rem;
+    }
+
+    .views-strip-left strong {
+      color: #0f172a;
+    }
+
+    .visitor-live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: #16a34a;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .live-pulse {
+      width: 7px;
+      height: 7px;
+      background: #16a34a;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #16a34a;
+    }
+
+    .visitor-counter-digits {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .digit-box {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: var(--primary-blue);
+      font-size: 1.15rem;
+      font-weight: 800;
+      font-family: monospace;
+      padding: 3px 8px;
+      border-radius: 4px;
+      min-width: 24px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 96px;
+      right: 24px;
+      width: 54px;
+      height: 54px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 998;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    /* Chatbot Launcher & Panel */
+    .chatbot-toggler {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      border: 2px solid var(--accent-cyan);
+      cursor: pointer;
+      z-index: 999;
+      transition: var(--transition);
+      overflow: hidden;
+      padding: 6px;
+    }
+
+    .chatbot-toggler:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(1, 180, 255, 0.5);
+    }
+
+    .toggler-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .chatbot-panel {
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      width: 380px;
+      max-width: 92vw;
+      height: 520px;
+      background: #071e3d;
+      border: 1px solid #0e3b75;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      z-index: 999;
+      transform: scale(0);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease;
+    }
+
+    .chatbot-panel.active {
+      transform: scale(1);
+    }
+
+    .chatbot-header {
+      background: #03152d;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #0e3b75;
+    }
+
+    .bot-header-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bot-avatar-header-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid var(--accent-cyan);
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bot-avatar-header {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .bot-status-wrap h3 {
+      font-size: 0.95rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #ffffff;
+    }
+
+    .bot-status-wrap span {
+      font-size: 0.75rem;
+      color: #22c55e;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .bot-status-dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+
+    .chatbot-header button {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .chatbot-messages {
+      flex-grow: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+
+    .msg-row {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+    }
+
+    .msg-row.user-row {
+      justify-content: flex-end;
+    }
+
+    .msg-row.bot-row {
+      justify-content: flex-start;
+    }
+
+    .bot-inline-avatar-wrap {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1.5px solid var(--accent-cyan);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .bot-inline-avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .chat-msg {
+      max-width: 82%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      line-height: 1.45;
+    }
+
+    .chat-msg.bot {
+      background: #03152d;
+      border: 1px solid #0e3b75;
+      color: #e2e8f0;
+    }
+
+    .chat-msg.user {
+      background: #034ebc;
+      color: #ffffff;
+    }
+
+    .bot-quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .bot-chip {
+      background: #071e3d;
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .bot-chip:hover {
+      background: var(--accent-cyan);
+      color: #03152d;
+    }
+
+    .bot-btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-top: 8px;
+      transition: var(--transition);
+    }
+
+    .bot-btn-action:hover {
+      background: #1da851;
+    }
+
+    .chatbot-input-area {
+      display: flex;
+      padding: 12px;
+      border-top: 1px solid #0e3b75;
+      background: #03152d;
+      gap: 8px;
+    }
+
+    .chatbot-input-area input {
+      flex-grow: 1;
+      background: #071e3d;
+      border: 1px solid #0e3b75;
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: #ffffff;
+      font-size: 0.9rem;
+    }
+
+    .chatbot-input-area input:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+    }
+
+    .chatbot-input-area button {
+      background: #034ebc;
+      border: 1px solid var(--accent-cyan);
+      border-radius: 6px;
+      width: 40px;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .chatbot-input-area button:hover {
+      background: var(--accent-cyan);
+      color: #03152d;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .hero h1 { font-size: 2.6rem; }
+      .about-wrapper, .pre-footer-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar-wrapper { flex-direction: column; gap: 6px; text-align: center; }
+      .top-contacts { gap: 14px; flex-wrap: wrap; justify-content: center; }
+      .nav-links, .nav-cta .btn { display: none; }
+      .mobile-menu-btn { display: block; }
+      .dropdown-menu { position: static; width: 100%; box-shadow: none; opacity: 1; visibility: visible; transform: none; display: none; background: #f8fafc; }
+      .dropdown.active .dropdown-menu { display: block; }
+      .hero h1 { font-size: 2.1rem; }
+      .views-strip-content { flex-direction: column; text-align: center; justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP BAR CONTAINER (WHITE THEME) -->
+  <div class="top-bar-container">
+    <div class="container">
+      <div class="top-bar-wrapper">
+        <div class="top-contacts">
+          <a href="tel:7995137513"><i class="fa-solid fa-phone"></i> +91 7995137513</a>
+          <a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope"></i> codexcrunch@gmail.com</a>
+        </div>
+        <div class="top-socials">
+          <span>Follow Us:</span>
+          <a href="https://instagram.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. STICKY NAVBAR (EXACT EXISTING NAVBAR ARCHITECTURE) -->
+  <header class="sticky-header">
+    <div class="container">
+      <nav>
+        <a href="https://www.codexcrunch.com/" class="logo-container" aria-label="Codex Crunch Homepage">
+          <img src="Assets/Codex Crunch logo.png" alt="Codex Crunch Logo" class="brand-logo-img">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="https://www.codexcrunch.com/">Home</a></li>
+          
+          <!-- SERVICES DROPDOWN -->
+          <li class="dropdown" id="servicesDropdown">
+            <a href="https://www.codexcrunch.com/#services" role="button" aria-expanded="false">
+              Services <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="webdevelopment.html"><i class="fa-solid fa-code"></i> Web Development</a></li>
+              <li><a href="Seo.html"><i class="fa-brands fa-wordpress"></i> Seo service</a></li>
+              <li><a href="smm.html"><i class="fa-solid fa-chart-line"></i> SMM </a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="#contact-hub" class="btn btn-primary" style="padding: 9px 20px; font-size: 0.9rem;">Get a Quote</a>
+          <button class="mobile-menu-btn" onclick="toggleMobileNav()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3. HERO SECTION (EXACT EXISTING DESIGN) -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> Practical Digital Growth</span>
+        <h1>About <span class="highlight">CodexCrunch</span></h1>
+        <p>CodexCrunch helps businesses build a stronger digital presence through modern web development, SEO, and social media marketing solutions.</p>
+        <div class="hero-buttons">
+          <a href="#contact-hub" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Get Started</a>
+          <a href="#contact-hub" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHO WE ARE SECTION -->
+  <section id="who-we-are">
+    <div class="container">
+      <div class="about-wrapper">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Who We Are</span>
+          <h2 class="section-title">Building Better Digital Experiences for Growing Businesses</h2>
+          <p style="color: var(--text-muted); margin-bottom: 18px; font-size: 1.05rem;">
+            <strong>CodexCrunch</strong> is a digital services company focused on helping businesses establish, improve, and grow their online presence. We combine modern web development, search engine optimization, and social media marketing to create practical digital solutions that support real business goals.
+          </p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">
+            We understand that every business is different, which is why digital solutions should always be aligned with clear commercial objectives rather than one-size-fits-all assumptions. A website should be more than just visually attractive—it must be fast, functional, and intuitive.
+          </p>
+          <p style="color: var(--text-muted); margin-bottom: 0;">
+            Our approach ensures that SEO focuses on organic visibility and attracting relevant traffic, while social media marketing builds real brand awareness and meaningful audience engagement. Our core mission is to engineer digital experiences that are useful, scalable, and focused on sustainable growth.
+          </p>
+        </div>
+
+        <div class="clean-card about-card">
+          <h3>Guiding Principles</h3>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Goal Aligned:</strong> Digital solutions tailored to actual commercial outcomes.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Useful & Functional:</strong> Clean web architecture designed for usability and speed.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Targeted Visibility:</strong> SEO strategies focused on relevant, high-intent traffic.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Meaningful Engagement:</strong> Social media strategies designed to build authentic brand awareness.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Built to Scale:</strong> Clean, maintainable digital foundations ready for long-term growth.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WHAT WE DO SECTION -->
+  <section class="section-alt" id="what-we-do">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-cube"></i> Core Solutions</span>
+        <h2 class="section-title">What We Do</h2>
+        <p class="section-desc">Practical digital services designed to strengthen your brand, streamline user interaction, and drive organic traffic.</p>
+      </div>
+
+      <div class="card-grid-3">
+        <!-- Service 1: Web Development -->
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h2>Web Development</h2>
+          <p>Modern, responsive, fast, and SEO-friendly websites designed around business goals and user experience.</p>
+          <a href="webdevelopment.html" class="card-action-link">Explore Web Development <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Service 2: SEO Services -->
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h2>SEO Services</h2>
+          <p>Search engine optimization strategies focused on improving organic visibility, attracting relevant traffic, and creating long-term growth opportunities.</p>
+          <a href="Seo.html" class="card-action-link">Explore SEO Services <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Service 3: Social Media Marketing -->
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
+          <h2>Social Media Marketing</h2>
+          <p>Strategic social media solutions that help businesses build brand awareness, engage their audience, and strengthen their digital presence.</p>
+          <a href="smm.html" class="card-action-link">Explore SMM Services <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. OUR APPROACH SECTION -->
+  <section id="our-approach">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-compass"></i> Strategic Methodology</span>
+        <h2 class="section-title">Our Approach</h2>
+        <p class="section-desc">We focus on understanding the business before recommending or executing any digital solutions.</p>
+      </div>
+
+      <div class="card-grid-5">
+        <div class="clean-card process-card">
+          <span class="process-step-num">STEP 01</span>
+          <h3>Understand</h3>
+          <p>We first understand your business, audience, goals, and challenges.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">STEP 02</span>
+          <h3>Plan</h3>
+          <p>We create a practical digital strategy based on your business objectives.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">STEP 03</span>
+          <h3>Build</h3>
+          <p>We develop professional digital experiences using modern technologies and best practices.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">STEP 04</span>
+          <h3>Optimize</h3>
+          <p>We continuously improve performance, visibility, usability, and engagement.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">STEP 05</span>
+          <h3>Grow</h3>
+          <p>We focus on creating a strong digital foundation that supports long-term business growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. WHY CODEXCRUNCH SECTION -->
+  <section class="section-alt" id="why-codexcrunch">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Why Choose Us</span>
+        <h2 class="section-title">Why CodexCrunch?</h2>
+        <p class="section-desc">We deliver grounded, dependable digital services that prioritize clarity, performance, and long-term utility.</p>
+      </div>
+
+      <div class="card-grid-3">
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Business-Focused Solutions</h3>
+          <p>Every line of code and marketing strategy is built directly around your operational and commercial goals.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Modern Technology</h3>
+          <p>We work with clean, dependable tools and modern development frameworks to build reliable assets.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-file-code"></i></div>
+          <h3>SEO-Friendly Development</h3>
+          <p>Websites structured with clean semantic hierarchy, schema markup, and optimal crawlability from day one.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>User-Centered Approach</h3>
+          <p>Intuitive user navigation and streamlined layouts that make it easy for visitors to find information.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>Performance Focused</h3>
+          <p>Optimized asset delivery and clean code architectures that prioritize fast load times across devices.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3>Transparent Communication</h3>
+          <p>Straightforward timelines, clear expectations, and regular updates without confusing technical jargon.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-sliders"></i></div>
+          <h3>Customized Strategies</h3>
+          <p>Strategies adapted to your specific business requirements, market dynamics, and target audience.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+          <h3>Long-Term Support</h3>
+          <p>Reliable maintenance and guidance to ensure your website and digital presence stay stable and secure.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Continuous Improvement</h3>
+          <p>We monitor performance indicators to identify opportunities for ongoing digital refinement.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3>Practical Solutions</h3>
+          <p>Pragmatic recommendations designed for usability, maintainability, and realistic execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. OUR CORE VALUES SECTION -->
+  <section id="values">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-heart"></i> Principles & Standards</span>
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-desc">The principles that guide how we build digital solutions and collaborate with our clients.</p>
+      </div>
+
+      <div class="card-grid-3">
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-award"></i></div>
+          <h3>1. Quality</h3>
+          <p>We focus on delivering reliable and well-structured digital solutions.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>2. Transparency</h3>
+          <p>We believe in clear communication, realistic expectations, and straightforward processes.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>3. Innovation</h3>
+          <p>We continuously explore modern tools, technologies, and strategies to improve our work.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-user-check"></i></div>
+          <h3>4. Customer Focus</h3>
+          <p>We build solutions around the actual needs and goals of each business.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <h3>5. Continuous Improvement</h3>
+          <p>We believe every digital presence can be measured, improved, and optimized over time.</p>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-chess-knight"></i></div>
+          <h3>6. Long-Term Thinking</h3>
+          <p>We focus on creating digital foundations that can support future growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. OUR WORK PROCESS SECTION -->
+  <section class="section-alt" id="process">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Step-by-Step Delivery</span>
+        <h2 class="section-title">Our Work Process</h2>
+        <p class="section-desc">A structured and transparent timeline that keeps projects organized from discovery through ongoing support.</p>
+      </div>
+
+      <div class="card-grid-3">
+        <div class="clean-card process-card">
+          <span class="process-step-num">01 — DISCOVER</span>
+          <h3>Discover</h3>
+          <p>Understand your business, goals, audience, and requirements.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">02 — STRATEGIZE</span>
+          <h3>Strategize</h3>
+          <p>Develop a clear plan based on your business objectives.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">03 — CREATE</span>
+          <h3>Create</h3>
+          <p>Design and develop the required digital solution.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">04 — OPTIMIZE</span>
+          <h3>Optimize</h3>
+          <p>Improve performance, usability, visibility, and overall experience.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">05 — LAUNCH</span>
+          <h3>Launch</h3>
+          <p>Deploy and implement the final solution.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <span class="process-step-num">06 — SUPPORT</span>
+          <h3>Support & Improve</h3>
+          <p>Continue monitoring, maintaining, and improving where required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. OUR DIGITAL SERVICES OVERVIEW -->
+  <section id="digital-services">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-network-wired"></i> What We Offer</span>
+        <h2 class="section-title">Our Digital Services</h2>
+        <p class="section-desc">Explore our full suite of digital services designed for modern businesses.</p>
+      </div>
+
+      <div class="card-grid-3">
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Web Development</h3>
+          <p>Professional websites designed for performance, usability, responsiveness, and scalability.</p>
+          <a href="webdevelopment.html" class="card-action-link">View Development Options <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>SEO</h3>
+          <p>Search engine optimization designed to improve organic visibility and attract relevant users.</p>
+          <a href="Seo.html" class="card-action-link">View SEO Solutions <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="clean-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-hashtag"></i></div>
+          <h3>Social Media Marketing</h3>
+          <p>Social media strategies designed to build awareness, engagement, and brand presence.</p>
+          <a href="smm.html" class="card-action-link">View Social Media Solutions <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. WHO WE WORK WITH SECTION -->
+  <section class="section-alt" id="who-we-work-with">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-handshake"></i> Client Partnerships</span>
+        <h2 class="section-title">Who We Work With</h2>
+        <p class="section-desc">
+          Whether you're launching a new business, improving an existing website, or looking to strengthen your online visibility, CodexCrunch provides digital services that can be adapted to your goals and requirements.
+        </p>
+      </div>
+
+      <div class="card-grid-4">
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-store audience-icon"></i>
+          <h3>Small Businesses</h3>
+        </div>
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-rocket audience-icon"></i>
+          <h3>Startups</h3>
+        </div>
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-location-dot audience-icon"></i>
+          <h3>Local Businesses</h3>
+        </div>
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-briefcase audience-icon"></i>
+          <h3>Service Businesses</h3>
+        </div>
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-cart-shopping audience-icon"></i>
+          <h3>E-commerce Businesses</h3>
+        </div>
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-user-tie audience-icon"></i>
+          <h3>Entrepreneurs</h3>
+        </div>
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-building audience-icon"></i>
+          <h3>Professional Brands</h3>
+        </div>
+        <div class="clean-card audience-card">
+          <i class="fa-solid fa-arrow-trend-up audience-icon"></i>
+          <h3>Growing Companies</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. OUR COMMITMENT & VALUE TRUST SECTION -->
+  <section id="commitment">
+    <div class="container">
+      <div class="about-wrapper">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-lock"></i> Dedicated Service</span>
+          <h2 class="section-title">Focused on Your Digital Growth</h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px;">
+            We believe successful digital solutions start with understanding the business behind them. Our goal is to create websites, SEO strategies, and social media solutions that are useful, measurable, and aligned with your business objectives.
+          </p>
+          <div class="hero-buttons" style="justify-content: flex-start;">
+            <a href="portfolio.html" class="btn btn-outline"><i class="fa-solid fa-briefcase"></i> View Live Portfolio</a>
+          </div>
+        </div>
+
+        <div class="clean-card about-card">
+          <h3>Our Commitment to You</h3>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> <strong>Clear Communication:</strong> Direct updates, realistic guidance, and responsive assistance.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Practical Strategies:</strong> Actionable digital planning structured for actual operational value.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Modern Solutions:</strong> Adherence to current web standards, mobile responsiveness, and clean code.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Performance-Focused Work:</strong> Attention to Core Web Vitals, usability, and speed.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Long-Term Digital Growth:</strong> Building maintainable digital assets that adapt as you expand.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FAQ SECTION -->
+  <section class="section-alt" id="faqs">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Questions Answered</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Clear answers to common questions about CodexCrunch, our capabilities, and how we work.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>What is CodexCrunch?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>CodexCrunch is a digital services company that helps businesses establish and improve their digital presence through web development, search engine optimization (SEO), and social media marketing solutions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>What services does CodexCrunch provide?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>We provide three primary digital solutions: custom and responsive Web Development, data-backed Search Engine Optimization (SEO) services, and strategic Social Media Marketing (SMM).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>Does CodexCrunch work with small businesses?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>Yes. We regularly work with small businesses, startups, entrepreneurs, and local service providers to create practical, cost-effective digital solutions suited to their needs and budget.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>Do you provide both web development and SEO?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>Yes. We develop websites with SEO best practices built in from the beginning, and we also provide dedicated monthly SEO services to improve organic search visibility and search ranking.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>Do you provide social media marketing?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>Yes. We create tailored social media strategies focused on building brand awareness, connecting with your target audience, and driving meaningful online engagement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>Can CodexCrunch redesign an existing website?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>Yes. We can evaluate your existing website, modernize its visual structure, improve its load performance, ensure mobile responsiveness, and upgrade its on-page SEO structure.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>Can I hire CodexCrunch for a single service?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>Absolutely. You can hire us specifically for web development, an SEO campaign, or social media management depending on your specific requirements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>Do you provide ongoing support?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>Yes. We offer post-launch support and ongoing website maintenance retainers to ensure your web presence remains secure, up-to-date, and smoothly functioning.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>How can I get started with CodexCrunch?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-body">
+            <p>You can get started by submitting an inquiry via our contact form below, reaching out to us directly on WhatsApp, or sending an email to codexcrunch@gmail.com to discuss your project requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. FINAL CTA SECTION (EXACT CTA STRUCTURE) -->
+  <section class="hero" style="border-top: 1px solid #0e3b75; border-bottom: none;">
+    <div class="container">
+      <div class="hero-content">
+        <span class="section-tag"><i class="fa-solid fa-handshake"></i> Let's Collaborate</span>
+        <h2 class="section-title" style="font-size: 3rem;">Let's Build Something Better Together</h2>
+        <p>Whether you need a new website, better search visibility, or a stronger social media presence, CodexCrunch can help you build a stronger digital foundation for your business.</p>
+        <div class="hero-buttons">
+          <a href="#contact-hub" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Get Started</a>
+          <a href="contact.html" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. PRE-FOOTER / CONTACT US FORM SECTION (EXACT COMPONENT) -->
+  <section id="contact-hub" class="pre-footer-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-envelope-open-text"></i> Direct Inquiry & Updates</span>
+        <h2 class="section-title">Let’s Discuss Your Next Big Project</h2>
+        <p class="section-desc">Get a personalized project quote or subscribe to our weekly SEO & tech insights newsletter.</p>
+      </div>
+
+      <div class="pre-footer-grid">
+        <!-- Main Contact Form -->
+        <div class="clean-card form-card-box">
+          <h3><i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan); margin-right: 8px;"></i> Request a Custom Quote</h3>
+          <p>Fill out this form to connect with our development & SEO team immediately.</p>
+          <form onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">Your Name / Company</label>
+              <input type="text" id="name" class="form-control" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp Number</label>
+              <input type="tel" id="phone" class="form-control" placeholder="e.g. 7995137513" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Select Requirement</label>
+              <select id="service" class="form-control">
+                <option value="Web Development Solutions">Web Development Solutions</option>
+                <option value="SEO Services & Optimization">SEO Services & Optimization</option>
+                <option value="Social Media Marketing (SMM)">Social Media Marketing (SMM)</option>
+                <option value="Website Redesign & Speed Optimization">Website Redesign & Speed Optimization</option>
+                <option value="General Digital Inquiry">General Digital Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Overview</label>
+              <textarea id="message" rows="3" class="form-control" placeholder="Briefly describe your goals or existing website URL..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              <i class="fa-brands fa-whatsapp"></i> Send Inquiry via WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <!-- Newsletter Subscription Card -->
+        <div class="clean-card form-card-box newsletter-card">
+          <div>
+            <div class="newsletter-badge"><i class="fa-solid fa-fire"></i> Weekly Tech Insights</div>
+            <h3>Join Our Newsletter</h3>
+            <p>Get actionable Google ranking tricks, website speed hacks, and conversion strategies delivered straight to your inbox.</p>
+            
+            <form onsubmit="handleNewsletterSubmit(event)">
+              <div class="form-group">
+                <label for="newsletter-email">Email Address</label>
+                <input type="email" id="newsletter-email" class="form-control" placeholder="yourname@gmail.com" required>
+              </div>
+              <button type="submit" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: var(--accent-cyan);">
+                <i class="fa-solid fa-envelope-open-text"></i> Subscribe Free
+              </button>
+              <div id="newsletter-success" style="display: none; color: #22c55e; font-size: 0.85rem; margin-top: 10px;">
+                <i class="fa-solid fa-circle-check"></i> Thank you! You've subscribed to Codex Crunch updates.
+              </div>
+            </form>
+          </div>
+
+          <!-- Quick Contact Details -->
+          <div class="quick-contact-pills">
+            <div class="pill-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>Direct Call: <strong>+91 7995137513</strong></span>
+            </div>
+            <div class="pill-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Official Mail: <strong>codexcrunch@gmail.com</strong></span>
+            </div>
+            <div class="pill-item">
+              <i class="fa-solid fa-globe"></i>
+              <span>Domain: <strong>codexcrunch.com</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16. FOOTER (PURE WHITE THEME - IDENTICAL) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="https://www.codexcrunch.com/" class="logo-container">
+            <img src="Assets/Codex Crunch logo.png" alt="Codex Crunch Footer Logo" class="brand-footer-logo-img">
+          </a>
+          <p>Codex Crunch is a digital agency specializing in high-performance web development and search engine optimization (SEO) that scales your online presence.</p>
+          <div class="footer-social-strip">
+            <a href="https://instagram.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com/company/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.codexcrunch.com/">Home</a></li>
+            <li><a href="https://www.codexcrunch.com/#services">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="webdevelopment.html">Web Development</a></li>
+            <li><a href="Seo.html">SEO Service</a></li>
+            <li><a href="smm.html">SMM Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <ul class="footer-links">
+            <li><a href="tel:7995137513"><i class="fa-solid fa-phone" style="color: var(--primary-blue); margin-right: 6px;"></i> +91 7995137513</a></li>
+            <li><a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch@gmail.com</a></li>
+            <li><a href="https://codexcrunch.com"><i class="fa-solid fa-globe" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch.com</a></li>
+            <li><span style="color: #64748b;"><i class="fa-solid fa-hashtag" style="color: var(--primary-blue); margin-right: 6px;"></i> @codexcrunch</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Codex Crunch (codexcrunch.com). All rights reserved.</div>
+        <div>Engineered for Speed, Scalability, and Google #1 Rankings.</div>
+      </div>
+    </div>
+
+    <!-- ULTRA-BOTTOM VIEWS & VISITS BAR -->
+    <div class="ultra-bottom-views-strip">
+      <div class="container">
+        <div class="views-strip-content">
+          <div class="views-strip-left">
+            <i class="fa-solid fa-chart-line"></i>
+            <span><strong>Total Page Views & Visits:</strong> Verified Traffic Counter</span>
+            <span class="visitor-live-dot"><span class="live-pulse"></span> Global Active Counter</span>
+          </div>
+
+          <div class="visitor-counter-digits" id="visitorCounter">
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- 17. CHATBOT LAUNCHER & PANEL (MANDATORY EXACT EXISTING COMPONENT) -->
+  <button class="chatbot-toggler" onclick="toggleChatbot()" aria-label="Open Codex Crunch Assistant">
+    <img src="Assets/Codex Crunch site logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Codex Crunch Bot Logo" class="toggler-logo-img">
+  </button>
+
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header">
+      <div class="bot-header-info">
+        <div class="bot-avatar-header-wrap">
+          <img src="Assets/Codex Crunch site logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Bot Logo" class="bot-avatar-header">
+        </div>
+        <div class="bot-status-wrap">
+          <h3>Codex Crunch AI</h3>
+          <span><span class="bot-status-dot"></span> Online • Instant Answers</span>
+        </div>
+      </div>
+      <button onclick="toggleChatbot()" aria-label="Close Chat"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="msg-row bot-row">
+        <div class="bot-inline-avatar-wrap">
+          <img src="Assets/Codex Crunch site logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Bot" class="bot-inline-avatar">
+        </div>
+        <div class="chat-msg bot">
+          Hello! 👋 Welcome to <strong>Codex Crunch</strong>. I can answer <strong>any question</strong> about our website development packages, monthly SEO plans, pricing, tech stack, or live portfolio.
+          <div class="bot-quick-chips">
+            <span class="bot-chip" onclick="quickAsk('Web Pricing')">💰 Web Pricing</span>
+            <span class="bot-chip" onclick="quickAsk('SEO Packages')">🚀 SEO Retainers</span>
+            <span class="bot-chip" onclick="quickAsk('Live Portfolio')">📁 Portfolio</span>
+            <span class="bot-chip" onclick="quickAsk('WordPress vs Custom')">⚡ WordPress vs Code</span>
+            <span class="bot-chip" onclick="quickAsk('Delivery Time')">⏱️ Timelines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chatbot-input-area">
+      <input type="text" id="chatInput" placeholder="Ask anything (Pricing, SEO, Time, Tech)..." onkeypress="handleChatKey(event)">
+      <button onclick="sendChatMessage()" aria-label="Send Message"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    /* 1. ASYNCHRONOUS FORM DISPATCH */
+    const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFSMBGNVNdSnfPe4ovzzA_RYshi4LuIjpNXQ6dyOOIANpxQUKnTD7hWS_QmO_z4m4f/exec";
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+
+      const payload = JSON.stringify({
+        formType: "contact",
+        name: name,
+        phone: phone,
+        service: service,
+        message: message
+      });
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(APPSCRIPT_URL, payload);
+      } else {
+        fetch(APPSCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: payload
+        }).catch(() => {});
+      }
+
+      const whatsappText = `Hello Codex Crunch,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Selected Requirement:* ${encodeURIComponent(service)}%0A*Message:* ${encodeURIComponent(message)}`;
+      window.open(`https://wa.me/917995137513?text=${whatsappText}`, '_blank');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('newsletter-email');
+      const email = emailInput.value;
+
+      if (!email) return;
+
+      const payload = JSON.stringify({
+        formType: "newsletter",
+        email: email
+      });
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(APPSCRIPT_URL, payload);
+      } else {
+        fetch(APPSCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: payload
+        }).catch(() => {});
+      }
+
+      document.getElementById('newsletter-success').style.display = 'block';
+      emailInput.value = '';
+    }
+
+    /* 2. FAQ ACCORDION CONTROLLER */
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      // Close other open FAQ items
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+
+    /* 3. CROSS-DEVICE GLOBAL CLOUD COUNTER */
+    async function syncGlobalCrossDeviceCounter() {
+      const primaryUrl = 'https://abacus.jasoncameron.dev/hit/codexcrunch.com/totalviews';
+      const secondaryUrl = 'https://api.counterapi.dev/v1/codexcrunch_global/views/up';
+
+      let rendered = false;
+
+      try {
+        const res = await fetch(primaryUrl);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && typeof data.value === 'number') {
+            renderDigits(data.value);
+            rendered = true;
+          }
+        }
+      } catch (e) {}
+
+      if (!rendered) {
+        try {
+          const res2 = await fetch(secondaryUrl);
+          if (res2.ok) {
+            const data2 = await res2.json();
+            if (data2 && typeof data2.count === 'number') {
+              renderDigits(data2.count);
+              rendered = true;
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (!rendered) {
+        let fallbackCount = parseInt(localStorage.getItem('cc_last_known_global') || '1', 10) + 1;
+        renderDigits(fallbackCount);
+      }
+    }
+
+    function renderDigits(count) {
+      const counterElement = document.getElementById('visitorCounter');
+      if (!counterElement) return;
+
+      localStorage.setItem('cc_last_known_global', count);
+
+      const num = Math.max(1, count);
+      const countStr = String(num).padStart(6, '0');
+      let html = '';
+      for (let i = 0; i < countStr.length; i++) {
+        html += `<span class="digit-box">${countStr[i]}</span>`;
+      }
+      counterElement.innerHTML = html;
+    }
+
+    syncGlobalCrossDeviceCounter();
+
+    // Mobile nav toggle
+    function toggleMobileNav() {
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '75px';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.background = '#ffffff';
+        navLinks.style.padding = '20px';
+        navLinks.style.borderBottom = '1px solid #e2e8f0';
+      }
+    }
+
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdown = document.getElementById('servicesDropdown');
+      if (dropdown) {
+        dropdown.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768) {
+            this.classList.toggle('active');
+          }
+        });
+      }
+    });
+
+    /* 4. CHATBOT ENGINE */
+    const BOT_LOGO_SRC = 'Codex Crunch logo.png';
+    const BOT_FALLBACK_IMG = 'Assets/Codex%20Crunch%20site%20logo.png';
+
+    function toggleChatbot() {
+      const panel = document.getElementById('chatbotPanel');
+      panel.classList.toggle('active');
+    }
+
+    function handleChatKey(e) {
+      if (e.key === 'Enter') {
+        sendChatMessage();
+      }
+    }
+
+    function quickAsk(text) {
+      document.getElementById('chatInput').value = text;
+      sendChatMessage();
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const container = document.getElementById('chatMessages');
+
+      // User Message
+      const userRow = document.createElement('div');
+      userRow.className = 'msg-row user-row';
+      userRow.innerHTML = `<div class="chat-msg user">${escapeHtml(text)}</div>`;
+      container.appendChild(userRow);
+      input.value = '';
+      container.scrollTop = container.scrollHeight;
+
+      // Bot Reply
+      setTimeout(() => {
+        const botRow = document.createElement('div');
+        botRow.className = 'msg-row bot-row';
+
+        const botReply = generateUniversalBotReply(text.toLowerCase());
+
+        botRow.innerHTML = `
+          <div class="bot-inline-avatar-wrap">
+            <img src="${BOT_LOGO_SRC}" onerror="this.onerror=null; this.src='${BOT_FALLBACK_IMG}';" alt="Bot Avatar" class="bot-inline-avatar">
+          </div>
+          <div class="chat-msg bot">${botReply}</div>
+        `;
+        container.appendChild(botRow);
+        container.scrollTop = container.scrollHeight;
+      }, 400);
+    }
+
+    function escapeHtml(string) {
+      return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;',
+          '/': '&#x2F;',
+          '`': '&#x60;',
+          '=': '&#x3D;'
+        }[s];
+      });
+    }
+
+    function generateUniversalBotReply(q) {
+      if (/^(hi|hello|hey|hola|namaste|morning|evening|wassup|yo)\b/.test(q)) {
+        return `Hello! How can I assist you with your website or digital marketing today? You can ask about our <strong>Pricing, SEO Packages, Timelines, Technologies</strong>, or explore our <strong>Portfolio</strong>!`;
+      }
+      
+      if (q.includes('who are you') || q.includes('what are you') || q.includes('your name') || q.includes('about codexcrunch')) {
+        return `I am <strong>Codex Crunch AI</strong>, the virtual assistant for <strong>CodexCrunch</strong> (codexcrunch.com). We help businesses build a stronger digital presence through modern web development, SEO, and social media marketing solutions.`;
+      }
+
+      if (q.includes('starter') || q.includes('5999') || q.includes('9999') || q.includes('small website')) {
+        return `🟢 <strong>Starter Website Plan:</strong><br>• <strong>Price:</strong> ₹5,999 - ₹9,999<br>• <strong>Best For:</strong> Individuals, startups & small businesses.<br>• <strong>Includes:</strong> 3-5 high-speed pages, 100% mobile responsive, contact form & basic technical SEO setup.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Starter%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Starter Plan</a>`;
+      }
+
+      if (q.includes('business plan') || q.includes('11999') || q.includes('24999')) {
+        return `🔵 <strong>Business Website Plan (Most Popular):</strong><br>• <strong>Price:</strong> ₹11,999 - ₹24,999<br>• <strong>Best For:</strong> Growing brands & service companies.<br>• <strong>Includes:</strong> 5-10 pages, WhatsApp direct chat, lead forms, advanced on-page SEO, and Google Analytics/Search Console setup.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Business%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Business Plan</a>`;
+      }
+
+      if (q.includes('pro') || q.includes('professional') || q.includes('29999') || q.includes('49999')) {
+        return `🟣 <strong>Professional Website Plan:</strong><br>• <strong>Price:</strong> ₹29,999 - ₹49,999<br>• <strong>Best For:</strong> Established brands & enterprise portals.<br>• <strong>Includes:</strong> 10-20 custom pages, custom UI/UX animations, deep Core Web Vitals speed tuning, and advanced SEO architecture.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Professional%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Professional Plan</a>`;
+      }
+
+      if (q.includes('ecommerce') || q.includes('e-commerce') || q.includes('store') || q.includes('shop') || q.includes('cart') || q.includes('payment gateway')) {
+        return `🟠 <strong>E-Commerce Website Plan:</strong><br>• <strong>Price:</strong> ₹39,999 - ₹79,999+<br>• <strong>Features:</strong> Unlimited products, cart & checkout, Razorpay/UPI/Card integration, order & stock management, and e-commerce SEO.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20want%20to%20build%20an%20E-commerce%20Store" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Discuss E-Commerce Store</a>`;
+      }
+
+      if (q.includes('custom') || q.includes('portal') || q.includes('dashboard') || q.includes('api') || q.includes('database')) {
+        return `🔴 <strong>Custom Web Architecture (₹59,999+):</strong><br>We build tailor-made platforms with custom dashboards, API integrations, authentication, and high-load databases tailored to your custom specifications.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20need%20a%20Custom%20Web%20Platform" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Request Custom Quote</a>`;
+      }
+
+      if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('package') || q.includes('charges') || q.includes('how much')) {
+        return `Here is our <strong>Web & SEO Pricing Summary</strong>:<br><br><strong>Web Development:</strong><br>• 🟢 Starter: ₹5,999 - ₹9,999<br>• 🔵 Business: ₹11,999 - ₹24,999<br>• 🟣 Pro: ₹29,999 - ₹49,999<br>• 🟠 E-Commerce: ₹39,999 - ₹79,999+<br><br><strong>Monthly SEO Plans:</strong><br>• Starter: ₹4,999/mo | Growth: ₹9,999/mo<br>• Pro: ₹19,999/mo | Enterprise: Custom`;
+      }
+
+      if (q.includes('seo') || q.includes('google rank') || q.includes('backlink') || q.includes('ranking') || q.includes('keyword')) {
+        return `🚀 <strong>Monthly SEO Retainers:</strong><br>1. <strong>SEO Starter (₹4,999/mo):</strong> 10 keywords, Meta & On-page fixes, GSC monitoring.<br>2. <strong>SEO Growth (₹9,999/mo):</strong> 25 keywords, Local GMB Map Pack, Backlinks, Content tuning.<br>3. <strong>SEO Pro (₹19,999/mo):</strong> 50+ keywords, Competitor theft, cluster strategy, weekly strategy calls.<br>4. <strong>SEO Enterprise (Custom):</strong> Unlimited scale & programmatic SEO.`;
+      }
+
+      if (q.includes('smm') || q.includes('social media')) {
+        return `📱 <strong>Social Media Marketing (SMM):</strong><br>We create strategic social media solutions that help businesses build brand awareness, engage their audience, and strengthen their digital presence across major platforms.`;
+      }
+
+      if (q.includes('portfolio') || q.includes('work') || q.includes('sample') || q.includes('client') || q.includes('examples') || q.includes('projects')) {
+        return `📁 <strong>Our Live Client Projects:</strong><br>• <a href="https://banksadda.com" target="_blank" style="color: #01b4ff;">banksadda.com</a> (Fintech & Finance)<br>• <a href="https://loanloop.in" target="_blank" style="color: #01b4ff;">loanloop.in</a> (DSA & Loan Aggregator)<br>• <a href="https://dsaloanagent.in" target="_blank" style="color: #01b4ff;">dsaloanagent.in</a> (Agent Portal)<br>• <a href="https://ottloop.com" target="_blank" style="color: #01b4ff;">ottloop.com</a> (OTT Media Platform)<br>• <a href="https://rjsportsclub.com" target="_blank" style="color: #01b4ff;">rjsportsclub.com</a> (Sports Club Management)<br>• <a href="https://beeway.in" target="_blank" style="color: #01b4ff;">beeway.in</a> (Corporate Logistics)`;
+      }
+
+      if (q.includes('time') || q.includes('how long') || q.includes('duration') || q.includes('days') || q.includes('delivery')) {
+        return `⏱️ <strong>Project Timelines:</strong><br>• <strong>Starter Site (3-5 pages):</strong> 3 to 5 business days.<br>• <strong>Business Site (5-10 pages):</strong> 5 to 8 business days.<br>• <strong>E-Commerce / Pro Site:</strong> 10 to 18 business days.<br>• <strong>Custom Platforms:</strong> Based on feature scope.`;
+      }
+
+      if (q.includes('contact') || q.includes('phone') || q.includes('number') || q.includes('whatsapp') || q.includes('email') || q.includes('call')) {
+        return `📞 <strong>Direct Contact Channels:</strong><br>• <strong>Phone / WhatsApp:</strong> +91 7995137513<br>• <strong>Email:</strong> codexcrunch@gmail.com<br>• <strong>Website:</strong> codexcrunch.com<br>• <strong>Social Media:</strong> @codexcrunch (IG, FB, X, LinkedIn)<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20an%20inquiry" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Chat with Us Directly</a>`;
+      }
+
+      return `Thank you for asking! At <strong>CodexCrunch</strong>, we cater to custom requirements in web development, SEO ranking, and social media marketing.<br><br>Would you like to speak directly with our team for a personalized proposal?<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20a%20question:%20${encodeURIComponent(q)}" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+91 7995137513)</a>`;
+    }
+  </script>
+</body>
+</html>
