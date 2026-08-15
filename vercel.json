@@ -1,8 +1,16 @@
 {
   "rewrites": [
     {
+      "source": "/seo",
+      "destination": "/Seo.html"
+    },
+    {
       "source": "/about",
       "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
     },
     {
       "source": "/portfolio",
@@ -13,20 +21,12 @@
       "destination": "/pricing.html"
     },
     {
-      "source": "/contact",
-      "destination": "/contact.html"
-    },
-    {
-      "source": "/seo",
-      "destination": "/seo.html"
-    },
-    {
-      "source": "/web-development",
-      "destination": "/web-development.html"
-    },
-    {
       "source": "/smm",
       "destination": "/smm.html"
+    },
+    {
+      "source": "/webdevelopment",
+      "destination": "/webdevelopment.html"
     }
   ]
 }
