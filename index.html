@@ -69,6 +69,7 @@
       --accent-red: #7c0000;
       --pure-black: #000000;
       --pure-white: #ffffff;
+      --logo-plate-bg: #ffffff;
       --text-muted: #cbd5e1;
       --text-dim: #94a3b8;
       --transition: all 0.25s ease-in-out;
@@ -254,7 +255,7 @@
       border-color: var(--accent-cyan);
     }
 
-    /* 2. STICKY NAVBAR WITH LOGO & DROPDOWN */
+    /* 2. STICKY NAVBAR (HIGH-CONTRAST LOGO PLATE) */
     header.sticky-header {
       position: sticky;
       top: 0;
@@ -281,8 +282,20 @@
       color: var(--pure-white);
     }
 
+    /* High-Contrast Pure White Frame so Dark Logos Pop Out Clearly */
+    .brand-logo-frame {
+      background: #ffffff;
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 2px solid var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(1, 180, 255, 0.35);
+    }
+
     .brand-logo-img {
-      max-height: 42px;
+      max-height: 38px;
       width: auto;
       object-fit: contain;
       display: block;
@@ -291,14 +304,15 @@
     .logo-badge-fallback {
       width: 42px;
       height: 42px;
-      background: var(--primary-blue);
+      background: #ffffff;
+      color: #03152d;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
       font-size: 1.2rem;
-      border: 1px solid var(--accent-cyan);
+      border: 2px solid var(--accent-cyan);
     }
 
     .logo-text {
@@ -1008,7 +1022,7 @@
       font-size: 1.1rem;
     }
 
-    /* FOOTER STYLING */
+    /* FOOTER STYLING (HIGH-CONTRAST FOOTER LOGO FRAME) */
     footer {
       background: #00060e;
       border-top: 1px solid #0e3b75;
@@ -1022,8 +1036,20 @@
       margin-bottom: 40px;
     }
 
+    /* Pure White Base Box For Dark Blue Footer Logo */
+    .brand-footer-logo-frame {
+      background: #ffffff;
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 2px solid var(--accent-cyan);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(1, 180, 255, 0.35);
+    }
+
     .brand-footer-logo-img {
-      max-height: 44px;
+      max-height: 38px;
       width: auto;
       object-fit: contain;
       display: block;
@@ -1191,36 +1217,38 @@
       transform: scale(1.08);
     }
 
-    /* Chatbot Launcher & Panel */
+    /* ========================================================
+       CHATBOT LAUNCHER & PANEL (PURE WHITE BASE FOR DARK LOGOS)
+       ======================================================== */
     .chatbot-toggler {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      width: 56px;
-      height: 56px;
-      background: #034ebc;
+      width: 58px;
+      height: 58px;
+      background: #ffffff; /* Crisp white background */
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      box-shadow: 0 6px 20px rgba(1, 180, 255, 0.5);
       border: 2px solid var(--accent-cyan);
       cursor: pointer;
       z-index: 999;
       transition: var(--transition);
       overflow: hidden;
-      padding: 0;
+      padding: 6px;
     }
 
     .chatbot-toggler:hover {
-      transform: scale(1.08);
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(1, 180, 255, 0.7);
     }
 
     .toggler-logo-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
@@ -1263,13 +1291,22 @@
       gap: 10px;
     }
 
-    .bot-avatar-header {
-      width: 36px;
-      height: 36px;
+    .bot-avatar-header-wrap {
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: #03152d;
-      border: 1px solid var(--accent-cyan);
-      object-fit: cover;
+      background: #ffffff;
+      border: 2px solid var(--accent-cyan);
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bot-avatar-header {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .bot-status-wrap h3 {
@@ -1327,14 +1364,23 @@
       justify-content: flex-start;
     }
 
-    .bot-inline-avatar {
+    .bot-inline-avatar-wrap {
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: #010a17;
-      border: 1px solid var(--accent-cyan);
-      object-fit: cover;
+      background: #ffffff;
+      border: 1.5px solid var(--accent-cyan);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+    }
+
+    .bot-inline-avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .chat-msg {
@@ -1481,13 +1527,16 @@
     </div>
   </div>
 
-  <!-- 2. ONLY NAVBAR IS STICKY -->
+  <!-- 2. ONLY NAVBAR IS STICKY (WITH HIGH-CONTRAST LOGO CONTAINER) -->
   <header class="sticky-header">
     <div class="container">
       <nav>
         <a href="#home" class="logo-container" aria-label="Codex Crunch Homepage">
-          <img src="assets/images/navbar-logo.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Codex Crunch Logo" class="brand-logo-img">
-          <div class="logo-badge-fallback" style="display: none;">CC</div>
+          <!-- Pure White Frame makes Dark Blue / Dark colored Logos Pop -->
+          <div class="brand-logo-frame">
+            <img src="assets/images/navbar-logo.png" onerror="this.parentElement.style.display='none'; document.getElementById('navbarFallbackBadge').style.display='flex';" alt="Codex Crunch Logo" class="brand-logo-img">
+          </div>
+          <div id="navbarFallbackBadge" class="logo-badge-fallback" style="display: none;">CC</div>
           <span class="logo-text">Codex<span>Crunch</span></span>
         </a>
 
@@ -1996,10 +2045,7 @@
     </div>
   </section>
 
-  <!-- ========================================================
-       5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE
-       (CONTACT US PAINA)
-       ======================================================== -->
+  <!-- 5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE (CONTACT US PAINA) -->
   <section class="images-marquee-section" id="featured-work">
     <div class="container">
       <div class="marquee-header-wrap">
@@ -2214,14 +2260,17 @@
     </div>
   </section>
 
-  <!-- 4. FOOTER -->
+  <!-- 4. FOOTER (HIGH-CONTRAST LOGO CONTAINER) -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <a href="#home" class="logo-container">
-            <img src="assets/images/footer-logo.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Codex Crunch Footer Logo" class="brand-footer-logo-img">
-            <div class="logo-badge-fallback" style="display: none;">CC</div>
+            <!-- Pure White Frame makes Dark Blue / Dark colored Logos Pop in Footer -->
+            <div class="brand-footer-logo-frame">
+              <img src="assets/images/footer-logo.png" onerror="this.parentElement.style.display='none'; document.getElementById('footerFallbackBadge').style.display='flex';" alt="Codex Crunch Footer Logo" class="brand-footer-logo-img">
+            </div>
+            <div id="footerFallbackBadge" class="logo-badge-fallback" style="display: none;">CC</div>
             <span class="logo-text">Codex<span>Crunch</span></span>
           </a>
           <p>Codex Crunch is a digital agency specializing in high-performance web development and search engine optimization (SEO) that scales your online presence.</p>
@@ -2301,7 +2350,9 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Chatbot Launcher & Panel -->
+  <!-- ========================================================
+       CHATBOT LAUNCHER & PANEL (PURE WHITE BASE FOR DARK LOGOS)
+       ======================================================== -->
   <button class="chatbot-toggler" onclick="toggleChatbot()" aria-label="Open Codex Crunch Assistant">
     <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Codex Crunch Bot Logo" class="toggler-logo-img">
   </button>
@@ -2309,7 +2360,9 @@
   <div class="chatbot-panel" id="chatbotPanel">
     <div class="chatbot-header">
       <div class="bot-header-info">
-        <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot Logo" class="bot-avatar-header">
+        <div class="bot-avatar-header-wrap">
+          <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot Logo" class="bot-avatar-header">
+        </div>
         <div class="bot-status-wrap">
           <h3>Codex Crunch AI</h3>
           <span><span class="bot-status-dot"></span> Online • Instant Answers</span>
@@ -2320,7 +2373,9 @@
 
     <div class="chatbot-messages" id="chatMessages">
       <div class="msg-row bot-row">
-        <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot" class="bot-inline-avatar">
+        <div class="bot-inline-avatar-wrap">
+          <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot" class="bot-inline-avatar">
+        </div>
         <div class="chat-msg bot">
           Hello! 👋 Welcome to <strong>Codex Crunch</strong>. I can answer <strong>any question</strong> about our website development packages, monthly SEO plans, pricing, tech stack, or live portfolio.
           <div class="bot-quick-chips">
@@ -2568,7 +2623,9 @@
         const botReply = generateUniversalBotReply(text.toLowerCase());
 
         botRow.innerHTML = `
-          <img src="${BOT_LOGO_SRC}" onerror="this.onerror=null; this.src='${BOT_FALLBACK_IMG}';" alt="Bot Avatar" class="bot-inline-avatar">
+          <div class="bot-inline-avatar-wrap">
+            <img src="${BOT_LOGO_SRC}" onerror="this.onerror=null; this.src='${BOT_FALLBACK_IMG}';" alt="Bot Avatar" class="bot-inline-avatar">
+          </div>
           <div class="chat-msg bot">${botReply}</div>
         `;
         container.appendChild(botRow);
