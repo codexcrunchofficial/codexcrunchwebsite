@@ -5,18 +5,6 @@
       "destination": "/about.html"
     },
     {
-      "source": "/services/seo",
-      "destination": "/seo.html"
-    },
-    {
-      "source": "/services/web-development",
-      "destination": "/web-development.html"
-    },
-    {
-      "source": "/services/smm",
-      "destination": "/smm.html"
-    },
-    {
       "source": "/portfolio",
       "destination": "/portfolio.html"
     },
@@ -27,6 +15,18 @@
     {
       "source": "/contact",
       "destination": "/contact.html"
+    },
+    {
+      "source": "/seo",
+      "destination": "/seo.html"
+    },
+    {
+      "source": "/web-development",
+      "destination": "/web-development.html"
+    },
+    {
+      "source": "/smm",
+      "destination": "/smm.html"
     }
   ]
 }
