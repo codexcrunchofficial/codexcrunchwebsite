@@ -1,0 +1,32 @@
+{
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/services/seo",
+      "destination": "/seo.html"
+    },
+    {
+      "source": "/services/web-development",
+      "destination": "/web-development.html"
+    },
+    {
+      "source": "/services/smm",
+      "destination": "/smm.html"
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/portfolio.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    }
+  ]
+}
