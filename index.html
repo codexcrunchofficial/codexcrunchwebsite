@@ -769,10 +769,155 @@
       color: var(--accent-cyan);
     }
 
-    /* PRE-FOOTER SECTION */
-    .pre-footer-section {
+    /* ========================================================
+       SERVICES CAROUSEL SECTION (CONTACT US SECTION PAINA)
+       ======================================================== */
+    .services-carousel-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
+      border-bottom: 1px solid #0e3b75;
+      padding: 80px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-header-wrap {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .carousel-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: #071e3d;
+      border: 1px solid #0e3b75;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1.1rem;
+    }
+
+    .carousel-nav-btn:hover {
+      background: var(--accent-cyan);
+      color: var(--bg-dark);
+      border-color: var(--accent-cyan);
+    }
+
+    .carousel-viewport {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      cursor: grab;
+    }
+
+    .carousel-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      padding: 10px 4px;
+    }
+
+    .carousel-card {
+      width: 340px;
+      flex-shrink: 0;
+      background: var(--card-solid);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .carousel-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(1, 180, 255, 0.15);
+    }
+
+    .carousel-card-icon {
+      width: 50px;
+      height: 50px;
+      background: #03152d;
+      border: 1px solid var(--accent-cyan);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+    }
+
+    .carousel-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .carousel-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .carousel-card-footer {
+      border-top: 1px solid #0e3b75;
+      padding-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .carousel-card-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(1, 180, 255, 0.1);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      border: 1px solid rgba(1, 180, 255, 0.2);
+    }
+
+    .carousel-card-link {
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .carousel-card-link:hover {
+      color: var(--accent-cyan);
+      transform: translateX(4px);
+    }
+
+    /* PRE-FOOTER / CONTACT SECTION */
+    .pre-footer-section {
+      background: #03152d;
       padding: 90px 0 60px 0;
     }
 
@@ -812,7 +957,7 @@
     .form-control {
       width: 100%;
       padding: 12px 16px;
-      background: #03152d;
+      background: #010a17;
       border: 1px solid #0e3b75;
       border-radius: 6px;
       color: #ffffff;
@@ -824,7 +969,7 @@
     .form-control:focus {
       outline: none;
       border-color: var(--accent-cyan);
-      background: #051d3d;
+      background: #071e3d;
     }
 
     .newsletter-card {
@@ -1314,6 +1459,7 @@
       .dropdown.active .dropdown-menu { display: block; }
       .hero h1 { font-size: 2.1rem; }
       .hero-stats-box { grid-template-columns: 1fr; }
+      .carousel-card { width: 290px; padding: 24px 20px; }
       .views-strip-content { flex-direction: column; text-align: center; justify-content: center; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -1341,7 +1487,7 @@
     </div>
   </div>
 
-  <!-- 2. ONLY NAVBAR IS STICKY -->
+  <!-- 2. ONLY NAVBAR IS STICKY (WITH LOGO & SERVICES DROPDOWN) -->
   <header class="sticky-header">
     <div class="container">
       <nav>
@@ -1856,7 +2002,110 @@
     </div>
   </section>
 
-  <!-- 3. PRE-FOOTER SECTION -->
+  <!-- ========================================================
+       5. SERVICES CAROUSEL SECTION (CONTACT US PAINA)
+       ======================================================== -->
+  <section class="services-carousel-section" id="featured-carousel">
+    <div class="container">
+      <div class="carousel-header-wrap">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-sliders"></i> Dynamic Solutions</span>
+          <h2 class="section-title" style="margin-bottom: 0;">Core Services at a Glance</h2>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-nav-btn" onclick="slideCarousel('left')" aria-label="Slide Left"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="carousel-nav-btn" onclick="slideCarousel('right')" aria-label="Slide Right"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Carousel Viewport & Track -->
+      <div class="carousel-viewport" id="servicesCarouselViewport">
+        <div class="carousel-track" id="servicesCarouselTrack">
+          
+          <!-- Card 1 -->
+          <div class="carousel-card">
+            <div>
+              <div class="carousel-card-icon"><i class="fa-solid fa-code"></i></div>
+              <h3>Custom Web Development</h3>
+              <p>Tailor-made semantic HTML5, CSS3, & JS architectures engineered for extreme speed and Google PageSpeed 95+ scores.</p>
+            </div>
+            <div class="carousel-card-footer">
+              <span class="carousel-card-badge">High Performance</span>
+              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="carousel-card">
+            <div>
+              <div class="carousel-card-icon"><i class="fa-brands fa-wordpress"></i></div>
+              <h3>WordPress & Elementor</h3>
+              <p>Dynamic business websites & portals with seamless drag-and-drop customization, dynamic post types, and schema.</p>
+            </div>
+            <div class="carousel-card-footer">
+              <span class="carousel-card-badge">Easy CMS</span>
+              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="carousel-card">
+            <div>
+              <div class="carousel-card-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>Advanced SEO Growth</h3>
+              <p>Technical site audits, competitor keyword theft, backlink acquisition, and Yoast optimization to rank #1 on SERP.</p>
+            </div>
+            <div class="carousel-card-footer">
+              <span class="carousel-card-badge">Google #1 Rank</span>
+              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="carousel-card">
+            <div>
+              <div class="carousel-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <h3>Local SEO & GMB Map Pack</h3>
+              <p>Local citations, Google My Business profile ranking, and geo-targeted landing pages to dominate your area.</p>
+            </div>
+            <div class="carousel-card-footer">
+              <span class="carousel-card-badge">Local Leads</span>
+              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="carousel-card">
+            <div>
+              <div class="carousel-card-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <h3>E-Commerce Architecture</h3>
+              <p>Full-scale online stores with Razorpay, UPI, & Stripe payment gateway integrations, cart setups, and inventory sync.</p>
+            </div>
+            <div class="carousel-card-footer">
+              <span class="carousel-card-badge">Payment Ready</span>
+              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="carousel-card">
+            <div>
+              <div class="carousel-card-icon"><i class="fa-solid fa-robot"></i></div>
+              <h3>AI Chatbots & Automation</h3>
+              <p>24/7 intelligent ChatGPT & Claude AI assistants integrated directly into your website to capture high-intent leads.</p>
+            </div>
+            <div class="carousel-card-footer">
+              <span class="carousel-card-badge">24/7 AI Leads</span>
+              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PRE-FOOTER / CONTACT US SECTION -->
   <section id="contact-hub" class="pre-footer-section">
     <div class="container">
       <div class="text-center">
@@ -2070,11 +2319,48 @@
   <!-- JavaScript -->
   <script>
     /* ========================================================
-       LIGHTNING-FAST ASYNCHRONOUS FORM DISPATCH
+       1. INFINITE AUTO-SCROLL SERVICES CAROUSEL ENGINE
+       ======================================================== */
+    let carouselInterval;
+    const viewport = document.getElementById('servicesCarouselViewport');
+
+    function slideCarousel(direction) {
+      const scrollAmount = 360;
+      if (direction === 'left') {
+        viewport.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        viewport.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    function startAutoScroll() {
+      carouselInterval = setInterval(() => {
+        if (!viewport) return;
+        if (viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 10) {
+          viewport.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          viewport.scrollBy({ left: 360, behavior: 'smooth' });
+        }
+      }, 3500);
+    }
+
+    function stopAutoScroll() {
+      clearInterval(carouselInterval);
+    }
+
+    if (viewport) {
+      viewport.addEventListener('mouseenter', stopAutoScroll);
+      viewport.addEventListener('mouseleave', startAutoScroll);
+      viewport.addEventListener('touchstart', stopAutoScroll);
+      viewport.addEventListener('touchend', startAutoScroll);
+      startAutoScroll();
+    }
+
+    /* ========================================================
+       2. LIGHTNING-FAST ASYNCHRONOUS FORM DISPATCH
        ======================================================== */
     const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFSMBGNVNdSnfPe4ovzzA_RYshi4LuIjpNXQ6dyOOIANpxQUKnTD7hWS_QmO_z4m4f/exec";
 
-    // 1. Instant Contact Form (Zero-Delay WhatsApp + Background Sheet Sync)
     function handleFormSubmit(e) {
       e.preventDefault();
 
@@ -2091,7 +2377,6 @@
         message: message
       });
 
-      // 1. Fire-and-forget background push to Google Apps Script
       if (navigator.sendBeacon) {
         navigator.sendBeacon(APPSCRIPT_URL, payload);
       } else {
@@ -2103,12 +2388,10 @@
         }).catch(() => {});
       }
 
-      // 2. INSTANT WhatsApp Redirect (No waiting, opens immediately)
       const whatsappText = `Hello Codex Crunch,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Selected Plan:* ${encodeURIComponent(service)}%0A*Message:* ${encodeURIComponent(message)}`;
       window.open(`https://wa.me/917995137513?text=${whatsappText}`, '_blank');
     }
 
-    // 2. Instant Newsletter Subscription (Immediate Success Response)
     function handleNewsletterSubmit(e) {
       e.preventDefault();
       const emailInput = document.getElementById('newsletter-email');
@@ -2121,7 +2404,6 @@
         email: email
       });
 
-      // 1. Fire-and-forget background push
       if (navigator.sendBeacon) {
         navigator.sendBeacon(APPSCRIPT_URL, payload);
       } else {
@@ -2133,13 +2415,12 @@
         }).catch(() => {});
       }
 
-      // 2. Instant UI feedback
       document.getElementById('newsletter-success').style.display = 'block';
       emailInput.value = '';
     }
 
     /* ========================================================
-       CROSS-DEVICE GLOBAL CLOUD COUNTER
+       3. CROSS-DEVICE GLOBAL CLOUD COUNTER
        ======================================================== */
     async function syncGlobalCrossDeviceCounter() {
       const primaryUrl = 'https://abacus.jasoncameron.dev/hit/codexcrunch.com/totalviews';
@@ -2147,7 +2428,6 @@
 
       let rendered = false;
 
-      // Method 1: Primary Universal Integer Engine
       try {
         const res = await fetch(primaryUrl);
         if (res.ok) {
@@ -2159,7 +2439,6 @@
         }
       } catch (e) {}
 
-      // Method 2: Secondary Universal Cloud Fallback
       if (!rendered) {
         try {
           const res2 = await fetch(secondaryUrl);
@@ -2173,7 +2452,6 @@
         } catch (e) {}
       }
 
-      // Method 3: Resilient Fallback if completely offline
       if (!rendered) {
         let fallbackCount = parseInt(localStorage.getItem('cc_last_known_global') || '1', 10) + 1;
         renderDigits(fallbackCount);
@@ -2195,7 +2473,6 @@
       counterElement.innerHTML = html;
     }
 
-    // Trigger on load
     syncGlobalCrossDeviceCounter();
 
     // Tab switching for Pricing
@@ -2235,7 +2512,7 @@
       }
     }
 
-    // Mobile dropdown toggle on touch devices
+    // Mobile dropdown toggle
     document.addEventListener('DOMContentLoaded', () => {
       const dropdown = document.getElementById('servicesDropdown');
       if (dropdown) {
@@ -2248,7 +2525,7 @@
     });
 
     /* ========================================================
-       INTELLIGENT UNIVERSAL NLP CHATBOT ENGINE
+       4. INTELLIGENT UNIVERSAL NLP CHATBOT ENGINE
        ======================================================== */
     const BOT_LOGO_SRC = 'assets/images/bot-logo.png';
     const BOT_FALLBACK_IMG = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';
