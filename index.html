@@ -179,7 +179,7 @@
       transform: translateY(-2px);
     }
 
-    /* 1. TOP BAR CONTAINER (Clean & Sharp) */
+    /* 1. TOP BAR CONTAINER */
     .top-bar-container {
       background: #010a17;
       border-bottom: 1px solid #0e3b75;
@@ -695,7 +695,7 @@
       color: var(--accent-cyan);
     }
 
-    /* PRE-FOOTER SECTION (Clean Forms) */
+    /* PRE-FOOTER SECTION */
     .pre-footer-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
@@ -796,18 +796,18 @@
       font-size: 1.1rem;
     }
 
-    /* FOOTER & TOTAL VIEWS COUNTER STYLING */
+    /* FOOTER STYLING */
     footer {
       background: #00060e;
       border-top: 1px solid #0e3b75;
-      padding: 60px 0 30px 0;
+      padding: 60px 0 0 0;
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1.2fr;
       gap: 36px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .footer-col p {
@@ -869,45 +869,66 @@
       border-color: var(--accent-cyan);
     }
 
-    /* TOTAL VIEWS COUNTER CONTAINER */
-    .visitor-counter-wrapper {
-      background: #03152d;
-      border: 1px solid #0e3b75;
-      border-radius: 10px;
-      padding: 14px 22px;
-      margin-bottom: 30px;
+    .footer-bottom {
+      border-top: 1px solid #0e3b75;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    /* ========================================================
+       ULTRA-BOTTOM TOTAL VIEWS BAR (AT THE VERY END OF PAGE)
+       ======================================================== */
+    .ultra-bottom-views-strip {
+      background: #020b18;
+      border-top: 1px dashed #0e3b75;
+      padding: 16px 0;
+    }
+
+    .views-strip-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .visitor-badge-left {
-      display: flex;
-      align-items: center;
       gap: 12px;
     }
 
-    .visitor-icon-box {
-      width: 38px;
-      height: 38px;
-      background: rgba(1, 180, 255, 0.1);
-      border: 1px solid var(--accent-cyan);
-      border-radius: 8px;
+    .views-strip-left {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--accent-cyan);
-      font-size: 1.1rem;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    .visitor-label {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
+    .views-strip-left i {
+      color: var(--accent-cyan);
+      font-size: 1rem;
+    }
+
+    .views-strip-left strong {
+      color: #ffffff;
+    }
+
+    .visitor-live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: #22c55e;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .live-pulse {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #22c55e;
     }
 
     .visitor-counter-digits {
@@ -920,41 +941,13 @@
       background: #071e3d;
       border: 1px solid #0e3b75;
       color: var(--accent-cyan);
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 800;
       font-family: monospace;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 4px;
-      min-width: 28px;
+      min-width: 24px;
       text-align: center;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
-    }
-
-    .visitor-live-dot {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      color: #22c55e;
-      font-weight: 600;
-    }
-
-    .live-pulse {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #22c55e;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #0e3b75;
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-dim);
     }
 
     /* Floating WhatsApp Button */
@@ -1240,7 +1233,7 @@
       .mobile-menu-btn { display: block; }
       .hero h1 { font-size: 2.1rem; }
       .hero-stats-box { grid-template-columns: 1fr; }
-      .visitor-counter-wrapper { flex-direction: column; text-align: center; justify-content: center; }
+      .views-strip-content { flex-direction: column; text-align: center; justify-content: center; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
@@ -1248,7 +1241,7 @@
 </head>
 <body>
 
-  <!-- 1. TOP BAR CONTAINER (Scrolls Naturally - Non-Sticky) -->
+  <!-- 1. TOP BAR CONTAINER -->
   <div class="top-bar-container">
     <div class="container">
       <div class="top-bar-wrapper">
@@ -1849,31 +1842,9 @@
     </div>
   </section>
 
-  <!-- 4. FOOTER WITH ACCURATE MULTI-DEVICE GLOBAL COUNTER -->
+  <!-- 4. FOOTER (NAVIGATION & POLICIES) -->
   <footer>
     <div class="container">
-      
-      <!-- TOTAL PAGE VIEWS COUNTER DISPLAY BAR -->
-      <div class="visitor-counter-wrapper">
-        <div class="visitor-badge-left">
-          <div class="visitor-icon-box"><i class="fa-solid fa-chart-line"></i></div>
-          <div>
-            <div class="visitor-label">Total Page Views & Visits</div>
-            <div class="visitor-live-dot"><span class="live-pulse"></span> Universal Global Counter</div>
-          </div>
-        </div>
-
-        <!-- Dynamic Counter Digits -->
-        <div class="visitor-counter-digits" id="visitorCounter">
-          <span class="digit-box">-</span>
-          <span class="digit-box">-</span>
-          <span class="digit-box">-</span>
-          <span class="digit-box">-</span>
-          <span class="digit-box">-</span>
-          <span class="digit-box">-</span>
-        </div>
-      </div>
-
       <div class="footer-grid">
         <div class="footer-col">
           <a href="#home" class="logo-container">
@@ -1928,6 +1899,28 @@
         <div>Engineered for Speed, Scalability, and Google #1 Rankings.</div>
       </div>
     </div>
+
+    <!-- 5. ULTRA-BOTTOM VIEWS & VISITS BAR (Placed at the very bottom) -->
+    <div class="ultra-bottom-views-strip">
+      <div class="container">
+        <div class="views-strip-content">
+          <div class="views-strip-left">
+            <i class="fa-solid fa-chart-line"></i>
+            <span><strong>Total Page Views & Visits:</strong> Verified Traffic Counter</span>
+            <span class="visitor-live-dot"><span class="live-pulse"></span> Global Active Counter</span>
+          </div>
+
+          <div class="visitor-counter-digits" id="visitorCounter">
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+            <span class="digit-box">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Floating WhatsApp Action -->
@@ -1977,12 +1970,10 @@
   <!-- JavaScript -->
   <script>
     /* ========================================================
-       100% CROSS-DEVICE GLOBAL CLOUD COUNTER
-       - Connects to global cloud integer database
-       - Shared across every single device, phone, browser & refresh
+       CROSS-DEVICE GLOBAL CLOUD COUNTER
+       - Shared across every device, phone, browser & refresh
        ======================================================== */
     async function syncGlobalCrossDeviceCounter() {
-      // Global namespace & key for codexcrunch.com
       const primaryUrl = 'https://abacus.jasoncameron.dev/hit/codexcrunch.com/totalviews';
       const secondaryUrl = 'https://api.counterapi.dev/v1/codexcrunch_global/views/up';
 
