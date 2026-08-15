@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Site Favicon / Logo (Replace src/href with your logo) -->
-  <link rel="icon" type="image/png" href="assets/images/site-logo.png">
+  <!-- Site Favicon / Logo -->
+  <link rel="icon" type="image/png" href="Codex Crunch logo.png">
 
   <!-- SEO Primary Meta Tags -->
   <title>Codex Crunch | Top Web Development & SEO Services Agency</title>
@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://codexcrunch.com/">
   <meta property="og:title" content="Codex Crunch | Scalable Web Development & SEO Services">
   <meta property="og:description" content="Custom web design, technical SEO, and digital growth solutions tailored to your business goals.">
-  <meta property="og:image" content="https://codexcrunch.com/assets/images/site-logo.png">
+  <meta property="og:image" content="Codex Crunch logo.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -35,8 +35,8 @@
     "@type": "ProfessionalService",
     "name": "Codex Crunch",
     "url": "https://codexcrunch.com",
-    "logo": "https://codexcrunch.com/assets/images/site-logo.png",
-    "image": "https://codexcrunch.com/assets/images/site-logo.png",
+    "logo": "https://codexcrunch.com/Codex%20Crunch%20logo.png",
+    "image": "https://codexcrunch.com/Codex%20Crunch%20logo.png",
     "description": "Professional Web Development and Advanced Search Engine Optimization (SEO) agency.",
     "telephone": "+917995137513",
     "email": "codexcrunch@gmail.com",
@@ -69,7 +69,6 @@
       --accent-red: #7c0000;
       --pure-black: #000000;
       --pure-white: #ffffff;
-      --logo-plate-bg: #ffffff;
       --text-muted: #cbd5e1;
       --text-dim: #94a3b8;
       --transition: all 0.25s ease-in-out;
@@ -183,12 +182,14 @@
       transform: translateY(-2px);
     }
 
-    /* 1. TOP BAR CONTAINER */
+    /* ========================================================
+       1. TOP BAR CONTAINER (WHITE/LIGHT THEME)
+       ======================================================== */
     .top-bar-container {
-      background: #010a17;
-      border-bottom: 1px solid #0e3b75;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
       font-size: 0.85rem;
-      padding: 10px 0;
+      padding: 9px 0;
       position: relative;
       z-index: 1001;
     }
@@ -206,21 +207,21 @@
     }
 
     .top-contacts a {
-      color: var(--text-muted);
+      color: #334155;
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 8px;
-      font-weight: 500;
+      font-weight: 600;
       transition: var(--transition);
     }
 
     .top-contacts a:hover {
-      color: var(--accent-cyan);
+      color: var(--primary-blue);
     }
 
     .top-contacts i {
-      color: var(--accent-cyan);
+      color: var(--primary-blue);
     }
 
     .top-socials {
@@ -230,12 +231,13 @@
     }
 
     .top-socials span {
-      color: var(--text-dim);
+      color: #64748b;
       font-size: 0.8rem;
+      font-weight: 600;
     }
 
     .top-socials a {
-      color: var(--text-muted);
+      color: #334155;
       text-decoration: none;
       font-size: 0.9rem;
       transition: var(--transition);
@@ -245,26 +247,28 @@
       width: 28px;
       height: 28px;
       border-radius: 4px;
-      background: #071e3d;
-      border: 1px solid #0e3b75;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
     }
 
     .top-socials a:hover {
-      background: var(--accent-cyan);
-      color: var(--bg-dark);
-      border-color: var(--accent-cyan);
+      background: var(--primary-blue);
+      color: #ffffff;
+      border-color: var(--primary-blue);
     }
 
-    /* 2. STICKY NAVBAR (HIGH-CONTRAST LOGO PLATE) */
+    /* ========================================================
+       2. STICKY NAVBAR (PURE WHITE THEME)
+       ======================================================== */
     header.sticky-header {
       position: sticky;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: #03152d;
-      border-bottom: 1px solid #0e3b75;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     }
 
     nav {
@@ -279,50 +283,14 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--pure-white);
     }
 
-    /* High-Contrast Pure White Frame so Dark Logos Pop Out Clearly */
-    .brand-logo-frame {
-      background: #ffffff;
-      padding: 5px 10px;
-      border-radius: 8px;
-      border: 2px solid var(--accent-cyan);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 15px rgba(1, 180, 255, 0.35);
-    }
-
+    /* Seamless Logo Container on White Background */
     .brand-logo-img {
-      max-height: 38px;
+      max-height: 48px;
       width: auto;
       object-fit: contain;
       display: block;
-    }
-
-    .logo-badge-fallback {
-      width: 42px;
-      height: 42px;
-      background: #ffffff;
-      color: #03152d;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
-      border: 2px solid var(--accent-cyan);
-    }
-
-    .logo-text {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .logo-text span {
-      color: var(--accent-cyan);
     }
 
     .nav-links {
@@ -337,9 +305,9 @@
     }
 
     .nav-links a {
-      color: var(--text-muted);
+      color: #1e293b;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
       transition: var(--transition);
       display: flex;
@@ -348,10 +316,10 @@
     }
 
     .nav-links a:hover {
-      color: var(--accent-cyan);
+      color: var(--primary-blue);
     }
 
-    /* SERVICES DROPDOWN MENU */
+    /* SERVICES DROPDOWN (LIGHT THEME) */
     .dropdown {
       position: relative;
     }
@@ -361,12 +329,12 @@
       top: 100%;
       left: 0;
       width: 280px;
-      background: #071e3d;
-      border: 1px solid #0e3b75;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 8px;
       padding: 10px 0;
       list-style: none;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
       opacity: 0;
       visibility: hidden;
       transform: translateY(12px);
@@ -389,22 +357,22 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: var(--text-muted);
+      color: #334155;
       font-size: 0.88rem;
-      font-weight: 500;
+      font-weight: 600;
       transition: var(--transition);
     }
 
     .dropdown-menu a i {
-      color: var(--accent-cyan);
+      color: var(--primary-blue);
       font-size: 0.95rem;
       width: 18px;
       text-align: center;
     }
 
     .dropdown-menu a:hover {
-      background: #03152d;
-      color: var(--accent-cyan);
+      background: #f1f5f9;
+      color: var(--primary-blue);
       padding-left: 22px;
     }
 
@@ -418,7 +386,7 @@
       display: none;
       background: none;
       border: none;
-      color: var(--pure-white);
+      color: #1e293b;
       font-size: 1.5rem;
       cursor: pointer;
     }
@@ -783,9 +751,7 @@
       color: var(--accent-cyan);
     }
 
-    /* ========================================================
-       5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE
-       ======================================================== */
+    /* 5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE */
     .images-marquee-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
@@ -1022,11 +988,14 @@
       font-size: 1.1rem;
     }
 
-    /* FOOTER STYLING (HIGH-CONTRAST FOOTER LOGO FRAME) */
+    /* ========================================================
+       4. FOOTER STYLING (PURE WHITE THEME)
+       ======================================================== */
     footer {
-      background: #00060e;
-      border-top: 1px solid #0e3b75;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
       padding: 60px 0 0 0;
+      color: #1e293b;
     }
 
     .footer-grid {
@@ -1036,36 +1005,25 @@
       margin-bottom: 40px;
     }
 
-    /* Pure White Base Box For Dark Blue Footer Logo */
-    .brand-footer-logo-frame {
-      background: #ffffff;
-      padding: 5px 12px;
-      border-radius: 8px;
-      border: 2px solid var(--accent-cyan);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 15px rgba(1, 180, 255, 0.35);
-    }
-
     .brand-footer-logo-img {
-      max-height: 38px;
+      max-height: 48px;
       width: auto;
       object-fit: contain;
       display: block;
+      margin-bottom: 12px;
     }
 
     .footer-col p {
-      color: var(--text-muted);
+      color: #475569;
       font-size: 0.9rem;
-      margin-top: 16px;
+      margin-top: 10px;
       max-width: 320px;
     }
 
     .footer-col h4 {
       font-size: 1.1rem;
       margin-bottom: 18px;
-      color: var(--accent-cyan);
+      color: var(--primary-blue);
     }
 
     .footer-links {
@@ -1077,14 +1035,15 @@
     }
 
     .footer-links a {
-      color: var(--text-muted);
+      color: #475569;
       text-decoration: none;
       font-size: 0.9rem;
+      font-weight: 500;
       transition: var(--transition);
     }
 
     .footer-links a:hover {
-      color: #ffffff;
+      color: var(--primary-blue);
       padding-left: 3px;
     }
 
@@ -1097,37 +1056,38 @@
     .footer-social-btn {
       width: 36px;
       height: 36px;
-      background: #071e3d;
-      border: 1px solid #0e3b75;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
       border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
+      color: #334155;
       text-decoration: none;
       transition: var(--transition);
     }
 
     .footer-social-btn:hover {
-      background: var(--accent-cyan);
-      color: var(--bg-dark);
-      border-color: var(--accent-cyan);
+      background: var(--primary-blue);
+      color: #ffffff;
+      border-color: var(--primary-blue);
     }
 
     .footer-bottom {
-      border-top: 1px solid #0e3b75;
+      border-top: 1px solid #e2e8f0;
       padding: 24px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 0.85rem;
-      color: var(--text-dim);
+      color: #64748b;
+      font-weight: 500;
     }
 
     /* ULTRA-BOTTOM TOTAL VIEWS BAR */
     .ultra-bottom-views-strip {
-      background: #020b18;
-      border-top: 1px dashed #0e3b75;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
       padding: 16px 0;
     }
 
@@ -1144,16 +1104,16 @@
       align-items: center;
       gap: 10px;
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #475569;
     }
 
     .views-strip-left i {
-      color: var(--accent-cyan);
+      color: var(--primary-blue);
       font-size: 1rem;
     }
 
     .views-strip-left strong {
-      color: #ffffff;
+      color: #0f172a;
     }
 
     .visitor-live-dot {
@@ -1161,17 +1121,17 @@
       align-items: center;
       gap: 6px;
       font-size: 0.75rem;
-      color: #22c55e;
-      font-weight: 600;
+      color: #16a34a;
+      font-weight: 700;
       margin-left: 8px;
     }
 
     .live-pulse {
       width: 7px;
       height: 7px;
-      background: #22c55e;
+      background: #16a34a;
       border-radius: 50%;
-      box-shadow: 0 0 6px #22c55e;
+      box-shadow: 0 0 6px #16a34a;
     }
 
     .visitor-counter-digits {
@@ -1181,9 +1141,9 @@
     }
 
     .digit-box {
-      background: #071e3d;
-      border: 1px solid #0e3b75;
-      color: var(--accent-cyan);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: var(--primary-blue);
       font-size: 1.15rem;
       font-weight: 800;
       font-family: monospace;
@@ -1191,6 +1151,7 @@
       border-radius: 4px;
       min-width: 24px;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     /* Floating WhatsApp Button */
@@ -1207,7 +1168,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.8rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       z-index: 998;
       text-decoration: none;
       transition: var(--transition);
@@ -1217,21 +1178,19 @@
       transform: scale(1.08);
     }
 
-    /* ========================================================
-       CHATBOT LAUNCHER & PANEL (PURE WHITE BASE FOR DARK LOGOS)
-       ======================================================== */
+    /* CHATBOT LAUNCHER & PANEL */
     .chatbot-toggler {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      width: 58px;
-      height: 58px;
-      background: #ffffff; /* Crisp white background */
+      width: 60px;
+      height: 60px;
+      background: #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 20px rgba(1, 180, 255, 0.5);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       border: 2px solid var(--accent-cyan);
       cursor: pointer;
       z-index: 999;
@@ -1242,7 +1201,7 @@
 
     .chatbot-toggler:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(1, 180, 255, 0.7);
+      box-shadow: 0 8px 25px rgba(1, 180, 255, 0.5);
     }
 
     .toggler-logo-img {
@@ -1292,12 +1251,12 @@
     }
 
     .bot-avatar-header-wrap {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: #ffffff;
       border: 2px solid var(--accent-cyan);
-      padding: 3px;
+      padding: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1315,6 +1274,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      color: #ffffff;
     }
 
     .bot-status-wrap span {
@@ -1365,8 +1325,8 @@
     }
 
     .bot-inline-avatar-wrap {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: #ffffff;
       border: 1.5px solid var(--accent-cyan);
@@ -1494,7 +1454,7 @@
       .top-contacts { gap: 14px; flex-wrap: wrap; justify-content: center; }
       .nav-links, .nav-cta .btn { display: none; }
       .mobile-menu-btn { display: block; }
-      .dropdown-menu { position: static; width: 100%; box-shadow: none; opacity: 1; visibility: visible; transform: none; display: none; background: #010a17; }
+      .dropdown-menu { position: static; width: 100%; box-shadow: none; opacity: 1; visibility: visible; transform: none; display: none; background: #f8fafc; }
       .dropdown.active .dropdown-menu { display: block; }
       .hero h1 { font-size: 2.1rem; }
       .hero-stats-box { grid-template-columns: 1fr; }
@@ -1508,7 +1468,7 @@
 </head>
 <body>
 
-  <!-- 1. TOP BAR CONTAINER -->
+  <!-- 1. TOP BAR CONTAINER (WHITE THEME) -->
   <div class="top-bar-container">
     <div class="container">
       <div class="top-bar-wrapper">
@@ -1527,17 +1487,12 @@
     </div>
   </div>
 
-  <!-- 2. ONLY NAVBAR IS STICKY (WITH HIGH-CONTRAST LOGO CONTAINER) -->
+  <!-- 2. STICKY NAVBAR (PURE WHITE THEME - CRISP LOGO DISPLAY) -->
   <header class="sticky-header">
     <div class="container">
       <nav>
         <a href="#home" class="logo-container" aria-label="Codex Crunch Homepage">
-          <!-- Pure White Frame makes Dark Blue / Dark colored Logos Pop -->
-          <div class="brand-logo-frame">
-            <img src="assets/images/navbar-logo.png" onerror="this.parentElement.style.display='none'; document.getElementById('navbarFallbackBadge').style.display='flex';" alt="Codex Crunch Logo" class="brand-logo-img">
-          </div>
-          <div id="navbarFallbackBadge" class="logo-badge-fallback" style="display: none;">CC</div>
-          <span class="logo-text">Codex<span>Crunch</span></span>
+          <img src="Codex Crunch logo.png" alt="Codex Crunch Logo" class="brand-logo-img">
         </a>
 
         <ul class="nav-links">
@@ -2045,7 +2000,7 @@
     </div>
   </section>
 
-  <!-- 5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE (CONTACT US PAINA) -->
+  <!-- 5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE -->
   <section class="images-marquee-section" id="featured-work">
     <div class="container">
       <div class="marquee-header-wrap">
@@ -2063,10 +2018,10 @@
       <div class="marquee-wrapper" id="marqueeViewport">
         <div class="marquee-track" id="marqueeTrack">
           
-          <!-- Slide 1 (Replace src with your image) -->
+          <!-- Slide 1 -->
           <div class="image-slide-card">
             <div class="slide-img-container">
-              <img src="assets/images/slider-1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80';" alt="Web Development Project" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Modern Fintech Platform" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>Modern Fintech Portal</h4>
@@ -2077,7 +2032,7 @@
           <!-- Slide 2 -->
           <div class="image-slide-card">
             <div class="slide-img-container">
-              <img src="assets/images/slider-2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80';" alt="SEO Growth Analytics" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="SEO Growth Analytics" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>SEO Growth & SERP Rank #1</h4>
@@ -2088,7 +2043,7 @@
           <!-- Slide 3 -->
           <div class="image-slide-card">
             <div class="slide-img-container">
-              <img src="assets/images/slider-3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80';" alt="E-Commerce Architecture" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80" alt="E-Commerce Architecture" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>E-Commerce Store Setup</h4>
@@ -2099,7 +2054,7 @@
           <!-- Slide 4 -->
           <div class="image-slide-card">
             <div class="slide-img-container">
-              <img src="assets/images/slider-4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80';" alt="WordPress and Elementor UI" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80" alt="WordPress and Elementor UI" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>WordPress & Elementor Pro</h4>
@@ -2110,7 +2065,7 @@
           <!-- Slide 5 -->
           <div class="image-slide-card">
             <div class="slide-img-container">
-              <img src="assets/images/slider-5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=700&q=80';" alt="AI Bot Assistant" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=700&q=80" alt="AI Bot Assistant" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>AI Chatbot & Automation</h4>
@@ -2121,7 +2076,7 @@
           <!-- Slide 6 -->
           <div class="image-slide-card">
             <div class="slide-img-container">
-              <img src="assets/images/slider-6.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=700&q=80';" alt="Local GMB Dominance" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=700&q=80" alt="Local GMB Dominance" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>Local GMB Map Dominance</h4>
@@ -2132,7 +2087,7 @@
           <!-- DUPLICATE SET FOR SEAMLESS INFINITE LOOP -->
           <div class="image-slide-card" aria-hidden="true">
             <div class="slide-img-container">
-              <img src="assets/images/slider-1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>Modern Fintech Portal</h4>
@@ -2142,7 +2097,7 @@
 
           <div class="image-slide-card" aria-hidden="true">
             <div class="slide-img-container">
-              <img src="assets/images/slider-2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>SEO Growth & SERP Rank #1</h4>
@@ -2152,7 +2107,7 @@
 
           <div class="image-slide-card" aria-hidden="true">
             <div class="slide-img-container">
-              <img src="assets/images/slider-3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>E-Commerce Store Setup</h4>
@@ -2162,7 +2117,7 @@
 
           <div class="image-slide-card" aria-hidden="true">
             <div class="slide-img-container">
-              <img src="assets/images/slider-4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
             </div>
             <div class="slide-info">
               <h4>WordPress & Elementor Pro</h4>
@@ -2260,18 +2215,13 @@
     </div>
   </section>
 
-  <!-- 4. FOOTER (HIGH-CONTRAST LOGO CONTAINER) -->
+  <!-- 4. FOOTER (PURE WHITE THEME - LOGO INTEGRATED NATURALLY) -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <a href="#home" class="logo-container">
-            <!-- Pure White Frame makes Dark Blue / Dark colored Logos Pop in Footer -->
-            <div class="brand-footer-logo-frame">
-              <img src="assets/images/footer-logo.png" onerror="this.parentElement.style.display='none'; document.getElementById('footerFallbackBadge').style.display='flex';" alt="Codex Crunch Footer Logo" class="brand-footer-logo-img">
-            </div>
-            <div id="footerFallbackBadge" class="logo-badge-fallback" style="display: none;">CC</div>
-            <span class="logo-text">Codex<span>Crunch</span></span>
+            <img src="Codex Crunch logo.png" alt="Codex Crunch Footer Logo" class="brand-footer-logo-img">
           </a>
           <p>Codex Crunch is a digital agency specializing in high-performance web development and search engine optimization (SEO) that scales your online presence.</p>
           <div class="footer-social-strip">
@@ -2308,10 +2258,10 @@
         <div class="footer-col">
           <h4>Get in Touch</h4>
           <ul class="footer-links">
-            <li><a href="tel:7995137513"><i class="fa-solid fa-phone" style="color: var(--accent-cyan); margin-right: 6px;"></i> +91 7995137513</a></li>
-            <li><a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope" style="color: var(--accent-cyan); margin-right: 6px;"></i> codexcrunch@gmail.com</a></li>
-            <li><a href="https://codexcrunch.com"><i class="fa-solid fa-globe" style="color: var(--accent-cyan); margin-right: 6px;"></i> codexcrunch.com</a></li>
-            <li><span style="color: var(--text-dim);"><i class="fa-solid fa-hashtag" style="color: var(--accent-cyan); margin-right: 6px;"></i> @codexcrunch</span></li>
+            <li><a href="tel:7995137513"><i class="fa-solid fa-phone" style="color: var(--primary-blue); margin-right: 6px;"></i> +91 7995137513</a></li>
+            <li><a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch@gmail.com</a></li>
+            <li><a href="https://codexcrunch.com"><i class="fa-solid fa-globe" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch.com</a></li>
+            <li><span style="color: #64748b;"><i class="fa-solid fa-hashtag" style="color: var(--primary-blue); margin-right: 6px;"></i> @codexcrunch</span></li>
           </ul>
         </div>
       </div>
@@ -2350,18 +2300,16 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- ========================================================
-       CHATBOT LAUNCHER & PANEL (PURE WHITE BASE FOR DARK LOGOS)
-       ======================================================== -->
+  <!-- CHATBOT LAUNCHER & PANEL -->
   <button class="chatbot-toggler" onclick="toggleChatbot()" aria-label="Open Codex Crunch Assistant">
-    <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Codex Crunch Bot Logo" class="toggler-logo-img">
+    <img src="Codex Crunch logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Codex Crunch Bot Logo" class="toggler-logo-img">
   </button>
 
   <div class="chatbot-panel" id="chatbotPanel">
     <div class="chatbot-header">
       <div class="bot-header-info">
         <div class="bot-avatar-header-wrap">
-          <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot Logo" class="bot-avatar-header">
+          <img src="Codex Crunch logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot Logo" class="bot-avatar-header">
         </div>
         <div class="bot-status-wrap">
           <h3>Codex Crunch AI</h3>
@@ -2374,7 +2322,7 @@
     <div class="chatbot-messages" id="chatMessages">
       <div class="msg-row bot-row">
         <div class="bot-inline-avatar-wrap">
-          <img src="assets/images/bot-logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot" class="bot-inline-avatar">
+          <img src="Codex Crunch logo.png" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';" alt="Bot" class="bot-inline-avatar">
         </div>
         <div class="chat-msg bot">
           Hello! 👋 Welcome to <strong>Codex Crunch</strong>. I can answer <strong>any question</strong> about our website development packages, monthly SEO plans, pricing, tech stack, or live portfolio.
@@ -2560,9 +2508,9 @@
         navLinks.style.top = '75px';
         navLinks.style.left = '0';
         navLinks.style.width = '100%';
-        navLinks.style.background = '#03152d';
+        navLinks.style.background = '#ffffff';
         navLinks.style.padding = '20px';
-        navLinks.style.borderBottom = '1px solid #0e3b75';
+        navLinks.style.borderBottom = '1px solid #e2e8f0';
       }
     }
 
@@ -2581,7 +2529,7 @@
     /* ========================================================
        4. INTELLIGENT UNIVERSAL NLP CHATBOT ENGINE
        ======================================================== */
-    const BOT_LOGO_SRC = 'assets/images/bot-logo.png';
+    const BOT_LOGO_SRC = 'Codex Crunch logo.png';
     const BOT_FALLBACK_IMG = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f916.png';
 
     function toggleChatbot() {
