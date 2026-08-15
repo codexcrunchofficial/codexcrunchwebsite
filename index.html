@@ -1849,7 +1849,7 @@
     </div>
   </section>
 
-  <!-- 4. FOOTER WITH ACCURATE PAGE VIEWS COUNTER -->
+  <!-- 4. FOOTER WITH ACCURATE MULTI-DEVICE GLOBAL COUNTER -->
   <footer>
     <div class="container">
       
@@ -1859,18 +1859,18 @@
           <div class="visitor-icon-box"><i class="fa-solid fa-chart-line"></i></div>
           <div>
             <div class="visitor-label">Total Page Views & Visits</div>
-            <div class="visitor-live-dot"><span class="live-pulse"></span> Lifetime Views Tracked</div>
+            <div class="visitor-live-dot"><span class="live-pulse"></span> Universal Global Counter</div>
           </div>
         </div>
 
         <!-- Dynamic Counter Digits -->
         <div class="visitor-counter-digits" id="visitorCounter">
-          <span class="digit-box">0</span>
-          <span class="digit-box">0</span>
-          <span class="digit-box">0</span>
-          <span class="digit-box">0</span>
-          <span class="digit-box">0</span>
-          <span class="digit-box">1</span>
+          <span class="digit-box">-</span>
+          <span class="digit-box">-</span>
+          <span class="digit-box">-</span>
+          <span class="digit-box">-</span>
+          <span class="digit-box">-</span>
+          <span class="digit-box">-</span>
         </div>
       </div>
 
@@ -1977,43 +1977,55 @@
   <!-- JavaScript -->
   <script>
     /* ========================================================
-       ACCURATE UNCONDITIONAL VISITOR / REFRESH COUNTER
-       - Increments +1 on EVERY visit AND EVERY page refresh
-       - Saves locally in localStorage & syncs to cloud
+       100% CROSS-DEVICE GLOBAL CLOUD COUNTER
+       - Connects to global cloud integer database
+       - Shared across every single device, phone, browser & refresh
        ======================================================== */
-    function recordPageViewAndRefresh() {
-      const STORAGE_KEY = 'codexcrunch_total_views_count';
-      
-      // 1. Get current count (or initialize at 1)
-      let storedCount = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
-      
-      // 2. Increment +1 on every single load/refresh
-      storedCount += 1;
-      localStorage.setItem(STORAGE_KEY, storedCount);
+    async function syncGlobalCrossDeviceCounter() {
+      // Global namespace & key for codexcrunch.com
+      const primaryUrl = 'https://abacus.jasoncameron.dev/hit/codexcrunch.com/totalviews';
+      const secondaryUrl = 'https://api.counterapi.dev/v1/codexcrunch_global/views/up';
 
-      // 3. Immediately render updated count
-      renderDigits(storedCount);
+      let rendered = false;
 
-      // 4. Also trigger global cloud hit in background
+      // Method 1: Primary Universal Integer Engine
       try {
-        fetch('https://api.counterapi.dev/v1/codexcrunch_com_views/total/up', { mode: 'cors' })
-          .then(res => res.json())
-          .then(data => {
-            if (data && typeof data.count === 'number') {
-              const maxCount = Math.max(data.count, storedCount);
-              localStorage.setItem(STORAGE_KEY, maxCount);
-              renderDigits(maxCount);
+        const res = await fetch(primaryUrl);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && typeof data.value === 'number') {
+            renderDigits(data.value);
+            rendered = true;
+          }
+        }
+      } catch (e) {}
+
+      // Method 2: Secondary Universal Cloud Fallback
+      if (!rendered) {
+        try {
+          const res2 = await fetch(secondaryUrl);
+          if (res2.ok) {
+            const data2 = await res2.json();
+            if (data2 && typeof data2.count === 'number') {
+              renderDigits(data2.count);
+              rendered = true;
             }
-          })
-          .catch(() => {
-            // If offline or blocked, local increment continues perfectly
-          });
-      } catch (err) {}
+          }
+        } catch (e) {}
+      }
+
+      // Method 3: Resilient Fallback if completely offline
+      if (!rendered) {
+        let fallbackCount = parseInt(localStorage.getItem('cc_last_known_global') || '1', 10) + 1;
+        renderDigits(fallbackCount);
+      }
     }
 
     function renderDigits(count) {
       const counterElement = document.getElementById('visitorCounter');
       if (!counterElement) return;
+
+      localStorage.setItem('cc_last_known_global', count);
 
       const num = Math.max(1, count);
       const countStr = String(num).padStart(6, '0');
@@ -2024,8 +2036,8 @@
       counterElement.innerHTML = html;
     }
 
-    // Run immediately when script loads
-    recordPageViewAndRefresh();
+    // Trigger on every device load & refresh
+    syncGlobalCrossDeviceCounter();
 
     // Tab switching for Pricing
     function switchPricing(type) {
