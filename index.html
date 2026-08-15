@@ -960,7 +960,7 @@
       color: var(--text-dim);
     }
 
-    /* ULTRA-BOTTOM TOTAL VIEWS BAR (AT THE VERY END OF PAGE) */
+    /* ULTRA-BOTTOM TOTAL VIEWS BAR */
     .ultra-bottom-views-strip {
       background: #020b18;
       border-top: 1px dashed #0e3b75;
@@ -1341,7 +1341,7 @@
     </div>
   </div>
 
-  <!-- 2. ONLY NAVBAR IS STICKY (WITH LOGO & SERVICES DROPDOWN) -->
+  <!-- 2. ONLY NAVBAR IS STICKY -->
   <header class="sticky-header">
     <div class="container">
       <nav>
@@ -1856,7 +1856,7 @@
     </div>
   </section>
 
-  <!-- 3. PRE-FOOTER SECTION (FORM & NEWSLETTER) -->
+  <!-- 3. PRE-FOOTER SECTION -->
   <section id="contact-hub" class="pre-footer-section">
     <div class="container">
       <div class="text-center">
@@ -2070,80 +2070,72 @@
   <!-- JavaScript -->
   <script>
     /* ========================================================
-       GOOGLE APPS SCRIPT WEB APP ENDPOINT INTEGRATION
+       LIGHTNING-FAST ASYNCHRONOUS FORM DISPATCH
        ======================================================== */
     const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFSMBGNVNdSnfPe4ovzzA_RYshi4LuIjpNXQ6dyOOIANpxQUKnTD7hWS_QmO_z4m4f/exec";
 
-    // 1. Contact Form -> Google Sheet Leads Tab + WhatsApp Dispatch
-    async function handleFormSubmit(e) {
+    // 1. Instant Contact Form (Zero-Delay WhatsApp + Background Sheet Sync)
+    function handleFormSubmit(e) {
       e.preventDefault();
-      const submitBtn = e.target.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
 
       const name = document.getElementById('name').value;
       const phone = document.getElementById('phone').value;
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value;
 
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-      submitBtn.disabled = true;
+      const payload = JSON.stringify({
+        formType: "contact",
+        name: name,
+        phone: phone,
+        service: service,
+        message: message
+      });
 
-      try {
-        await fetch(APPSCRIPT_URL, {
+      // 1. Fire-and-forget background push to Google Apps Script
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(APPSCRIPT_URL, payload);
+      } else {
+        fetch(APPSCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            formType: "contact",
-            name: name,
-            phone: phone,
-            service: service,
-            message: message
-          })
-        });
-      } catch (err) {
-        console.error("Sheet submission error:", err);
-      } finally {
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
+          body: payload
+        }).catch(() => {});
       }
 
+      // 2. INSTANT WhatsApp Redirect (No waiting, opens immediately)
       const whatsappText = `Hello Codex Crunch,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Selected Plan:* ${encodeURIComponent(service)}%0A*Message:* ${encodeURIComponent(message)}`;
       window.open(`https://wa.me/917995137513?text=${whatsappText}`, '_blank');
     }
 
-    // 2. Newsletter Subscription -> Google Sheet Newsletter Tab
-    async function handleNewsletterSubmit(e) {
+    // 2. Instant Newsletter Subscription (Immediate Success Response)
+    function handleNewsletterSubmit(e) {
       e.preventDefault();
       const emailInput = document.getElementById('newsletter-email');
       const email = emailInput.value;
-      const submitBtn = e.target.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
 
       if (!email) return;
 
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
-      submitBtn.disabled = true;
+      const payload = JSON.stringify({
+        formType: "newsletter",
+        email: email
+      });
 
-      try {
-        await fetch(APPSCRIPT_URL, {
+      // 1. Fire-and-forget background push
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(APPSCRIPT_URL, payload);
+      } else {
+        fetch(APPSCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            formType: "newsletter",
-            email: email
-          })
-        });
-
-        document.getElementById('newsletter-success').style.display = 'block';
-        emailInput.value = '';
-      } catch (err) {
-        console.error("Newsletter submission error:", err);
-      } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
+          body: payload
+        }).catch(() => {});
       }
+
+      // 2. Instant UI feedback
+      document.getElementById('newsletter-success').style.display = 'block';
+      emailInput.value = '';
     }
 
     /* ========================================================
@@ -2203,7 +2195,7 @@
       counterElement.innerHTML = html;
     }
 
-    // Trigger on every device load & refresh
+    // Trigger on load
     syncGlobalCrossDeviceCounter();
 
     // Tab switching for Pricing
