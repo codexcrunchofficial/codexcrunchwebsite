@@ -770,32 +770,32 @@
     }
 
     /* ========================================================
-       SERVICES CAROUSEL SECTION (CONTACT US SECTION PAINA)
+       5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE
        ======================================================== */
-    .services-carousel-section {
+    .images-marquee-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
       border-bottom: 1px solid #0e3b75;
-      padding: 80px 0;
+      padding: 85px 0 75px 0;
       overflow: hidden;
       position: relative;
     }
 
-    .carousel-header-wrap {
+    .marquee-header-wrap {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       flex-wrap: wrap;
       gap: 16px;
     }
 
-    .carousel-controls {
+    .marquee-controls {
       display: flex;
       gap: 10px;
     }
 
-    .carousel-nav-btn {
+    .marquee-nav-btn {
       width: 44px;
       height: 44px;
       border-radius: 8px;
@@ -810,109 +810,102 @@
       font-size: 1.1rem;
     }
 
-    .carousel-nav-btn:hover {
+    .marquee-nav-btn:hover {
       background: var(--accent-cyan);
       color: var(--bg-dark);
       border-color: var(--accent-cyan);
     }
 
-    .carousel-viewport {
+    .marquee-wrapper {
+      width: 100%;
       overflow-x: auto;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
       cursor: grab;
+      position: relative;
     }
 
-    .carousel-viewport::-webkit-scrollbar {
+    .marquee-wrapper::-webkit-scrollbar {
       display: none;
     }
 
-    .carousel-track {
+    .marquee-track {
       display: flex;
       gap: 24px;
       width: max-content;
-      padding: 10px 4px;
+      animation: infiniteLoopScroll 32s linear infinite;
+      padding: 10px 0;
     }
 
-    .carousel-card {
-      width: 340px;
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes infiniteLoopScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-50% - 12px));
+      }
+    }
+
+    .image-slide-card {
+      width: 360px;
       flex-shrink: 0;
       background: var(--card-solid);
       border: 1px solid var(--card-border);
       border-radius: 14px;
-      padding: 30px 26px;
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .image-slide-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(1, 180, 255, 0.2);
+    }
+
+    .slide-img-container {
+      width: 100%;
+      height: 210px;
+      background: #03152d;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .image-slide-card:hover .slide-img-container img {
+      transform: scale(1.06);
+    }
+
+    .slide-info {
+      padding: 20px 22px;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: var(--transition);
-      user-select: none;
     }
 
-    .carousel-card:hover {
-      border-color: var(--accent-cyan);
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(1, 180, 255, 0.15);
-    }
-
-    .carousel-card-icon {
-      width: 50px;
-      height: 50px;
-      background: #03152d;
-      border: 1px solid var(--accent-cyan);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: var(--accent-cyan);
-      margin-bottom: 20px;
-    }
-
-    .carousel-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-
-    .carousel-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-
-    .carousel-card-footer {
-      border-top: 1px solid #0e3b75;
-      padding-top: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .carousel-card-badge {
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 4px;
-      background: rgba(1, 180, 255, 0.1);
-      color: var(--accent-cyan);
-      font-weight: 700;
-      border: 1px solid rgba(1, 180, 255, 0.2);
-    }
-
-    .carousel-card-link {
+    .slide-info h4 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
       color: #ffffff;
-      font-size: 0.88rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition);
     }
 
-    .carousel-card-link:hover {
-      color: var(--accent-cyan);
-      transform: translateX(4px);
+    .slide-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* PRE-FOOTER / CONTACT SECTION */
@@ -1459,7 +1452,8 @@
       .dropdown.active .dropdown-menu { display: block; }
       .hero h1 { font-size: 2.1rem; }
       .hero-stats-box { grid-template-columns: 1fr; }
-      .carousel-card { width: 290px; padding: 24px 20px; }
+      .image-slide-card { width: 290px; }
+      .slide-img-container { height: 175px; }
       .views-strip-content { flex-direction: column; text-align: center; justify-content: center; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -1487,7 +1481,7 @@
     </div>
   </div>
 
-  <!-- 2. ONLY NAVBAR IS STICKY (WITH LOGO & SERVICES DROPDOWN) -->
+  <!-- 2. ONLY NAVBAR IS STICKY -->
   <header class="sticky-header">
     <div class="container">
       <nav>
@@ -2003,100 +1997,130 @@
   </section>
 
   <!-- ========================================================
-       5. SERVICES CAROUSEL SECTION (CONTACT US PAINA)
+       5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE
+       (CONTACT US PAINA)
        ======================================================== -->
-  <section class="services-carousel-section" id="featured-carousel">
+  <section class="images-marquee-section" id="featured-work">
     <div class="container">
-      <div class="carousel-header-wrap">
+      <div class="marquee-header-wrap">
         <div>
-          <span class="section-tag"><i class="fa-solid fa-sliders"></i> Dynamic Solutions</span>
-          <h2 class="section-title" style="margin-bottom: 0;">Core Services at a Glance</h2>
+          <span class="section-tag"><i class="fa-solid fa-images"></i> Visual Showcase</span>
+          <h2 class="section-title" style="margin-bottom: 0;">Recent Designs & Project Visuals</h2>
         </div>
-        <div class="carousel-controls">
-          <button class="carousel-nav-btn" onclick="slideCarousel('left')" aria-label="Slide Left"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carousel-nav-btn" onclick="slideCarousel('right')" aria-label="Slide Right"><i class="fa-solid fa-arrow-right"></i></button>
+        <div class="marquee-controls">
+          <button class="marquee-nav-btn" onclick="manualMarqueeSlide('left')" aria-label="Slide Left"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="marquee-nav-btn" onclick="manualMarqueeSlide('right')" aria-label="Slide Right"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
 
-      <!-- Carousel Viewport & Track -->
-      <div class="carousel-viewport" id="servicesCarouselViewport">
-        <div class="carousel-track" id="servicesCarouselTrack">
+      <!-- Infinite Marquee Viewport -->
+      <div class="marquee-wrapper" id="marqueeViewport">
+        <div class="marquee-track" id="marqueeTrack">
           
-          <!-- Card 1 -->
-          <div class="carousel-card">
-            <div>
-              <div class="carousel-card-icon"><i class="fa-solid fa-code"></i></div>
-              <h3>Custom Web Development</h3>
-              <p>Tailor-made semantic HTML5, CSS3, & JS architectures engineered for extreme speed and Google PageSpeed 95+ scores.</p>
+          <!-- Slide 1 (Replace src with your image) -->
+          <div class="image-slide-card">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80';" alt="Web Development Project" loading="lazy">
             </div>
-            <div class="carousel-card-footer">
-              <span class="carousel-card-badge">High Performance</span>
-              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="slide-info">
+              <h4>Modern Fintech Portal</h4>
+              <p>Ultra-responsive financial data architecture & DSA loan agent platform.</p>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="carousel-card">
-            <div>
-              <div class="carousel-card-icon"><i class="fa-brands fa-wordpress"></i></div>
-              <h3>WordPress & Elementor</h3>
-              <p>Dynamic business websites & portals with seamless drag-and-drop customization, dynamic post types, and schema.</p>
+          <!-- Slide 2 -->
+          <div class="image-slide-card">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80';" alt="SEO Growth Analytics" loading="lazy">
             </div>
-            <div class="carousel-card-footer">
-              <span class="carousel-card-badge">Easy CMS</span>
-              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="slide-info">
+              <h4>SEO Growth & SERP Rank #1</h4>
+              <p>Comprehensive technical optimization and semantic keyword ranking.</p>
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="carousel-card">
-            <div>
-              <div class="carousel-card-icon"><i class="fa-solid fa-chart-line"></i></div>
-              <h3>Advanced SEO Growth</h3>
-              <p>Technical site audits, competitor keyword theft, backlink acquisition, and Yoast optimization to rank #1 on SERP.</p>
+          <!-- Slide 3 -->
+          <div class="image-slide-card">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80';" alt="E-Commerce Architecture" loading="lazy">
             </div>
-            <div class="carousel-card-footer">
-              <span class="carousel-card-badge">Google #1 Rank</span>
-              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="slide-info">
+              <h4>E-Commerce Store Setup</h4>
+              <p>High-converting product funnels with Razorpay and UPI checkout.</p>
             </div>
           </div>
 
-          <!-- Card 4 -->
-          <div class="carousel-card">
-            <div>
-              <div class="carousel-card-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <h3>Local SEO & GMB Map Pack</h3>
-              <p>Local citations, Google My Business profile ranking, and geo-targeted landing pages to dominate your area.</p>
+          <!-- Slide 4 -->
+          <div class="image-slide-card">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80';" alt="WordPress and Elementor UI" loading="lazy">
             </div>
-            <div class="carousel-card-footer">
-              <span class="carousel-card-badge">Local Leads</span>
-              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="slide-info">
+              <h4>WordPress & Elementor Pro</h4>
+              <p>Clean design system with custom post structures and speedy loading.</p>
             </div>
           </div>
 
-          <!-- Card 5 -->
-          <div class="carousel-card">
-            <div>
-              <div class="carousel-card-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-              <h3>E-Commerce Architecture</h3>
-              <p>Full-scale online stores with Razorpay, UPI, & Stripe payment gateway integrations, cart setups, and inventory sync.</p>
+          <!-- Slide 5 -->
+          <div class="image-slide-card">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=700&q=80';" alt="AI Bot Assistant" loading="lazy">
             </div>
-            <div class="carousel-card-footer">
-              <span class="carousel-card-badge">Payment Ready</span>
-              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="slide-info">
+              <h4>AI Chatbot & Automation</h4>
+              <p>24/7 client conversational agent capturing high-ticket leads automatically.</p>
             </div>
           </div>
 
-          <!-- Card 6 -->
-          <div class="carousel-card">
-            <div>
-              <div class="carousel-card-icon"><i class="fa-solid fa-robot"></i></div>
-              <h3>AI Chatbots & Automation</h3>
-              <p>24/7 intelligent ChatGPT & Claude AI assistants integrated directly into your website to capture high-intent leads.</p>
+          <!-- Slide 6 -->
+          <div class="image-slide-card">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-6.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=700&q=80';" alt="Local GMB Dominance" loading="lazy">
             </div>
-            <div class="carousel-card-footer">
-              <span class="carousel-card-badge">24/7 AI Leads</span>
-              <a href="#services" class="carousel-card-link">Details <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="slide-info">
+              <h4>Local GMB Map Dominance</h4>
+              <p>Geo-targeted citations and reviews driving consistent localized calls.</p>
+            </div>
+          </div>
+
+          <!-- DUPLICATE SET FOR SEAMLESS INFINITE LOOP -->
+          <div class="image-slide-card" aria-hidden="true">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+            </div>
+            <div class="slide-info">
+              <h4>Modern Fintech Portal</h4>
+              <p>Ultra-responsive financial data architecture & DSA loan agent platform.</p>
+            </div>
+          </div>
+
+          <div class="image-slide-card" aria-hidden="true">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+            </div>
+            <div class="slide-info">
+              <h4>SEO Growth & SERP Rank #1</h4>
+              <p>Comprehensive technical optimization and semantic keyword ranking.</p>
+            </div>
+          </div>
+
+          <div class="image-slide-card" aria-hidden="true">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+            </div>
+            <div class="slide-info">
+              <h4>E-Commerce Store Setup</h4>
+              <p>High-converting product funnels with Razorpay and UPI checkout.</p>
+            </div>
+          </div>
+
+          <div class="image-slide-card" aria-hidden="true">
+            <div class="slide-img-container">
+              <img src="assets/images/slider-4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80';" alt="" loading="lazy">
+            </div>
+            <div class="slide-info">
+              <h4>WordPress & Elementor Pro</h4>
+              <p>Clean design system with custom post structures and speedy loading.</p>
             </div>
           </div>
 
@@ -2319,41 +2343,16 @@
   <!-- JavaScript -->
   <script>
     /* ========================================================
-       1. INFINITE AUTO-SCROLL SERVICES CAROUSEL ENGINE
+       1. INFINITE IMAGE CAROUSEL MARQUEE CONTROLS
        ======================================================== */
-    let carouselInterval;
-    const viewport = document.getElementById('servicesCarouselViewport');
-
-    function slideCarousel(direction) {
-      const scrollAmount = 360;
+    function manualMarqueeSlide(direction) {
+      const wrapper = document.getElementById('marqueeViewport');
+      const scrollAmt = 380;
       if (direction === 'left') {
-        viewport.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        wrapper.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
       } else {
-        viewport.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        wrapper.scrollBy({ left: scrollAmt, behavior: 'smooth' });
       }
-    }
-
-    function startAutoScroll() {
-      carouselInterval = setInterval(() => {
-        if (!viewport) return;
-        if (viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 10) {
-          viewport.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          viewport.scrollBy({ left: 360, behavior: 'smooth' });
-        }
-      }, 3500);
-    }
-
-    function stopAutoScroll() {
-      clearInterval(carouselInterval);
-    }
-
-    if (viewport) {
-      viewport.addEventListener('mouseenter', stopAutoScroll);
-      viewport.addEventListener('mouseleave', startAutoScroll);
-      viewport.addEventListener('touchstart', stopAutoScroll);
-      viewport.addEventListener('touchend', startAutoScroll);
-      startAutoScroll();
     }
 
     /* ========================================================
