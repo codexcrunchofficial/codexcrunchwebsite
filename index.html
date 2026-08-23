@@ -182,7 +182,7 @@
       transform: translateY(-2px);
     }
 
-    /* TOP BAR CONTAINER */
+    /* 1. TOP BAR */
     .top-bar-container {
       background: #f8fafc;
       border-bottom: 1px solid #e2e8f0;
@@ -255,7 +255,7 @@
       border-color: var(--primary-blue);
     }
 
-    /* STICKY NAVBAR */
+    /* 2. STICKY NAVBAR */
     header.sticky-header {
       position: sticky;
       top: 0;
@@ -314,7 +314,6 @@
       color: var(--primary-blue);
     }
 
-    /* DROPDOWN */
     .dropdown {
       position: relative;
     }
@@ -559,7 +558,7 @@
       line-height: 1.55;
     }
 
-    /* Tools Tiles */
+    /* Tools Section */
     .tools-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
@@ -602,235 +601,128 @@
     }
 
     /* ========================================================
-       REVAMPED INTERACTIVE DEVICE-FRAME PROJECT PREVIEW MODEL
+       SIMPLE, CRISP LIVE BROWSER PREVIEW MODEL (IFRAME/LINK)
        ======================================================== */
-    .portfolio-grid {
+    .live-preview-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 32px;
+      gap: 28px;
     }
 
-    .device-project-card {
-      background: linear-gradient(180deg, #051a36 0%, #020e1e 100%);
+    .live-browser-card {
+      background: #071e3d;
       border: 1px solid #0e3b75;
-      border-radius: 18px;
-      padding: 22px;
+      border-radius: 12px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: var(--transition);
     }
 
-    .device-project-card:hover {
+    .live-browser-card:hover {
       border-color: var(--accent-cyan);
-      transform: translateY(-8px);
-      box-shadow: 0 20px 45px rgba(1, 180, 255, 0.25);
+      transform: translateY(-4px);
     }
 
-    /* Interactive Laptop Mockup Frame */
-    .laptop-frame {
-      background: #010a17;
-      border-radius: 10px 10px 0 0;
-      border: 2px solid #14355a;
-      border-bottom: none;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 0 12px rgba(0,0,0,0.8);
+    .live-browser-bar {
+      background: #020c1b;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #0e3b75;
     }
 
-    .laptop-top-notch {
-      background: #03152d;
-      padding: 6px 14px;
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #22c55e; }
+
+    .browser-search-bar {
+      flex-grow: 1;
+      background: #061933;
+      border: 1px solid #0e3b75;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.78rem;
+      color: #94a3b8;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #14355a;
-    }
-
-    .notch-dots {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .notch-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .notch-red { background: #ef4444; }
-    .notch-yellow { background: #eab308; }
-    .notch-green { background: #22c55e; }
-
-    .notch-title {
-      font-size: 0.75rem;
-      color: var(--text-dim);
       font-family: monospace;
-      font-weight: 600;
     }
 
-    .notch-status {
-      font-size: 0.7rem;
-      color: #22c55e;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-weight: 700;
+    .browser-search-bar span {
+      color: #38bdf8;
     }
 
-    /* Screen with Smooth Panoramic Auto-Preview */
-    .laptop-screen {
+    .live-embed-viewport {
       width: 100%;
-      height: 200px;
+      height: 240px;
       position: relative;
+      background: #010a17;
       overflow: hidden;
-      background: #020914;
     }
 
-    .laptop-screen img {
+    .live-iframe {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: top;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+      display: block;
+      background: #ffffff;
     }
 
-    .device-project-card:hover .laptop-screen img {
-      transform: scale(1.06);
-    }
-
-    .screen-overlay-hud {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
+    .live-bottom-info {
+      padding: 16px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      pointer-events: none;
+      justify-content: space-between;
+      background: #071e3d;
+      border-top: 1px solid #0e3b75;
     }
 
-    .hud-stat {
-      background: rgba(3, 21, 45, 0.85);
-      border: 1px solid var(--accent-cyan);
-      backdrop-filter: blur(6px);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.72rem;
+    .live-site-title {
+      font-size: 1.05rem;
       font-weight: 700;
-      color: #ffffff;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Laptop Base Bar */
-    .laptop-base-bar {
-      height: 10px;
-      background: linear-gradient(180deg, #1e3a5f 0%, #0c1a2d 100%);
-      border-radius: 0 0 10px 10px;
-      border: 2px solid #14355a;
-      border-top: 1px solid #3b82f6;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .laptop-base-bar::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 3px;
-      background: #020914;
-      border-radius: 0 0 4px 4px;
-    }
-
-    /* Card Details Area */
-    .project-body {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-
-    .project-header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .project-header-row h3 {
-      font-size: 1.25rem;
       color: #ffffff;
       margin: 0;
     }
 
-    .project-pill-badge {
+    .live-site-type {
       font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      background: rgba(1, 180, 255, 0.1);
-      border: 1px solid rgba(1, 180, 255, 0.3);
-      padding: 3px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .project-summary {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 16px;
-    }
-
-    .project-stack-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 20px;
-      padding-top: 12px;
-      border-top: 1px solid #0e3b75;
-    }
-
-    .stack-chip {
-      font-size: 0.72rem;
-      font-weight: 600;
       color: var(--text-dim);
-      background: #020c1a;
-      padding: 3px 9px;
-      border-radius: 4px;
-      border: 1px solid #0e3b75;
     }
 
-    .project-action-button {
-      width: 100%;
-      padding: 12px 18px;
-      background: #034ebc;
-      border: 1px solid var(--accent-cyan);
-      color: #ffffff;
-      font-size: 0.88rem;
-      font-weight: 700;
-      border-radius: 8px;
-      text-decoration: none;
+    .open-site-btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
+      gap: 6px;
+      background: #034ebc;
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--accent-cyan);
       transition: var(--transition);
     }
 
-    .project-action-button:hover {
+    .open-site-btn:hover {
       background: var(--accent-cyan);
       color: #03152d;
-      box-shadow: 0 4px 16px rgba(1, 180, 255, 0.4);
     }
 
     /* Pricing Section */
@@ -1029,7 +921,7 @@
       color: var(--accent-cyan);
     }
 
-    /* Infinite Image Carousel */
+    /* Infinite Carousel */
     .images-marquee-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
@@ -1332,7 +1224,7 @@
       font-size: 1.1rem;
     }
 
-    /* Footer Styling */
+    /* Footer */
     footer {
       background: #ffffff;
       border-top: 1px solid #e2e8f0;
@@ -1426,7 +1318,7 @@
       font-weight: 500;
     }
 
-    /* ULTRA-BOTTOM VIEWS STRIP */
+    /* Views Strip */
     .ultra-bottom-views-strip {
       background: #f8fafc;
       border-top: 1px solid #e2e8f0;
@@ -1496,7 +1388,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    /* Floating WhatsApp Button */
+    /* Floating WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 96px;
@@ -1520,7 +1412,7 @@
       transform: scale(1.08);
     }
 
-    /* CHATBOT LAUNCHER & PANEL */
+    /* Chatbot Panel */
     .chatbot-toggler {
       position: fixed;
       bottom: 24px;
@@ -1784,7 +1676,7 @@
       color: #03152d;
     }
 
-    /* Responsive Queries */
+    /* Responsive */
     @media (max-width: 992px) {
       .hero h1 { font-size: 2.6rem; }
       .about-wrapper, .pre-footer-grid { grid-template-columns: 1fr; }
@@ -1800,7 +1692,7 @@
       .dropdown.active .dropdown-menu { display: block; }
       .hero h1 { font-size: 2.1rem; }
       .hero-stats-box { grid-template-columns: 1fr; }
-      .portfolio-grid { grid-template-columns: 1fr; }
+      .live-preview-grid { grid-template-columns: 1fr; }
       .image-slide-card { width: 290px; }
       .slide-img-container { height: 175px; }
       .views-strip-content { flex-direction: column; text-align: center; justify-content: center; }
@@ -1811,7 +1703,7 @@
 </head>
 <body>
 
-  <!-- 1. TOP BAR CONTAINER (WHITE THEME) -->
+  <!-- 1. TOP BAR CONTAINER -->
   <div class="top-bar-container">
     <div class="container">
       <div class="top-bar-wrapper">
@@ -1830,7 +1722,7 @@
     </div>
   </div>
 
-  <!-- 2. STICKY NAVBAR (PURE WHITE THEME) -->
+  <!-- 2. STICKY NAVBAR -->
   <header class="sticky-header">
     <div class="container">
       <nav>
@@ -2089,282 +1981,176 @@
     </div>
   </section>
 
-  <!-- Revamped Device-Frame Project Preview Model -->
+  <!-- ========================================================
+       SIMPLE & CLEAN LIVE WEBSITE PREVIEW SECTION
+       ======================================================== -->
   <section id="portfolio">
     <div class="container">
       <div class="text-center">
-        <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Live Showcase</span>
-        <h2 class="section-title">Engineered Digital Platforms</h2>
-        <p class="section-desc">Interactive portfolio previews of high-traffic portals, web apps, and SEO-dominant platforms created by Codex Crunch.</p>
+        <span class="section-tag"><i class="fa-solid fa-globe"></i> Live Website Previews</span>
+        <h2 class="section-title">Our Live Client Websites</h2>
+        <p class="section-desc">Maa clients kosam build chesina live websites direct ga ikkade chudavachu.</p>
       </div>
 
-      <div class="portfolio-grid">
-        <!-- Project 1: BanksAdda -->
-        <div class="device-project-card">
-          <div>
-            <div class="laptop-frame">
-              <div class="laptop-top-notch">
-                <div class="notch-dots">
-                  <span class="notch-dot notch-red"></span>
-                  <span class="notch-dot notch-yellow"></span>
-                  <span class="notch-dot notch-green"></span>
-                </div>
-                <div class="notch-title">banksadda.com</div>
-                <div class="notch-status"><i class="fa-solid fa-shield"></i> SSL Secured</div>
-              </div>
-              <div class="laptop-screen">
-                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=700&q=80" alt="BanksAdda Portal" loading="lazy">
-                <div class="screen-overlay-hud">
-                  <span class="hud-stat"><i class="fa-solid fa-gauge-high" style="color: var(--accent-cyan);"></i> 99/100 Speed</span>
-                  <span class="hud-stat"><i class="fa-solid fa-bolt" style="color: #22c55e;"></i> Core Vitals Passed</span>
-                </div>
-              </div>
+      <div class="live-preview-grid">
+        <!-- Site 1: BanksAdda -->
+        <div class="live-browser-card">
+          <div class="live-browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="laptop-base-bar"></div>
-
-            <div class="project-body">
-              <div class="project-header-row">
-                <h3>banksadda.com</h3>[cite: 1]
-                <span class="project-pill-badge">Fintech / Info</span>[cite: 1]
-              </div>
-              <p class="project-summary">Finance, banking updates, and credit informational portal structured for high-volume organic search queries.</p>[cite: 1]
+            <div class="browser-search-bar">
+              <span>https://banksadda.com</span>
+              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
             </div>
           </div>
-
-          <div>
-            <div class="project-stack-tags">
-              <span class="stack-chip">HTML5</span>
-              <span class="stack-chip">Semantic SEO</span>
-              <span class="stack-chip">Schema Structured Data</span>
-              <span class="stack-chip">Ultra-Fast CDN</span>
+          <div class="live-embed-viewport">
+            <iframe src="https://banksadda.com" title="BanksAdda Live Preview" class="live-iframe" loading="lazy"></iframe>
+          </div>
+          <div class="live-bottom-info">
+            <div>
+              <h3 class="live-site-title">banksadda.com</h3>[cite: 1]
+              <span class="live-site-type">Fintech & Banking Portal</span>
             </div>
-            <a href="https://banksadda.com" target="_blank" rel="noopener noreferrer" class="project-action-button">
-              Explore Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="https://banksadda.com" target="_blank" rel="noopener noreferrer" class="open-site-btn">
+              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Project 2: LoanLoop -->
-        <div class="device-project-card">
-          <div>
-            <div class="laptop-frame">
-              <div class="laptop-top-notch">
-                <div class="notch-dots">
-                  <span class="notch-dot notch-red"></span>
-                  <span class="notch-dot notch-yellow"></span>
-                  <span class="notch-dot notch-green"></span>
-                </div>
-                <div class="notch-title">loanloop.in</div>
-                <div class="notch-status"><i class="fa-solid fa-shield"></i> SSL Secured</div>
-              </div>
-              <div class="laptop-screen">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=700&q=80" alt="LoanLoop Platform" loading="lazy">
-                <div class="screen-overlay-hud">
-                  <span class="hud-stat"><i class="fa-solid fa-arrow-trend-up" style="color: var(--accent-cyan);"></i> +140% Conversions</span>
-                  <span class="hud-stat"><i class="fa-solid fa-server" style="color: #22c55e;"></i> Real-Time Webhooks</span>
-                </div>
-              </div>
+        <!-- Site 2: LoanLoop -->
+        <div class="live-browser-card">
+          <div class="live-browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="laptop-base-bar"></div>
-
-            <div class="project-body">
-              <div class="project-header-row">
-                <h3>loanloop.in</h3>[cite: 1]
-                <span class="project-pill-badge">Loan Aggregator</span>
-              </div>
-              <p class="project-summary">Comprehensive loan services and agent network portal with real-time lead ingestion and credit utilities.</p>[cite: 1]
+            <div class="browser-search-bar">
+              <span>https://loanloop.in</span>
+              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
             </div>
           </div>
-
-          <div>
-            <div class="project-stack-tags">
-              <span class="stack-chip">JavaScript</span>
-              <span class="stack-chip">REST APIs</span>
-              <span class="stack-chip">Lead Management</span>
-              <span class="stack-chip">Role Security</span>
+          <div class="live-embed-viewport">
+            <iframe src="https://loanloop.in" title="LoanLoop Live Preview" class="live-iframe" loading="lazy"></iframe>
+          </div>
+          <div class="live-bottom-info">
+            <div>
+              <h3 class="live-site-title">loanloop.in</h3>[cite: 1]
+              <span class="live-site-type">Fintech & Loan Aggregator</span>
             </div>
-            <a href="https://loanloop.in" target="_blank" rel="noopener noreferrer" class="project-action-button">
-              Explore Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="https://loanloop.in" target="_blank" rel="noopener noreferrer" class="open-site-btn">
+              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Project 3: DSA Loan Agent -->
-        <div class="device-project-card">
-          <div>
-            <div class="laptop-frame">
-              <div class="laptop-top-notch">
-                <div class="notch-dots">
-                  <span class="notch-dot notch-red"></span>
-                  <span class="notch-dot notch-yellow"></span>
-                  <span class="notch-dot notch-green"></span>
-                </div>
-                <div class="notch-title">dsaloanagent.in</div>
-                <div class="notch-status"><i class="fa-solid fa-shield"></i> SSL Secured</div>
-              </div>
-              <div class="laptop-screen">
-                <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="DSA Loan Agent Network" loading="lazy">
-                <div class="screen-overlay-hud">
-                  <span class="hud-stat"><i class="fa-solid fa-map-pin" style="color: var(--accent-cyan);"></i> Map Pack #1</span>
-                  <span class="hud-stat"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> Direct Match</span>
-                </div>
-              </div>
+        <!-- Site 3: DSA Loan Agent -->
+        <div class="live-browser-card">
+          <div class="live-browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="laptop-base-bar"></div>
-
-            <div class="project-body">
-              <div class="project-header-row">
-                <h3>dsaloanagent.in</h3>[cite: 1]
-                <span class="project-pill-badge">DSA Network</span>
-              </div>
-              <p class="project-summary">Specialized DSA agent and customer loan matchmaking platform optimized for hyperlocal financial discovery.</p>[cite: 1]
+            <div class="browser-search-bar">
+              <span>https://dsaloanagent.in</span>
+              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
             </div>
           </div>
-
-          <div>
-            <div class="project-stack-tags">
-              <span class="stack-chip">Hyperlocal SEO</span>
-              <span class="stack-chip">GMB Optimization</span>
-              <span class="stack-chip">WhatsApp Connect</span>
-              <span class="stack-chip">100% Responsive</span>
+          <div class="live-embed-viewport">
+            <iframe src="https://dsaloanagent.in" title="DSA Loan Agent Live Preview" class="live-iframe" loading="lazy"></iframe>
+          </div>
+          <div class="live-bottom-info">
+            <div>
+              <h3 class="live-site-title">dsaloanagent.in</h3>[cite: 1]
+              <span class="live-site-type">DSA Agent Network Platform</span>
             </div>
-            <a href="https://dsaloanagent.in" target="_blank" rel="noopener noreferrer" class="project-action-button">
-              Explore Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="https://dsaloanagent.in" target="_blank" rel="noopener noreferrer" class="open-site-btn">
+              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Project 4: OTTLoop -->
-        <div class="device-project-card">
-          <div>
-            <div class="laptop-frame">
-              <div class="laptop-top-notch">
-                <div class="notch-dots">
-                  <span class="notch-dot notch-red"></span>
-                  <span class="notch-dot notch-yellow"></span>
-                  <span class="notch-dot notch-green"></span>
-                </div>
-                <div class="notch-title">ottloop.com</div>
-                <div class="notch-status"><i class="fa-solid fa-shield"></i> SSL Secured</div>
-              </div>
-              <div class="laptop-screen">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=700&q=80" alt="OTTLoop Directory" loading="lazy">
-                <div class="screen-overlay-hud">
-                  <span class="hud-stat"><i class="fa-solid fa-fire" style="color: var(--accent-cyan);"></i> Trending Feed</span>
-                  <span class="hud-stat"><i class="fa-solid fa-clock" style="color: #22c55e;"></i> 0.6s Time-to-First-Byte</span>
-                </div>
-              </div>
+        <!-- Site 4: OTTLoop -->
+        <div class="live-browser-card">
+          <div class="live-browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="laptop-base-bar"></div>
-
-            <div class="project-body">
-              <div class="project-header-row">
-                <h3>ottloop.com</h3>[cite: 1]
-                <span class="project-pill-badge">Media / Portal</span>
-              </div>
-              <p class="project-summary">Dynamic streaming media directory, entertainment tracking portal, and high-engagement content platform.</p>[cite: 1]
+            <div class="browser-search-bar">
+              <span>https://ottloop.com</span>
+              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
             </div>
           </div>
-
-          <div>
-            <div class="project-stack-tags">
-              <span class="stack-chip">Dynamic Routing</span>
-              <span class="stack-chip">Programmatic SEO</span>
-              <span class="stack-chip">Global Edge Caching</span>
-              <span class="stack-chip">Search Architecture</span>
+          <div class="live-embed-viewport">
+            <iframe src="https://ottloop.com" title="OTTLoop Live Preview" class="live-iframe" loading="lazy"></iframe>
+          </div>
+          <div class="live-bottom-info">
+            <div>
+              <h3 class="live-site-title">ottloop.com</h3>[cite: 1]
+              <span class="live-site-type">Entertainment & Media Portal</span>
             </div>
-            <a href="https://ottloop.com" target="_blank" rel="noopener noreferrer" class="project-action-button">
-              Explore Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="https://ottloop.com" target="_blank" rel="noopener noreferrer" class="open-site-btn">
+              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Project 5: RJ Sports Club -->
-        <div class="device-project-card">
-          <div>
-            <div class="laptop-frame">
-              <div class="laptop-top-notch">
-                <div class="notch-dots">
-                  <span class="notch-dot notch-red"></span>
-                  <span class="notch-dot notch-yellow"></span>
-                  <span class="notch-dot notch-green"></span>
-                </div>
-                <div class="notch-title">rjsportsclub.com</div>
-                <div class="notch-status"><i class="fa-solid fa-shield"></i> SSL Secured</div>
-              </div>
-              <div class="laptop-screen">
-                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=700&q=80" alt="RJ Sports Club" loading="lazy">
-                <div class="screen-overlay-hud">
-                  <span class="hud-stat"><i class="fa-solid fa-calendar-check" style="color: var(--accent-cyan);"></i> Instant Booking</span>
-                  <span class="hud-stat"><i class="fa-solid fa-users" style="color: #22c55e;"></i> Member Portal</span>
-                </div>
-              </div>
+        <!-- Site 5: RJ Sports Club -->
+        <div class="live-browser-card">
+          <div class="live-browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="laptop-base-bar"></div>
-
-            <div class="project-body">
-              <div class="project-header-row">
-                <h3>rjsportsclub.com</h3>[cite: 1]
-                <span class="project-pill-badge">Sports & Events</span>[cite: 1]
-              </div>
-              <p class="project-summary">Modern sports club management portal with community memberships, match updates, and event schedules.</p>[cite: 1]
+            <div class="browser-search-bar">
+              <span>https://rjsportsclub.com</span>
+              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
             </div>
           </div>
-
-          <div>
-            <div class="project-stack-tags">
-              <span class="stack-chip">WordPress Framework</span>
-              <span class="stack-chip">Elementor Pro</span>
-              <span class="stack-chip">Booking Engine</span>
-              <span class="stack-chip">Speed Tuning</span>
+          <div class="live-embed-viewport">
+            <iframe src="https://rjsportsclub.com" title="RJ Sports Club Live Preview" class="live-iframe" loading="lazy"></iframe>
+          </div>
+          <div class="live-bottom-info">
+            <div>
+              <h3 class="live-site-title">rjsportsclub.com</h3>[cite: 1]
+              <span class="live-site-type">Sports Club Management</span>
             </div>
-            <a href="https://rjsportsclub.com" target="_blank" rel="noopener noreferrer" class="project-action-button">
-              Explore Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="https://rjsportsclub.com" target="_blank" rel="noopener noreferrer" class="open-site-btn">
+              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Project 6: Beeway Logistics -->
-        <div class="device-project-card">
-          <div>
-            <div class="laptop-frame">
-              <div class="laptop-top-notch">
-                <div class="notch-dots">
-                  <span class="notch-dot notch-red"></span>
-                  <span class="notch-dot notch-yellow"></span>
-                  <span class="notch-dot notch-green"></span>
-                </div>
-                <div class="notch-title">beeway.in</div>
-                <div class="notch-status"><i class="fa-solid fa-shield"></i> SSL Secured</div>
-              </div>
-              <div class="laptop-screen">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Beeway Logistics" loading="lazy">
-                <div class="screen-overlay-hud">
-                  <span class="hud-stat"><i class="fa-solid fa-truck-fast" style="color: var(--accent-cyan);"></i> Logistics Lead Funnel</span>
-                  <span class="hud-stat"><i class="fa-solid fa-chart-pie" style="color: #22c55e;"></i> GA4 Event Tracking</span>
-                </div>
-              </div>
+        <!-- Site 6: Beeway -->
+        <div class="live-browser-card">
+          <div class="live-browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="laptop-base-bar"></div>
-
-            <div class="project-body">
-              <div class="project-header-row">
-                <h3>beeway.in</h3>[cite: 1]
-                <span class="project-pill-badge">Corporate Logistics</span>
-              </div>
-              <p class="project-summary">Professional business services platform with dynamic inquiry forms, service breakdown, and fast page speeds.</p>[cite: 1]
+            <div class="browser-search-bar">
+              <span>https://beeway.in</span>
+              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
             </div>
           </div>
-
-          <div>
-            <div class="project-stack-tags">
-              <span class="stack-chip">CSS3 Grid System</span>
-              <span class="stack-chip">Lead Generation</span>
-              <span class="stack-chip">Enterprise UI</span>
-              <span class="stack-chip">Full On-Page SEO</span>
+          <div class="live-embed-viewport">
+            <iframe src="https://beeway.in" title="Beeway Logistics Live Preview" class="live-iframe" loading="lazy"></iframe>
+          </div>
+          <div class="live-bottom-info">
+            <div>
+              <h3 class="live-site-title">beeway.in</h3>[cite: 1]
+              <span class="live-site-type">Logistics & Supply Chain</span>
             </div>
-            <a href="https://beeway.in" target="_blank" rel="noopener noreferrer" class="project-action-button">
-              Explore Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="https://beeway.in" target="_blank" rel="noopener noreferrer" class="open-site-btn">
+              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
@@ -2723,7 +2509,7 @@
             </div>
           </div>
 
-          <!-- DUPLICATE SET FOR SMOOTH LOOP -->
+          <!-- DUPLICATE SET -->
           <div class="image-slide-card" aria-hidden="true">
             <div class="slide-img-container">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">[cite: 1]
@@ -2821,7 +2607,7 @@
     </div>
   </section>
 
-  <!-- Pre-Footer / Contact Us Section -->
+  <!-- Pre-Footer / Contact Section -->
   <section id="contact-hub" class="pre-footer-section">
     <div class="container">
       <div class="text-center">
@@ -2960,7 +2746,7 @@
       </div>
     </div>
 
-    <!-- Views & Counter Bar -->
+    <!-- Views Strip -->
     <div class="ultra-bottom-views-strip">
       <div class="container">
         <div class="views-strip-content">
@@ -3058,7 +2844,7 @@
       item.classList.toggle('active');
     }
 
-    /* 3. Form Dispatch Handling */
+    /* 3. Form Handling */
     const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFSMBGNVNdSnfPe4ovzzA_RYshi4LuIjpNXQ6dyOOIANpxQUKnTD7hWS_QmO_z4m4f/exec";[cite: 1]
 
     function handleFormSubmit(e) {
