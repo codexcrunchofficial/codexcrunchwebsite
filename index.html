@@ -601,128 +601,107 @@
     }
 
     /* ========================================================
-       SIMPLE, CRISP LIVE BROWSER PREVIEW MODEL (IFRAME/LINK)
+       ELEGANT & CLEAN LIVE WEBSITE TILES
        ======================================================== */
-    .live-preview-grid {
+    .modern-portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
     }
 
-    .live-browser-card {
-      background: #071e3d;
-      border: 1px solid #0e3b75;
+    .modern-project-card {
+      background: var(--card-solid);
+      border: 1px solid var(--card-border);
       border-radius: 12px;
-      overflow: hidden;
+      padding: 24px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       transition: var(--transition);
+      position: relative;
     }
 
-    .live-browser-card:hover {
+    .modern-project-card:hover {
       border-color: var(--accent-cyan);
       transform: translateY(-4px);
     }
 
-    .live-browser-bar {
-      background: #020c1b;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid #0e3b75;
-    }
-
-    .browser-dots {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .dot-red { background: #ef4444; }
-    .dot-yellow { background: #eab308; }
-    .dot-green { background: #22c55e; }
-
-    .browser-search-bar {
-      flex-grow: 1;
-      background: #061933;
-      border: 1px solid #0e3b75;
-      border-radius: 20px;
-      padding: 3px 12px;
-      font-size: 0.78rem;
-      color: #94a3b8;
+    .project-top-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-family: monospace;
+      margin-bottom: 12px;
     }
 
-    .browser-search-bar span {
-      color: #38bdf8;
-    }
-
-    .live-embed-viewport {
-      width: 100%;
-      height: 240px;
-      position: relative;
-      background: #010a17;
-      overflow: hidden;
-    }
-
-    .live-iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-      background: #ffffff;
-    }
-
-    .live-bottom-info {
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #071e3d;
-      border-top: 1px solid #0e3b75;
-    }
-
-    .live-site-title {
-      font-size: 1.05rem;
+    .project-name-link {
+      font-size: 1.2rem;
       font-weight: 700;
-      color: #ffffff;
-      margin: 0;
+      color: var(--pure-white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .live-site-type {
-      font-size: 0.75rem;
-      color: var(--text-dim);
-    }
-
-    .open-site-btn {
+    .live-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #034ebc;
-      color: #ffffff;
-      padding: 7px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid #22c55e;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+
+    .project-desc-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .project-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .project-cat-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .project-open-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-blue);
+      color: var(--pure-white);
+      padding: 8px 14px;
       border-radius: 6px;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 700;
       text-decoration: none;
       border: 1px solid var(--accent-cyan);
       transition: var(--transition);
     }
 
-    .open-site-btn:hover {
+    .project-open-btn:hover {
       background: var(--accent-cyan);
-      color: #03152d;
+      color: var(--bg-dark);
     }
 
     /* Pricing Section */
@@ -1124,7 +1103,7 @@
       line-height: 1.6;
     }
 
-    /* PRE-FOOTER / CONTACT SECTION */
+    /* Pre-Footer */
     .pre-footer-section {
       background: #03152d;
       padding: 90px 0 60px 0;
@@ -1692,7 +1671,7 @@
       .dropdown.active .dropdown-menu { display: block; }
       .hero h1 { font-size: 2.1rem; }
       .hero-stats-box { grid-template-columns: 1fr; }
-      .live-preview-grid { grid-template-columns: 1fr; }
+      .modern-portfolio-grid { grid-template-columns: 1fr; }
       .image-slide-card { width: 290px; }
       .slide-img-container { height: 175px; }
       .views-strip-content { flex-direction: column; text-align: center; justify-content: center; }
@@ -1703,7 +1682,7 @@
 </head>
 <body>
 
-  <!-- 1. TOP BAR CONTAINER -->
+  <!-- Top Bar -->
   <div class="top-bar-container">
     <div class="container">
       <div class="top-bar-wrapper">
@@ -1722,7 +1701,7 @@
     </div>
   </div>
 
-  <!-- 2. STICKY NAVBAR -->
+  <!-- Sticky Navbar -->
   <header class="sticky-header">
     <div class="container">
       <nav>
@@ -1982,175 +1961,115 @@
   </section>
 
   <!-- ========================================================
-       SIMPLE & CLEAN LIVE WEBSITE PREVIEW SECTION
+       CHALA SIMPLE & CRISP LIVE PROJECTS SECTION
        ======================================================== -->
   <section id="portfolio">
     <div class="container">
       <div class="text-center">
-        <span class="section-tag"><i class="fa-solid fa-globe"></i> Live Website Previews</span>
-        <h2 class="section-title">Our Live Client Websites</h2>
-        <p class="section-desc">Maa clients kosam build chesina live websites direct ga ikkade chudavachu.</p>
+        <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Live Client Websites</span>
+        <h2 class="section-title">Our Recent Client Work</h2>
+        <p class="section-desc">A selection of live web portals, platforms, and digital products engineered by our team.</p>[cite: 1]
       </div>
 
-      <div class="live-preview-grid">
-        <!-- Site 1: BanksAdda -->
-        <div class="live-browser-card">
-          <div class="live-browser-bar">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+      <div class="modern-portfolio-grid">
+        <!-- Card 1: BanksAdda -->
+        <div class="modern-project-card">
+          <div>
+            <div class="project-top-row">
+              <span class="project-name-link"><i class="fa-solid fa-arrow-trend-up" style="color: var(--accent-cyan);"></i> banksadda.com</span>[cite: 1]
+              <span class="live-badge"><span class="live-dot"></span> Live</span>
             </div>
-            <div class="browser-search-bar">
-              <span>https://banksadda.com</span>
-              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
-            </div>
+            <p class="project-desc-text">Finance, banking updates, and credit informational portal structured for high-volume organic search queries.</p>[cite: 1]
           </div>
-          <div class="live-embed-viewport">
-            <iframe src="https://banksadda.com" title="BanksAdda Live Preview" class="live-iframe" loading="lazy"></iframe>
-          </div>
-          <div class="live-bottom-info">
-            <div>
-              <h3 class="live-site-title">banksadda.com</h3>[cite: 1]
-              <span class="live-site-type">Fintech & Banking Portal</span>
-            </div>
-            <a href="https://banksadda.com" target="_blank" rel="noopener noreferrer" class="open-site-btn">
-              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <div class="project-meta-row">
+            <span class="project-cat-pill">Fintech / Info</span>[cite: 1]
+            <a href="https://banksadda.com" target="_blank" rel="noopener noreferrer" class="project-open-btn">
+              Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Site 2: LoanLoop -->
-        <div class="live-browser-card">
-          <div class="live-browser-bar">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+        <!-- Card 2: LoanLoop -->
+        <div class="modern-project-card">
+          <div>
+            <div class="project-top-row">
+              <span class="project-name-link"><i class="fa-solid fa-hand-holding-dollar" style="color: var(--accent-cyan);"></i> loanloop.in</span>[cite: 1]
+              <span class="live-badge"><span class="live-dot"></span> Live</span>
             </div>
-            <div class="browser-search-bar">
-              <span>https://loanloop.in</span>
-              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
-            </div>
+            <p class="project-desc-text">Comprehensive loan services and agent network portal with real-time lead ingestion and credit utilities.</p>[cite: 1]
           </div>
-          <div class="live-embed-viewport">
-            <iframe src="https://loanloop.in" title="LoanLoop Live Preview" class="live-iframe" loading="lazy"></iframe>
-          </div>
-          <div class="live-bottom-info">
-            <div>
-              <h3 class="live-site-title">loanloop.in</h3>[cite: 1]
-              <span class="live-site-type">Fintech & Loan Aggregator</span>
-            </div>
-            <a href="https://loanloop.in" target="_blank" rel="noopener noreferrer" class="open-site-btn">
-              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <div class="project-meta-row">
+            <span class="project-cat-pill">Fintech Aggregator</span>[cite: 1]
+            <a href="https://loanloop.in" target="_blank" rel="noopener noreferrer" class="project-open-btn">
+              Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Site 3: DSA Loan Agent -->
-        <div class="live-browser-card">
-          <div class="live-browser-bar">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+        <!-- Card 3: DSA Loan Agent -->
+        <div class="modern-project-card">
+          <div>
+            <div class="project-top-row">
+              <span class="project-name-link"><i class="fa-solid fa-users" style="color: var(--accent-cyan);"></i> dsaloanagent.in</span>[cite: 1]
+              <span class="live-badge"><span class="live-dot"></span> Live</span>
             </div>
-            <div class="browser-search-bar">
-              <span>https://dsaloanagent.in</span>
-              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
-            </div>
+            <p class="project-desc-text">Specialized DSA agent and customer loan matchmaking platform optimized for hyperlocal financial discovery.</p>[cite: 1]
           </div>
-          <div class="live-embed-viewport">
-            <iframe src="https://dsaloanagent.in" title="DSA Loan Agent Live Preview" class="live-iframe" loading="lazy"></iframe>
-          </div>
-          <div class="live-bottom-info">
-            <div>
-              <h3 class="live-site-title">dsaloanagent.in</h3>[cite: 1]
-              <span class="live-site-type">DSA Agent Network Platform</span>
-            </div>
-            <a href="https://dsaloanagent.in" target="_blank" rel="noopener noreferrer" class="open-site-btn">
-              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <div class="project-meta-row">
+            <span class="project-cat-pill">DSA Loan Network</span>[cite: 1]
+            <a href="https://dsaloanagent.in" target="_blank" rel="noopener noreferrer" class="project-open-btn">
+              Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Site 4: OTTLoop -->
-        <div class="live-browser-card">
-          <div class="live-browser-bar">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+        <!-- Card 4: OTTLoop -->
+        <div class="modern-project-card">
+          <div>
+            <div class="project-top-row">
+              <span class="project-name-link"><i class="fa-solid fa-film" style="color: var(--accent-cyan);"></i> ottloop.com</span>[cite: 1]
+              <span class="live-badge"><span class="live-dot"></span> Live</span>
             </div>
-            <div class="browser-search-bar">
-              <span>https://ottloop.com</span>
-              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
-            </div>
+            <p class="project-desc-text">Dynamic streaming media directory, entertainment tracking portal, and high-engagement content platform.</p>[cite: 1]
           </div>
-          <div class="live-embed-viewport">
-            <iframe src="https://ottloop.com" title="OTTLoop Live Preview" class="live-iframe" loading="lazy"></iframe>
-          </div>
-          <div class="live-bottom-info">
-            <div>
-              <h3 class="live-site-title">ottloop.com</h3>[cite: 1]
-              <span class="live-site-type">Entertainment & Media Portal</span>
-            </div>
-            <a href="https://ottloop.com" target="_blank" rel="noopener noreferrer" class="open-site-btn">
-              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <div class="project-meta-row">
+            <span class="project-cat-pill">Media & Entertainment</span>[cite: 1]
+            <a href="https://ottloop.com" target="_blank" rel="noopener noreferrer" class="project-open-btn">
+              Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Site 5: RJ Sports Club -->
-        <div class="live-browser-card">
-          <div class="live-browser-bar">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+        <!-- Card 5: RJ Sports Club -->
+        <div class="modern-project-card">
+          <div>
+            <div class="project-top-row">
+              <span class="project-name-link"><i class="fa-solid fa-medal" style="color: var(--accent-cyan);"></i> rjsportsclub.com</span>[cite: 1]
+              <span class="live-badge"><span class="live-dot"></span> Live</span>
             </div>
-            <div class="browser-search-bar">
-              <span>https://rjsportsclub.com</span>
-              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
-            </div>
+            <p class="project-desc-text">Modern sports club management portal with community memberships, match updates, and event schedules.</p>[cite: 1]
           </div>
-          <div class="live-embed-viewport">
-            <iframe src="https://rjsportsclub.com" title="RJ Sports Club Live Preview" class="live-iframe" loading="lazy"></iframe>
-          </div>
-          <div class="live-bottom-info">
-            <div>
-              <h3 class="live-site-title">rjsportsclub.com</h3>[cite: 1]
-              <span class="live-site-type">Sports Club Management</span>
-            </div>
-            <a href="https://rjsportsclub.com" target="_blank" rel="noopener noreferrer" class="open-site-btn">
-              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <div class="project-meta-row">
+            <span class="project-cat-pill">Sports & Events</span>[cite: 1]
+            <a href="https://rjsportsclub.com" target="_blank" rel="noopener noreferrer" class="project-open-btn">
+              Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
 
-        <!-- Site 6: Beeway -->
-        <div class="live-browser-card">
-          <div class="live-browser-bar">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+        <!-- Card 6: Beeway -->
+        <div class="modern-project-card">
+          <div>
+            <div class="project-top-row">
+              <span class="project-name-link"><i class="fa-solid fa-truck-fast" style="color: var(--accent-cyan);"></i> beeway.in</span>[cite: 1]
+              <span class="live-badge"><span class="live-dot"></span> Live</span>
             </div>
-            <div class="browser-search-bar">
-              <span>https://beeway.in</span>
-              <i class="fa-solid fa-lock" style="color: #22c55e;"></i>
-            </div>
+            <p class="project-desc-text">Professional business services platform with dynamic inquiry forms, service breakdown, and fast page speeds.</p>[cite: 1]
           </div>
-          <div class="live-embed-viewport">
-            <iframe src="https://beeway.in" title="Beeway Logistics Live Preview" class="live-iframe" loading="lazy"></iframe>
-          </div>
-          <div class="live-bottom-info">
-            <div>
-              <h3 class="live-site-title">beeway.in</h3>[cite: 1]
-              <span class="live-site-type">Logistics & Supply Chain</span>
-            </div>
-            <a href="https://beeway.in" target="_blank" rel="noopener noreferrer" class="open-site-btn">
-              Open Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <div class="project-meta-row">
+            <span class="project-cat-pill">Corporate & Logistics</span>[cite: 1]
+            <a href="https://beeway.in" target="_blank" rel="noopener noreferrer" class="project-open-btn">
+              Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>[cite: 1]
           </div>
         </div>
@@ -2607,7 +2526,7 @@
     </div>
   </section>
 
-  <!-- Pre-Footer / Contact Section -->
+  <!-- Pre-Footer -->
   <section id="contact-hub" class="pre-footer-section">
     <div class="container">
       <div class="text-center">
@@ -2769,7 +2688,7 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Action -->
+  <!-- Floating WhatsApp -->
   <a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
