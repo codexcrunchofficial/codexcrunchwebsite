@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Site Favicon / Logo -->
-<link rel="icon" type="image/png" sizes="48x48" href="/Assets/favicon.png">
-<link rel="shortcut icon" href="/Assets/favicon.png">
-<link rel="apple-touch-icon" href="/Assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/Assets/favicon.png">
+  <link rel="shortcut icon" href="/Assets/favicon.png">
+  <link rel="apple-touch-icon" href="/Assets/favicon.png">
 
-  
   <!-- SEO Primary Meta Tags -->
   <title>Codex Crunch | Top Web Development & SEO Services Agency</title>
   <meta name="title" content="Codex Crunch | Top Web Development & SEO Services Agency">
@@ -288,7 +287,6 @@
       text-decoration: none;
     }
 
-    /* Seamless Logo Container on White Background */
     .brand-logo-img {
       max-height: 48px;
       width: auto;
@@ -322,7 +320,7 @@
       color: var(--primary-blue);
     }
 
-    /* SERVICES DROPDOWN (LIGHT THEME) */
+    /* SERVICES DROPDOWN */
     .dropdown {
       position: relative;
     }
@@ -525,6 +523,46 @@
 
     .service-features li i {
       color: var(--accent-cyan);
+    }
+
+    /* Process Section */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      position: relative;
+    }
+
+    .process-card {
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .process-step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(1, 180, 255, 0.12);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
     }
 
     /* TOOLS (PNG BASED) TILES */
@@ -736,6 +774,74 @@
       margin-top: 4px;
     }
 
+    /* Testimonials Section */
+    .testimonials-section {
+      background: var(--bg-darker);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-rating {
+      color: #f59e0b;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .testimonial-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+
+    .testimonial-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--card-border);
+      padding-top: 16px;
+    }
+
+    .user-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary-blue);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 1px solid var(--accent-cyan);
+    }
+
+    .user-info h4 {
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .user-info span {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
     /* About Section */
     .about-wrapper {
       display: grid;
@@ -754,7 +860,7 @@
       color: var(--accent-cyan);
     }
 
-    /* 5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE */
+    /* Infinite Image Carousel */
     .images-marquee-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
@@ -891,6 +997,72 @@
       line-height: 1.5;
     }
 
+    /* FAQ Section */
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--card-solid);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item.active {
+      border-color: var(--accent-cyan);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      color: var(--pure-white);
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 16px;
+    }
+
+    .faq-question i {
+      color: var(--accent-cyan);
+      transition: transform 0.25s ease;
+      font-size: 0.9rem;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease;
+      padding: 0 24px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      padding: 0 24px 20px 24px;
+    }
+
+    .faq-answer p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
     /* PRE-FOOTER / CONTACT SECTION */
     .pre-footer-section {
       background: #03152d;
@@ -991,9 +1163,7 @@
       font-size: 1.1rem;
     }
 
-    /* ========================================================
-       4. FOOTER STYLING (PURE WHITE THEME)
-       ======================================================== */
+    /* Footer Styling */
     footer {
       background: #ffffff;
       border-top: 1px solid #e2e8f0;
@@ -1087,7 +1257,7 @@
       font-weight: 500;
     }
 
-    /* ULTRA-BOTTOM TOTAL VIEWS BAR */
+    /* ULTRA-BOTTOM VIEWS STRIP */
     .ultra-bottom-views-strip {
       background: #f8fafc;
       border-top: 1px solid #e2e8f0;
@@ -1490,7 +1660,7 @@
     </div>
   </div>
 
-  <!-- 2. STICKY NAVBAR (PURE WHITE THEME - CRISP LOGO DISPLAY) -->
+  <!-- 2. STICKY NAVBAR (PURE WHITE THEME) -->
   <header class="sticky-header">
     <div class="container">
       <nav>
@@ -1500,8 +1670,6 @@
 
         <ul class="nav-links">
           <li><a href="https://www.codexcrunch.com/">Home</a></li>
-          
-          <!-- SERVICES DROPDOWN -->
           <li class="dropdown" id="servicesDropdown">
             <a href="#services" role="button" aria-expanded="false">
               Services <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
@@ -1512,10 +1680,11 @@
               <li><a href="smm.html"><i class="fa-solid fa-chart-line"></i> SMM </a></li>
             </ul>
           </li>
-
+          <li><a href="#process">Process</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
 
@@ -1630,6 +1799,43 @@
             <li><i class="fa-solid fa-circle-check"></i> Smart lead qualification funnels</li>
             <li><i class="fa-solid fa-circle-check"></i> Automated query routing</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS / HOW IT WORKS SECTION -->
+  <section id="process">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-route"></i> Seamless Workflow</span>
+        <h2 class="section-title">How We Build & Rank Your Website</h2>
+        <p class="section-desc">A predictable, high-speed 4-step framework from concept to top Google SERP positions.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="clean-card process-card">
+          <div class="process-step-badge">01</div>
+          <h3>Discovery & Blueprint</h3>
+          <p>We analyze your target market, competitor keywords, and business goals to draft an architectural and content roadmap.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <div class="process-step-badge">02</div>
+          <h3>UI/UX & Clean Code</h3>
+          <p>We engineer lightweight, semantic HTML5/CSS3/JS layouts or custom WordPress setups tailored for maximum Core Web Vitals performance.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <div class="process-step-badge">03</div>
+          <h3>Technical SEO & Speed</h3>
+          <p>We deploy schema markups, speed caching, GSC, analytics, and canonical URLs before submitting sitemaps directly to search engines.</p>
+        </div>
+
+        <div class="clean-card process-card">
+          <div class="process-step-badge">04</div>
+          <h3>Launch & Scaling</h3>
+          <p>We go live on your cloud servers and kickstart ongoing off-page citation building, rank monitoring, and performance scaling.</p>
         </div>
       </div>
     </div>
@@ -1959,6 +2165,67 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Client Feedback</span>
+        <h2 class="section-title">Trusted by Growing Businesses</h2>
+        <p class="section-desc">See what founders and business managers say about our web engineering and SEO delivery.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="clean-card testimonial-card">
+          <div>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Codex Crunch overhauled our loan platform completely. Our mobile load time dropped below 1 second and organic lead flow increased by over 140%."</p>
+          </div>
+          <div class="testimonial-user">
+            <div class="user-avatar">LL</div>
+            <div class="user-info">
+              <h4>LoanLoop Team</h4>
+              <span>Fintech Aggregator (loanloop.in)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clean-card testimonial-card">
+          <div>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Working directly with developers made the entire project frictionless. They built our sports club website within a week, fully responsive with instant WhatsApp booking."</p>
+          </div>
+          <div class="testimonial-user">
+            <div class="user-avatar">RJ</div>
+            <div class="user-info">
+              <h4>RJ Sports Club</h4>
+              <span>Event & Sports Management</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clean-card testimonial-card">
+          <div>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Their technical SEO and local keyword targeting helped us crack Google's Map Pack top 3 within 60 days. Transparent pricing and exceptional communication throughout."</p>
+          </div>
+          <div class="testimonial-user">
+            <div class="user-avatar">BW</div>
+            <div class="user-info">
+              <h4>Beeway Logistics</h4>
+              <span>Supply Chain & Operations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Us Section -->
   <section id="about">
     <div class="container">
@@ -2000,7 +2267,7 @@
     </div>
   </section>
 
-  <!-- 5. INFINITE AUTO-LOOPING IMAGE CAROUSEL MARQUEE -->
+  <!-- Visual Showcase Carousel -->
   <section class="images-marquee-section" id="featured-work">
     <div class="container">
       <div class="marquee-header-wrap">
@@ -2014,10 +2281,8 @@
         </div>
       </div>
 
-      <!-- Infinite Marquee Viewport -->
       <div class="marquee-wrapper" id="marqueeViewport">
         <div class="marquee-track" id="marqueeTrack">
-          
           <!-- Slide 1 -->
           <div class="image-slide-card">
             <div class="slide-img-container">
@@ -2084,7 +2349,7 @@
             </div>
           </div>
 
-          <!-- DUPLICATE SET FOR SEAMLESS INFINITE LOOP -->
+          <!-- DUPLICATE SET FOR SMOOTH LOOP -->
           <div class="image-slide-card" aria-hidden="true">
             <div class="slide-img-container">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
@@ -2124,13 +2389,65 @@
               <p>Clean design system with custom post structures and speedy loading.</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. PRE-FOOTER / CONTACT US SECTION -->
+  <!-- FAQ Section -->
+  <section id="faq">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Clear answers to our most common questions about web development, timelines, and SEO.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long does it take to design and launch my website?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Starter websites (3–5 pages) take roughly 3 to 5 business days[cite: 1]. Business websites take 5 to 8 days, while complex custom or e-commerce platforms take 10 to 18 business days depending on feature scope[cite: 1].</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I get full ownership and source code access after project completion?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, 100%. Once final settlement is made, all source code, design assets, database credentials, and cloud hosting configurations are transferred completely to your ownership.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Will my website be mobile-friendly and fast on Google PageSpeed?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Every website we build is 100% responsive across phones, tablets, and wide monitors[cite: 1]. We strictly optimize assets, eliminate render-blocking code, and configure caching to target green 90+ Core Web Vitals scores[cite: 1].</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How soon can I expect results from Monthly SEO packages?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Local SEO and Google My Business improvements typically show initial keyword movement within 30 to 45 days. High-intent competitive keywords and steady lead flow compound significantly around months 3 to 6.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Footer / Contact Us Section -->
   <section id="contact-hub" class="pre-footer-section">
     <div class="container">
       <div class="text-center">
@@ -2140,7 +2457,6 @@
       </div>
 
       <div class="pre-footer-grid">
-        <!-- Main Contact Form -->
         <div class="clean-card form-card-box">
           <h3><i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan); margin-right: 8px;"></i> Request a Custom Quote</h3>
           <p>Fill out this form to connect with our development & SEO team immediately.</p>
@@ -2174,7 +2490,6 @@
           </form>
         </div>
 
-        <!-- Newsletter Subscription Card -->
         <div class="clean-card form-card-box newsletter-card">
           <div>
             <div class="newsletter-badge"><i class="fa-solid fa-fire"></i> Weekly Tech Insights</div>
@@ -2195,7 +2510,6 @@
             </form>
           </div>
 
-          <!-- Quick Contact Details -->
           <div class="quick-contact-pills">
             <div class="pill-item">
               <i class="fa-solid fa-phone"></i>
@@ -2215,7 +2529,7 @@
     </div>
   </section>
 
-  <!-- 4. FOOTER (PURE WHITE THEME - LOGO INTEGRATED NATURALLY) -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -2236,11 +2550,13 @@
           <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="https://www.codexcrunch.com/">Home</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact-hub.html">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact-hub">Contact</a></li>
           </ul>
         </div>
 
@@ -2270,7 +2586,7 @@
       </div>
     </div>
 
-    <!-- 5. ULTRA-BOTTOM VIEWS & VISITS BAR -->
+    <!-- Views & Counter Bar -->
     <div class="ultra-bottom-views-strip">
       <div class="container">
         <div class="views-strip-content">
@@ -2298,7 +2614,7 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- CHATBOT LAUNCHER & PANEL -->
+  <!-- Chatbot Toggler & Panel -->
   <button class="chatbot-toggler" onclick="toggleChatbot()" aria-label="Open Codex Crunch Assistant">
     <img src="Assets/CodexCrunch-site-logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Codex Crunch Bot Logo" class="toggler-logo-img">
   </button>
@@ -2343,9 +2659,7 @@
 
   <!-- JavaScript -->
   <script>
-    /* ========================================================
-       1. INFINITE IMAGE CAROUSEL MARQUEE CONTROLS
-       ======================================================== */
+    /* 1. Carousel Scroll */
     function manualMarqueeSlide(direction) {
       const wrapper = document.getElementById('marqueeViewport');
       const scrollAmt = 380;
@@ -2356,9 +2670,21 @@
       }
     }
 
-    /* ========================================================
-       2. LIGHTNING-FAST ASYNCHRONOUS FORM DISPATCH
-       ======================================================== */
+    /* 2. FAQ Accordion Toggle */
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      const allItems = document.querySelectorAll('.faq-item');
+
+      allItems.forEach(faq => {
+        if (faq !== item) {
+          faq.classList.remove('active');
+        }
+      });
+
+      item.classList.toggle('active');
+    }
+
+    /* 3. Form Dispatch Handling */
     const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFSMBGNVNdSnfPe4ovzzA_RYshi4LuIjpNXQ6dyOOIANpxQUKnTD7hWS_QmO_z4m4f/exec";
 
     function handleFormSubmit(e) {
@@ -2419,9 +2745,7 @@
       emailInput.value = '';
     }
 
-    /* ========================================================
-       3. CROSS-DEVICE GLOBAL CLOUD COUNTER
-       ======================================================== */
+    /* 4. Global Counter Synchronization */
     async function syncGlobalCrossDeviceCounter() {
       const primaryUrl = 'https://abacus.jasoncameron.dev/hit/codexcrunch.com/totalviews';
       const secondaryUrl = 'https://api.counterapi.dev/v1/codexcrunch_global/views/up';
@@ -2524,9 +2848,7 @@
       }
     });
 
-    /* ========================================================
-       4. INTELLIGENT UNIVERSAL NLP CHATBOT ENGINE
-       ======================================================== */
+    /* 5. Chatbot Engine */
     const BOT_LOGO_SRC = 'Codex Crunch logo.png';
     const BOT_FALLBACK_IMG = 'Assets/Codex%20Crunch%20site%20logo.png';
 
@@ -2553,7 +2875,6 @@
 
       const container = document.getElementById('chatMessages');
 
-      // User Message
       const userRow = document.createElement('div');
       userRow.className = 'msg-row user-row';
       userRow.innerHTML = `<div class="chat-msg user">${escapeHtml(text)}</div>`;
@@ -2561,7 +2882,6 @@
       input.value = '';
       container.scrollTop = container.scrollHeight;
 
-      // Bot Reply
       setTimeout(() => {
         const botRow = document.createElement('div');
         botRow.className = 'msg-row bot-row';
