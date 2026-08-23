@@ -565,7 +565,7 @@
       line-height: 1.55;
     }
 
-    /* TOOLS (PNG BASED) TILES */
+    /* TOOLS TILES */
     .tools-section {
       background: #010a17;
       border-top: 1px solid #0e3b75;
@@ -608,8 +608,34 @@
     }
 
     /* ========================================================
-       MODERNIZED BROWSER-STYLE PORTFOLIO CARDS
+       PREMIUM SHOWCASE PORTFOLIO GRID STYLE
        ======================================================== */
+    .portfolio-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 30px;
+      background: var(--card-solid);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary-blue);
+      border-color: var(--accent-cyan);
+      color: #ffffff;
+    }
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -617,32 +643,33 @@
     }
 
     .project-card {
-      background: var(--card-solid);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
+      background: #041b3b;
+      border: 1px solid #0f448a;
+      border-radius: 16px;
       overflow: hidden;
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
       position: relative;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
     .project-card:hover {
       border-color: var(--accent-cyan);
       transform: translateY(-8px);
-      box-shadow: 0 16px 36px rgba(1, 180, 255, 0.18);
+      box-shadow: 0 16px 40px rgba(1, 180, 255, 0.22);
     }
 
-    .project-browser-bar {
-      background: #020e1e;
-      padding: 10px 16px;
+    .project-card-header {
+      background: #020f20;
+      padding: 12px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--card-border);
+      border-bottom: 1px solid #0e3b75;
     }
 
-    .browser-dots {
+    .browser-controls {
       display: flex;
       align-items: center;
       gap: 6px;
@@ -659,28 +686,25 @@
     .dot-yellow { background: #eab308; }
     .dot-green { background: #22c55e; }
 
-    .browser-url {
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      background: #051933;
-      padding: 3px 14px;
+    .browser-address {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      background: #072044;
+      padding: 4px 14px;
       border-radius: 20px;
       border: 1px solid #0e3b75;
       font-family: monospace;
-      max-width: 180px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-weight: 600;
     }
 
-    .project-thumb-wrap {
+    .project-preview-wrap {
       position: relative;
       height: 220px;
       background: #010a17;
       overflow: hidden;
     }
 
-    .project-thumb-img {
+    .project-preview-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -688,22 +712,15 @@
       display: block;
     }
 
-    .project-card:hover .project-thumb-img {
+    .project-card:hover .project-preview-img {
       transform: scale(1.08);
     }
 
-    .project-overlay {
+    .project-floating-badge {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(3, 21, 45, 0.2) 0%, rgba(3, 21, 45, 0.85) 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 16px;
-      transition: opacity 0.3s ease;
-    }
-
-    .project-metric-badge {
-      background: rgba(1, 180, 255, 0.2);
+      top: 14px;
+      right: 14px;
+      background: rgba(3, 21, 45, 0.85);
       border: 1px solid var(--accent-cyan);
       backdrop-filter: blur(8px);
       color: #ffffff;
@@ -716,7 +733,7 @@
       gap: 6px;
     }
 
-    .project-content {
+    .project-details {
       padding: 24px;
       display: flex;
       flex-direction: column;
@@ -724,7 +741,7 @@
       justify-content: space-between;
     }
 
-    .project-title-area {
+    .project-headline-wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -732,58 +749,58 @@
       margin-bottom: 10px;
     }
 
-    .project-title-area h3 {
-      font-size: 1.25rem;
+    .project-headline-wrap h3 {
+      font-size: 1.3rem;
       color: #ffffff;
       margin: 0;
     }
 
-    .project-category-tag {
+    .project-type-tag {
       font-size: 0.75rem;
       font-weight: 700;
       color: var(--accent-cyan);
       background: rgba(1, 180, 255, 0.1);
       border: 1px solid rgba(1, 180, 255, 0.3);
-      padding: 3px 10px;
-      border-radius: 4px;
+      padding: 4px 10px;
+      border-radius: 6px;
       white-space: nowrap;
     }
 
-    .project-desc {
+    .project-overview-text {
       color: var(--text-muted);
       font-size: 0.92rem;
       line-height: 1.55;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
-    .project-tech-stack {
+    .project-tags-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 22px;
+      gap: 6px;
+      margin-bottom: 20px;
       padding-top: 14px;
       border-top: 1px solid #0e3b75;
     }
 
-    .tech-pill {
+    .tag-chip {
       font-size: 0.72rem;
       font-weight: 600;
       color: var(--text-dim);
       background: #020e1e;
-      padding: 3px 9px;
+      padding: 4px 10px;
       border-radius: 4px;
       border: 1px solid #0e3b75;
     }
 
-    .project-cta-btn {
+    .project-visit-btn {
       width: 100%;
-      padding: 11px 16px;
+      padding: 12px 18px;
       background: #03152d;
       border: 1px solid var(--accent-cyan);
       color: var(--accent-cyan);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -792,10 +809,10 @@
       transition: var(--transition);
     }
 
-    .project-cta-btn:hover {
+    .project-visit-btn:hover {
       background: var(--accent-cyan);
       color: var(--bg-dark);
-      box-shadow: 0 4px 15px rgba(1, 180, 255, 0.4);
+      box-shadow: 0 4px 16px rgba(1, 180, 255, 0.4);
     }
 
     /* Pricing Section */
@@ -1781,15 +1798,15 @@
     <div class="container">
       <div class="top-bar-wrapper">
         <div class="top-contacts">
-          <a href="tel:7995137513"><i class="fa-solid fa-phone"></i> +91 7995137513</a>[cite: 1]
-          <a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope"></i> codexcrunch@gmail.com</a>[cite: 1]
+          <a href="tel:7995137513"><i class="fa-solid fa-phone"></i> +91 7995137513</a>
+          <a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope"></i> codexcrunch@gmail.com</a>
         </div>
         <div class="top-socials">
           <span>Follow Us:</span>
-          <a href="https://instagram.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>[cite: 1]
-          <a href="https://facebook.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>[cite: 1]
-          <a href="https://twitter.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>[cite: 1]
-          <a href="https://linkedin.com/company/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>[cite: 1]
+          <a href="https://instagram.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/codexcrunch" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
@@ -1836,8 +1853,8 @@
     <div class="container">
       <div class="hero-content">
         <span class="section-tag"><i class="fa-solid fa-code"></i> Next-Gen Web Engineering & SEO</span>
-        <h1>We Build High-Ranking Websites That <span class="highlight">Convert Traffic Into Revenue</span></h1>[cite: 1]
-        <p>Codex Crunch designs lightning-fast, conversion-focused websites engineered with technical SEO and modern code architecture to dominate Google search results.</p>[cite: 1]
+        <h1>We Build High-Ranking Websites That <span class="highlight">Convert Traffic Into Revenue</span></h1>
+        <p>Codex Crunch designs lightning-fast, conversion-focused websites engineered with technical SEO and modern code architecture to dominate Google search results.</p>
         <div class="hero-buttons">
           <a href="#pricing" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Explore Plans</a>
           <a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
@@ -1866,14 +1883,14 @@
       <div class="text-center">
         <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Our Expertise</span>
         <h2 class="section-title">End-to-End Digital Solutions</h2>
-        <p class="section-desc">From clean code to top SERP rankings, we provide full-lifecycle website engineering and organic marketing.</p>[cite: 1]
+        <p class="section-desc">From clean code to top SERP rankings, we provide full-lifecycle website engineering and organic marketing.</p>
       </div>
 
       <div class="services-grid">
         <div class="clean-card service-card">
           <div class="service-icon"><i class="fa-solid fa-code"></i></div>
           <h3>Custom Web Development</h3>
-          <p>Hand-crafted, ultra-responsive HTML5, CSS3, and JavaScript websites designed for peak performance and speed.</p>[cite: 1]
+          <p>Hand-crafted, ultra-responsive HTML5, CSS3, and JavaScript websites designed for peak performance and speed.</p>
           <ul class="service-features">
             <li><i class="fa-solid fa-circle-check"></i> High-Speed Core Web Vitals</li>
             <li><i class="fa-solid fa-circle-check"></i> Clean, Semantic Code Structure</li>
@@ -1884,7 +1901,7 @@
         <div class="clean-card service-card">
           <div class="service-icon"><i class="fa-brands fa-wordpress"></i></div>
           <h3>WordPress & Elementor Pro</h3>
-          <p>Easy-to-manage dynamic websites, portals, and blogs built with secure WordPress frameworks and Elementor Pro.</p>[cite: 1]
+          <p>Easy-to-manage dynamic websites, portals, and blogs built with secure WordPress frameworks and Elementor Pro.</p>
           <ul class="service-features">
             <li><i class="fa-solid fa-circle-check"></i> Drag-and-drop customization</li>
             <li><i class="fa-solid fa-circle-check"></i> Enterprise-grade security setup</li>
@@ -1895,7 +1912,7 @@
         <div class="clean-card service-card">
           <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
           <h3>Advanced SEO Growth</h3>
-          <p>Data-driven on-page, off-page, and technical SEO designed to drive high-intent organic traffic to your business.</p>[cite: 1]
+          <p>Data-driven on-page, off-page, and technical SEO designed to drive high-intent organic traffic to your business.</p>
           <ul class="service-features">
             <li><i class="fa-solid fa-circle-check"></i> Yoast & RankMath Optimization</li>
             <li><i class="fa-solid fa-circle-check"></i> Keyword Research with SEMrush</li>
@@ -1906,7 +1923,7 @@
         <div class="clean-card service-card">
           <div class="service-icon"><i class="fa-solid fa-location-dot"></i></div>
           <h3>Local SEO & GMB Ranking</h3>
-          <p>Dominate your local geography with optimized Google My Business (GMB) profiles and localized landing pages.</p>[cite: 1]
+          <p>Dominate your local geography with optimized Google My Business (GMB) profiles and localized landing pages.</p>
           <ul class="service-features">
             <li><i class="fa-solid fa-circle-check"></i> Google Map 3-Pack Optimization</li>
             <li><i class="fa-solid fa-circle-check"></i> Local citation building</li>
@@ -1917,7 +1934,7 @@
         <div class="clean-card service-card">
           <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
           <h3>E-Commerce Architecture</h3>
-          <p>Full-scale online stores with seamless payment gateway integrations, order tracking, and product catalogs.</p>[cite: 1]
+          <p>Full-scale online stores with seamless payment gateway integrations, order tracking, and product catalogs.</p>
           <ul class="service-features">
             <li><i class="fa-solid fa-circle-check"></i> Razorpay, Stripe & UPI gateways</li>
             <li><i class="fa-solid fa-circle-check"></i> Conversion-optimized checkout</li>
@@ -1928,7 +1945,7 @@
         <div class="clean-card service-card">
           <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
           <h3>AI Integration & Chatbots</h3>
-          <p>Leverage cutting-edge AI (ChatGPT, Claude) to automate customer support and generate dynamic marketing assets.</p>[cite: 1]
+          <p>Leverage cutting-edge AI (ChatGPT, Claude) to automate customer support and generate dynamic marketing assets.</p>
           <ul class="service-features">
             <li><i class="fa-solid fa-circle-check"></i> 24/7 AI-powered chat assistants</li>
             <li><i class="fa-solid fa-circle-check"></i> Smart lead qualification funnels</li>
@@ -1982,7 +1999,7 @@
       <div class="text-center">
         <span class="section-tag"><i class="fa-solid fa-screwdriver-wrench"></i> Technology & Tools</span>
         <h2 class="section-title">Powered by Industry-Leading Software</h2>
-        <p class="section-desc">We leverage industry-standard development and digital marketing toolkits to deliver unmatched results.</p>[cite: 1]
+        <p class="section-desc">We leverage industry-standard development and digital marketing toolkits to deliver unmatched results.</p>
       </div>
 
       <div class="tools-grid">
@@ -2054,53 +2071,51 @@
     </div>
   </section>
 
-  <!-- Modern Browser Preview Portfolio Section -->
+  <!-- Modern Showcase Portfolio Section -->
   <section id="portfolio">
     <div class="container">
       <div class="text-center">
         <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Proven Track Record</span>
-        <h2 class="section-title">Our Recent Projects</h2>
-        <p class="section-desc">A selection of live web portals, platforms, and digital products engineered by our team.</p>[cite: 1]
+        <h2 class="section-title">Featured Client Platforms</h2>
+        <p class="section-desc">Explore custom web systems, high-volume portals, and fintech aggregators built for speed and top organic search visibility.</p>
       </div>
 
       <div class="portfolio-grid">
         <!-- Project 1: BanksAdda -->
         <div class="project-card">
-          <div class="project-browser-bar">
-            <div class="browser-dots">
+          <div class="project-card-header">
+            <div class="browser-controls">
               <span class="dot dot-red"></span>
               <span class="dot dot-yellow"></span>
               <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">https://banksadda.com</div>
-            <i class="fa-solid fa-lock" style="color: #22c55e; font-size: 0.75rem;"></i>
+            <div class="browser-address">banksadda.com</div>
+            <i class="fa-solid fa-shield-halved" style="color: #22c55e; font-size: 0.85rem;"></i>
           </div>
 
-          <div class="project-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=700&q=80" alt="BanksAdda Portal" class="project-thumb-img" loading="lazy">
-            <div class="project-overlay">
-              <span class="project-metric-badge"><i class="fa-solid fa-bolt"></i> 99/100 Mobile Speed</span>
-            </div>
+          <div class="project-preview-wrap">
+            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=700&q=80" alt="BanksAdda Portal" class="project-preview-img" loading="lazy">
+            <div class="project-floating-badge"><i class="fa-solid fa-bolt"></i> 99/100 Core Web Vitals</div>
           </div>
 
-          <div class="project-content">
+          <div class="project-details">
             <div>
-              <div class="project-title-area">
+              <div class="project-headline-wrap">
                 <h3>banksadda.com</h3>
-                <span class="project-category-tag">Fintech / Info</span>
+                <span class="project-type-tag">Fintech / Info</span>
               </div>
-              <p class="project-desc">Finance, banking updates, and credit informational portal structured for high-volume organic search queries.</p>[cite: 1]
+              <p class="project-overview-text">Finance, banking updates, and credit informational portal structured with deep semantic architecture for massive search volume.</p>
             </div>
 
             <div>
-              <div class="project-tech-stack">
-                <span class="tech-pill">Semantic HTML5</span>
-                <span class="tech-pill">Technical SEO</span>
-                <span class="tech-pill">Schema Markup</span>
-                <span class="tech-pill">Core Web Vitals</span>
+              <div class="project-tags-list">
+                <span class="tag-chip">Semantic HTML5</span>
+                <span class="tag-chip">Technical SEO</span>
+                <span class="tag-chip">Schema Markups</span>
+                <span class="tag-chip">High Speed</span>
               </div>
-              <a href="https://banksadda.com" target="_blank" rel="noopener noreferrer" class="project-cta-btn">
-                Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="https://banksadda.com" target="_blank" rel="noopener noreferrer" class="project-visit-btn">
+                Launch Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
@@ -2108,41 +2123,39 @@
 
         <!-- Project 2: LoanLoop -->
         <div class="project-card">
-          <div class="project-browser-bar">
-            <div class="browser-dots">
+          <div class="project-card-header">
+            <div class="browser-controls">
               <span class="dot dot-red"></span>
               <span class="dot dot-yellow"></span>
               <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">https://loanloop.in</div>
-            <i class="fa-solid fa-lock" style="color: #22c55e; font-size: 0.75rem;"></i>
+            <div class="browser-address">loanloop.in</div>
+            <i class="fa-solid fa-shield-halved" style="color: #22c55e; font-size: 0.85rem;"></i>
           </div>
 
-          <div class="project-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=700&q=80" alt="LoanLoop Platform" class="project-thumb-img" loading="lazy">
-            <div class="project-overlay">
-              <span class="project-metric-badge"><i class="fa-solid fa-chart-line"></i> +140% Lead Ingestion</span>
-            </div>
+          <div class="project-preview-wrap">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=700&q=80" alt="LoanLoop Platform" class="project-preview-img" loading="lazy">
+            <div class="project-floating-badge"><i class="fa-solid fa-chart-line"></i> +140% Lead Rate</div>
           </div>
 
-          <div class="project-content">
+          <div class="project-details">
             <div>
-              <div class="project-title-area">
+              <div class="project-headline-wrap">
                 <h3>loanloop.in</h3>
-                <span class="project-category-tag">Fintech Aggregator</span>
+                <span class="project-type-tag">Loan Aggregator</span>
               </div>
-              <p class="project-desc">Comprehensive loan services and agent network portal with real-time lead ingestion and credit utilities.</p>[cite: 1]
+              <p class="project-overview-text">Comprehensive financial services and agent network platform with automated customer lead ingestion and loan verification utilities.</p>
             </div>
 
             <div>
-              <div class="project-tech-stack">
-                <span class="tech-pill">JavaScript</span>
-                <span class="tech-pill">API Integration</span>
-                <span class="tech-pill">Lead CRM</span>
-                <span class="tech-pill">SSL & Security</span>
+              <div class="project-tags-list">
+                <span class="tag-chip">JavaScript</span>
+                <span class="tag-chip">API Webhooks</span>
+                <span class="tag-chip">Lead Management</span>
+                <span class="tag-chip">Secure Cloud</span>
               </div>
-              <a href="https://loanloop.in" target="_blank" rel="noopener noreferrer" class="project-cta-btn">
-                Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="https://loanloop.in" target="_blank" rel="noopener noreferrer" class="project-visit-btn">
+                Launch Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
@@ -2150,41 +2163,39 @@
 
         <!-- Project 3: DSA Loan Agent -->
         <div class="project-card">
-          <div class="project-browser-bar">
-            <div class="browser-dots">
+          <div class="project-card-header">
+            <div class="browser-controls">
               <span class="dot dot-red"></span>
               <span class="dot dot-yellow"></span>
               <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">https://dsaloanagent.in</div>
-            <i class="fa-solid fa-lock" style="color: #22c55e; font-size: 0.75rem;"></i>
+            <div class="browser-address">dsaloanagent.in</div>
+            <i class="fa-solid fa-shield-halved" style="color: #22c55e; font-size: 0.85rem;"></i>
           </div>
 
-          <div class="project-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="DSA Loan Agent Network" class="project-thumb-img" loading="lazy">
-            <div class="project-overlay">
-              <span class="project-metric-badge"><i class="fa-solid fa-location-dot"></i> Rank #1 Local Map Pack</span>
-            </div>
+          <div class="project-preview-wrap">
+            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="DSA Loan Agent Network" class="project-preview-img" loading="lazy">
+            <div class="project-floating-badge"><i class="fa-solid fa-location-dot"></i> Google Top 3 Pack</div>
           </div>
 
-          <div class="project-content">
+          <div class="project-details">
             <div>
-              <div class="project-title-area">
+              <div class="project-headline-wrap">
                 <h3>dsaloanagent.in</h3>
-                <span class="project-category-tag">DSA Network</span>
+                <span class="project-type-tag">Agent Matchmaking</span>
               </div>
-              <p class="project-desc">Specialized DSA agent and customer loan matchmaking platform optimized for hyperlocal financial discovery.</p>[cite: 1]
+              <p class="project-overview-text">Specialized DSA agent and borrower matchmaking network optimized for hyperlocal keyword searches and instant WhatsApp inquiries.</p>
             </div>
 
             <div>
-              <div class="project-tech-stack">
-                <span class="tech-pill">Local SEO</span>
-                <span class="tech-pill">GMB Sync</span>
-                <span class="tech-pill">Responsive UI</span>
-                <span class="tech-pill">WhatsApp API</span>
+              <div class="project-tags-list">
+                <span class="tag-chip">Local SEO</span>
+                <span class="tag-chip">GMB Integration</span>
+                <span class="tag-chip">Instant Inquiries</span>
+                <span class="tag-chip">Mobile First</span>
               </div>
-              <a href="https://dsaloanagent.in" target="_blank" rel="noopener noreferrer" class="project-cta-btn">
-                Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="https://dsaloanagent.in" target="_blank" rel="noopener noreferrer" class="project-visit-btn">
+                Launch Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
@@ -2192,41 +2203,39 @@
 
         <!-- Project 4: OTTLoop -->
         <div class="project-card">
-          <div class="project-browser-bar">
-            <div class="browser-dots">
+          <div class="project-card-header">
+            <div class="browser-controls">
               <span class="dot dot-red"></span>
               <span class="dot dot-yellow"></span>
               <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">https://ottloop.com</div>
-            <i class="fa-solid fa-lock" style="color: #22c55e; font-size: 0.75rem;"></i>
+            <div class="browser-address">ottloop.com</div>
+            <i class="fa-solid fa-shield-halved" style="color: #22c55e; font-size: 0.85rem;"></i>
           </div>
 
-          <div class="project-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=700&q=80" alt="OTTLoop Directory" class="project-thumb-img" loading="lazy">
-            <div class="project-overlay">
-              <span class="project-metric-badge"><i class="fa-solid fa-fire"></i> High Organic Traffic</span>
-            </div>
+          <div class="project-preview-wrap">
+            <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=700&q=80" alt="OTTLoop Directory" class="project-preview-img" loading="lazy">
+            <div class="project-floating-badge"><i class="fa-solid fa-fire"></i> Trending Portal</div>
           </div>
 
-          <div class="project-content">
+          <div class="project-details">
             <div>
-              <div class="project-title-area">
+              <div class="project-headline-wrap">
                 <h3>ottloop.com</h3>
-                <span class="project-category-tag">Media & Streaming</span>
+                <span class="project-type-tag">Media & Entertainment</span>
               </div>
-              <p class="project-desc">Dynamic streaming media directory, entertainment tracking portal, and high-engagement content platform.</p>[cite: 1]
+              <p class="project-overview-text">Dynamic streaming media index, release schedule tracker, and entertainment content hub built for ultra-low latency.</p>
             </div>
 
             <div>
-              <div class="project-tech-stack">
-                <span class="tech-pill">Dynamic Content</span>
-                <span class="tech-pill">SEO Clusters</span>
-                <span class="tech-pill">Fast CDN</span>
-                <span class="tech-pill">Mobile First</span>
+              <div class="project-tags-list">
+                <span class="tag-chip">Topic Clusters</span>
+                <span class="tag-chip">Programmatic SEO</span>
+                <span class="tag-chip">Edge CDN</span>
+                <span class="tag-chip">Dynamic UI</span>
               </div>
-              <a href="https://ottloop.com" target="_blank" rel="noopener noreferrer" class="project-cta-btn">
-                Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="https://ottloop.com" target="_blank" rel="noopener noreferrer" class="project-visit-btn">
+                Launch Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
@@ -2234,41 +2243,39 @@
 
         <!-- Project 5: RJ Sports Club -->
         <div class="project-card">
-          <div class="project-browser-bar">
-            <div class="browser-dots">
+          <div class="project-card-header">
+            <div class="browser-controls">
               <span class="dot dot-red"></span>
               <span class="dot dot-yellow"></span>
               <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">https://rjsportsclub.com</div>
-            <i class="fa-solid fa-lock" style="color: #22c55e; font-size: 0.75rem;"></i>
+            <div class="browser-address">rjsportsclub.com</div>
+            <i class="fa-solid fa-shield-halved" style="color: #22c55e; font-size: 0.85rem;"></i>
           </div>
 
-          <div class="project-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=700&q=80" alt="RJ Sports Club" class="project-thumb-img" loading="lazy">
-            <div class="project-overlay">
-              <span class="project-metric-badge"><i class="fa-solid fa-users"></i> Instant Match Bookings</span>
-            </div>
+          <div class="project-preview-wrap">
+            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=700&q=80" alt="RJ Sports Club" class="project-preview-img" loading="lazy">
+            <div class="project-floating-badge"><i class="fa-solid fa-calendar-check"></i> Real-Time Booking</div>
           </div>
 
-          <div class="project-content">
+          <div class="project-details">
             <div>
-              <div class="project-title-area">
+              <div class="project-headline-wrap">
                 <h3>rjsportsclub.com</h3>
-                <span class="project-category-tag">Sports Management</span>
+                <span class="project-type-tag">Sports Management</span>
               </div>
-              <p class="project-desc">Modern sports club management portal with community memberships, match updates, and event schedules.</p>[cite: 1]
+              <p class="project-overview-text">Modern sports facility portal offering online ground bookings, tournament schedules, membership passes, and instant support.</p>
             </div>
 
             <div>
-              <div class="project-tech-stack">
-                <span class="tech-pill">WordPress Pro</span>
-                <span class="tech-pill">Elementor</span>
-                <span class="tech-pill">Booking Form</span>
-                <span class="tech-pill">Speed Optimized</span>
+              <div class="project-tags-list">
+                <span class="tag-chip">WordPress Pro</span>
+                <span class="tag-chip">Elementor</span>
+                <span class="tag-chip">Booking Engine</span>
+                <span class="tag-chip">Custom Theme</span>
               </div>
-              <a href="https://rjsportsclub.com" target="_blank" rel="noopener noreferrer" class="project-cta-btn">
-                Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="https://rjsportsclub.com" target="_blank" rel="noopener noreferrer" class="project-visit-btn">
+                Launch Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
@@ -2276,41 +2283,39 @@
 
         <!-- Project 6: Beeway Logistics -->
         <div class="project-card">
-          <div class="project-browser-bar">
-            <div class="browser-dots">
+          <div class="project-card-header">
+            <div class="browser-controls">
               <span class="dot dot-red"></span>
               <span class="dot dot-yellow"></span>
               <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">https://beeway.in</div>
-            <i class="fa-solid fa-lock" style="color: #22c55e; font-size: 0.75rem;"></i>
+            <div class="browser-address">beeway.in</div>
+            <i class="fa-solid fa-shield-halved" style="color: #22c55e; font-size: 0.85rem;"></i>
           </div>
 
-          <div class="project-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Beeway Logistics" class="project-thumb-img" loading="lazy">
-            <div class="project-overlay">
-              <span class="project-metric-badge"><i class="fa-solid fa-truck-fast"></i> Dynamic Lead Engine</span>
-            </div>
+          <div class="project-preview-wrap">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Beeway Logistics" class="project-preview-img" loading="lazy">
+            <div class="project-floating-badge"><i class="fa-solid fa-truck-fast"></i> Enterprise Portal</div>
           </div>
 
-          <div class="project-content">
+          <div class="project-details">
             <div>
-              <div class="project-title-area">
+              <div class="project-headline-wrap">
                 <h3>beeway.in</h3>
-                <span class="project-category-tag">Corporate Logistics</span>
+                <span class="project-type-tag">Supply Chain B2B</span>
               </div>
-              <p class="project-desc">Professional business services platform with dynamic inquiry forms, service breakdown, and fast page speeds.</p>[cite: 1]
+              <p class="project-overview-text">Professional corporate transport and supply chain portal featuring interactive service calculators and quotation forms.</p>
             </div>
 
             <div>
-              <div class="project-tech-stack">
-                <span class="tech-pill">Custom CSS3</span>
-                <span class="tech-pill">Fast Inquiries</span>
-                <span class="tech-pill">Corporate UI</span>
-                <span class="tech-pill">On-Page SEO</span>
+              <div class="project-tags-list">
+                <span class="tag-chip">CSS3 Grid</span>
+                <span class="tag-chip">Conversion Forms</span>
+                <span class="tag-chip">B2B Structure</span>
+                <span class="tag-chip">Analytics GA4</span>
               </div>
-              <a href="https://beeway.in" target="_blank" rel="noopener noreferrer" class="project-cta-btn">
-                Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="https://beeway.in" target="_blank" rel="noopener noreferrer" class="project-visit-btn">
+                Launch Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
@@ -2325,7 +2330,7 @@
       <div class="text-center">
         <span class="section-tag"><i class="fa-solid fa-tags"></i> Transparent Pricing</span>
         <h2 class="section-title">Website & Monthly SEO Plans</h2>
-        <p class="section-desc">Select a web development package or monthly SEO retainer designed to scale your business.</p>[cite: 1]
+        <p class="section-desc">Select a web development package or monthly SEO retainer designed to scale your business.</p>
       </div>
 
       <div class="pricing-tabs">
@@ -2339,14 +2344,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-green"></span> Starter Website</div>
             <div class="plan-target">Individuals & Small Businesses</div>
-            <div class="plan-price">₹5,999 - ₹9,999</div>[cite: 1]
+            <div class="plan-price">₹5,999 - ₹9,999</div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> 3–5 High-Performance Pages</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> 100% Mobile Responsive</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Contact Form Integration</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Basic Technical & Meta SEO</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Social Media Links Setup</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> 3–5 High-Performance Pages</li>
+            <li><i class="fa-solid fa-check"></i> 100% Mobile Responsive</li>
+            <li><i class="fa-solid fa-check"></i> Contact Form Integration</li>
+            <li><i class="fa-solid fa-check"></i> Basic Technical & Meta SEO</li>
+            <li><i class="fa-solid fa-check"></i> Social Media Links Setup</li>
           </ul>
           <a href="#contact-hub" class="btn btn-outline text-center">Get Started</a>
         </div>
@@ -2356,14 +2361,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-blue"></span> Business Website</div>
             <div class="plan-target">Growing Businesses & Startups</div>
-            <div class="plan-price">₹11,999 - ₹24,999</div>[cite: 1]
+            <div class="plan-price">₹11,999 - ₹24,999</div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> 5–10 Premium Pages</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> WhatsApp Direct Integration</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Advanced Inquiry & Lead Forms</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Advanced On-Page SEO</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Google Analytics & GSC Setup</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> 5–10 Premium Pages</li>
+            <li><i class="fa-solid fa-check"></i> WhatsApp Direct Integration</li>
+            <li><i class="fa-solid fa-check"></i> Advanced Inquiry & Lead Forms</li>
+            <li><i class="fa-solid fa-check"></i> Advanced On-Page SEO</li>
+            <li><i class="fa-solid fa-check"></i> Google Analytics & GSC Setup</li>
           </ul>
           <a href="#contact-hub" class="btn btn-primary text-center">Choose Plan</a>
         </div>
@@ -2372,14 +2377,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-purple"></span> Professional Website</div>
             <div class="plan-target">Companies, Brands & Agencies</div>
-            <div class="plan-price">₹29,999 - ₹49,999</div>[cite: 1]
+            <div class="plan-price">₹29,999 - ₹49,999</div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> 10–20 Custom Designed Pages</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Custom Animations & Fast UI</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Deep Speed Optimization</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Complete Advanced SEO Setup</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Lead Capture & Analytics Setup</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> 10–20 Custom Designed Pages</li>
+            <li><i class="fa-solid fa-check"></i> Custom Animations & Fast UI</li>
+            <li><i class="fa-solid fa-check"></i> Deep Speed Optimization</li>
+            <li><i class="fa-solid fa-check"></i> Complete Advanced SEO Setup</li>
+            <li><i class="fa-solid fa-check"></i> Lead Capture & Analytics Setup</li>
           </ul>
           <a href="#contact-hub" class="btn btn-outline text-center">Choose Plan</a>
         </div>
@@ -2388,14 +2393,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-orange"></span> E-Commerce Website</div>
             <div class="plan-target">Online Stores & D2C Brands</div>
-            <div class="plan-price">₹39,999 - ₹79,999+</div>[cite: 1]
+            <div class="plan-price">₹39,999 - ₹79,999+</div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Complete Product Catalog & Cart</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Payment Gateway (UPI, Cards)</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Order & Inventory Management</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> E-Commerce SEO Architecture</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Abandoned Cart Tracking</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> Complete Product Catalog & Cart</li>
+            <li><i class="fa-solid fa-check"></i> Payment Gateway (UPI, Cards)</li>
+            <li><i class="fa-solid fa-check"></i> Order & Inventory Management</li>
+            <li><i class="fa-solid fa-check"></i> E-Commerce SEO Architecture</li>
+            <li><i class="fa-solid fa-check"></i> Abandoned Cart Tracking</li>
           </ul>
           <a href="#contact-hub" class="btn btn-outline text-center">Choose Plan</a>
         </div>
@@ -2404,14 +2409,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-red"></span> Custom Website</div>
             <div class="plan-target">Complex Architecture & Portals</div>
-            <div class="plan-price">₹59,999+</div>[cite: 1]
+            <div class="plan-price">₹59,999+</div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Custom Features, APIs & Dashboards</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Database Design & User Portals</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Advanced Backend Functionality</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> High-Traffic Scaling Infrastructure</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Dedicated Maintenance & Support</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> Custom Features, APIs & Dashboards</li>
+            <li><i class="fa-solid fa-check"></i> Database Design & User Portals</li>
+            <li><i class="fa-solid fa-check"></i> Advanced Backend Functionality</li>
+            <li><i class="fa-solid fa-check"></i> High-Traffic Scaling Infrastructure</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated Maintenance & Support</li>
           </ul>
           <a href="#contact-hub" class="btn btn-outline text-center">Contact Us</a>
         </div>
@@ -2423,13 +2428,13 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-green"></span> SEO Starter</div>
             <div class="plan-target">Local Businesses & Blogs</div>
-            <div class="plan-price">₹4,999 <span style="font-size: 1rem; color: var(--text-dim);">/month</span></div>[cite: 1]
+            <div class="plan-price">₹4,999 <span style="font-size: 1rem; color: var(--text-dim);">/month</span></div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Up to 10 Target Keywords</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> On-Page Meta & Heading Audits</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Google Search Console Monitoring</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Monthly Ranking Report</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> Up to 10 Target Keywords</li>
+            <li><i class="fa-solid fa-check"></i> On-Page Meta & Heading Audits</li>
+            <li><i class="fa-solid fa-check"></i> Google Search Console Monitoring</li>
+            <li><i class="fa-solid fa-check"></i> Monthly Ranking Report</li>
           </ul>
           <a href="#contact-hub" class="btn btn-outline text-center">Select Starter</a>
         </div>
@@ -2439,14 +2444,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-blue"></span> SEO Growth</div>
             <div class="plan-target">Growing Brands Seeking Leads</div>
-            <div class="plan-price">₹9,999 <span style="font-size: 1rem; color: var(--text-dim);">/month</span></div>[cite: 1]
+            <div class="plan-price">₹9,999 <span style="font-size: 1rem; color: var(--text-dim);">/month</span></div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Up to 25 Target Keywords</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Deep Technical & Content SEO</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> GMB / Local Map Pack Optimization</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> High-Quality Backlink Building</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Bi-weekly Performance Reviews</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> Up to 25 Target Keywords</li>
+            <li><i class="fa-solid fa-check"></i> Deep Technical & Content SEO</li>
+            <li><i class="fa-solid fa-check"></i> GMB / Local Map Pack Optimization</li>
+            <li><i class="fa-solid fa-check"></i> High-Quality Backlink Building</li>
+            <li><i class="fa-solid fa-check"></i> Bi-weekly Performance Reviews</li>
           </ul>
           <a href="#contact-hub" class="btn btn-primary text-center">Select Growth</a>
         </div>
@@ -2455,14 +2460,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-purple"></span> SEO Pro</div>
             <div class="plan-target">Competitive Industries & Portals</div>
-            <div class="plan-price">₹19,999 <span style="font-size: 1rem; color: var(--text-dim);">/month</span></div>[cite: 1]
+            <div class="plan-price">₹19,999 <span style="font-size: 1rem; color: var(--text-dim);">/month</span></div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> 50+ High-Intent Keywords</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Competitor Keyword Theft Strategy</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Full Content Cluster Strategy</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Core Web Vitals Optimization</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Weekly Reporting & Direct Strategy Call</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> 50+ High-Intent Keywords</li>
+            <li><i class="fa-solid fa-check"></i> Competitor Keyword Theft Strategy</li>
+            <li><i class="fa-solid fa-check"></i> Full Content Cluster Strategy</li>
+            <li><i class="fa-solid fa-check"></i> Core Web Vitals Optimization</li>
+            <li><i class="fa-solid fa-check"></i> Weekly Reporting & Direct Strategy Call</li>
           </ul>
           <a href="#contact-hub" class="btn btn-outline text-center">Select Pro</a>
         </div>
@@ -2471,14 +2476,14 @@
           <div class="pricing-header">
             <div class="plan-name"><span class="plan-indicator indicator-red"></span> SEO Enterprise</div>
             <div class="plan-target">Large Portals & E-Commerce</div>
-            <div class="plan-price">Custom</div>[cite: 1]
+            <div class="plan-price">Custom</div>
           </div>
           <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Unlimited Keyword Architecture</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Complete Programmatic SEO</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Dedicated Senior SEO Strategist</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Digital PR & Authority Acquisition</li>[cite: 1]
-            <li><i class="fa-solid fa-check"></i> Real-time Dashboard Access</li>[cite: 1]
+            <li><i class="fa-solid fa-check"></i> Unlimited Keyword Architecture</li>
+            <li><i class="fa-solid fa-check"></i> Complete Programmatic SEO</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated Senior SEO Strategist</li>
+            <li><i class="fa-solid fa-check"></i> Digital PR & Authority Acquisition</li>
+            <li><i class="fa-solid fa-check"></i> Real-time Dashboard Access</li>
           </ul>
           <a href="#contact-hub" class="btn btn-outline text-center">Get Custom Proposal</a>
         </div>
@@ -2555,10 +2560,10 @@
           <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> About Codex Crunch</span>
           <h2 class="section-title">Where Clean Code Meets Strategic Organic Ranking</h2>
           <p style="color: var(--text-muted); margin-bottom: 20px;">
-            At <strong>Codex Crunch</strong> (codexcrunch.com), we believe a website is your highest-performing sales channel.[cite: 1]
+            At <strong>Codex Crunch</strong> (codexcrunch.com), we believe a website is your highest-performing sales channel.
           </p>
           <p style="color: var(--text-muted); margin-bottom: 24px;">
-            We merge clean, lightweight software engineering principles with data-backed SEO tactics to build digital products that load under 1 second, attract ready-to-buy search traffic, and convert visitors into long-term clients.[cite: 1]
+            We merge clean, lightweight software engineering principles with data-backed SEO tactics to build digital products that load under 1 second, attract ready-to-buy search traffic, and convert visitors into long-term clients.
           </p>
           <div style="display: flex; gap: 20px;">
             <div>
@@ -2579,9 +2584,9 @@
         <div class="clean-card about-card">
           <h3>Why Businesses Choose Us</h3>
           <ul class="plan-features" style="margin-bottom: 0;">
-            <li><i class="fa-solid fa-magnifying-glass-chart"></i> <strong>Search Engine First:</strong> Every site is structured with canonicals, Open Graph, schema markups, and clean URLs.</li>[cite: 1]
-            <li><i class="fa-solid fa-gauge-high"></i> <strong>Speed & Security:</strong> We eliminate bloated plugins and write clean CSS/JS for maximum Core Web Vitals scores.</li>[cite: 1]
-            <li><i class="fa-solid fa-handshake"></i> <strong>Direct Developer Access:</strong> No endless sales layers. You talk directly with the engineers executing your project.</li>[cite: 1]
+            <li><i class="fa-solid fa-magnifying-glass-chart"></i> <strong>Search Engine First:</strong> Every site is structured with canonicals, Open Graph, schema markups, and clean URLs.</li>
+            <li><i class="fa-solid fa-gauge-high"></i> <strong>Speed & Security:</strong> We eliminate bloated plugins and write clean CSS/JS for maximum Core Web Vitals scores.</li>
+            <li><i class="fa-solid fa-handshake"></i> <strong>Direct Developer Access:</strong> No endless sales layers. You talk directly with the engineers executing your project.</li>
           </ul>
         </div>
       </div>
@@ -2611,7 +2616,7 @@
             </div>
             <div class="slide-info">
               <h4>Modern Fintech Portal</h4>
-              <p>Ultra-responsive financial data architecture & DSA loan agent platform.</p>[cite: 1]
+              <p>Ultra-responsive financial data architecture & DSA loan agent platform.</p>
             </div>
           </div>
 
@@ -2622,7 +2627,7 @@
             </div>
             <div class="slide-info">
               <h4>SEO Growth & SERP Rank #1</h4>
-              <p>Comprehensive technical optimization and semantic keyword ranking.</p>[cite: 1]
+              <p>Comprehensive technical optimization and semantic keyword ranking.</p>
             </div>
           </div>
 
@@ -2633,7 +2638,7 @@
             </div>
             <div class="slide-info">
               <h4>E-Commerce Store Setup</h4>
-              <p>High-converting product funnels with Razorpay and UPI checkout.</p>[cite: 1]
+              <p>High-converting product funnels with Razorpay and UPI checkout.</p>
             </div>
           </div>
 
@@ -2644,7 +2649,7 @@
             </div>
             <div class="slide-info">
               <h4>WordPress & Elementor Pro</h4>
-              <p>Clean design system with custom post structures and speedy loading.</p>[cite: 1]
+              <p>Clean design system with custom post structures and speedy loading.</p>
             </div>
           </div>
 
@@ -2655,7 +2660,7 @@
             </div>
             <div class="slide-info">
               <h4>AI Chatbot & Automation</h4>
-              <p>24/7 client conversational agent capturing high-ticket leads automatically.</p>[cite: 1]
+              <p>24/7 client conversational agent capturing high-ticket leads automatically.</p>
             </div>
           </div>
 
@@ -2666,7 +2671,7 @@
             </div>
             <div class="slide-info">
               <h4>Local GMB Map Dominance</h4>
-              <p>Geo-targeted citations and reviews driving consistent localized calls.</p>[cite: 1]
+              <p>Geo-targeted citations and reviews driving consistent localized calls.</p>
             </div>
           </div>
 
@@ -2677,7 +2682,7 @@
             </div>
             <div class="slide-info">
               <h4>Modern Fintech Portal</h4>
-              <p>Ultra-responsive financial data architecture & DSA loan agent platform.</p>[cite: 1]
+              <p>Ultra-responsive financial data architecture & DSA loan agent platform.</p>
             </div>
           </div>
 
@@ -2687,7 +2692,7 @@
             </div>
             <div class="slide-info">
               <h4>SEO Growth & SERP Rank #1</h4>
-              <p>Comprehensive technical optimization and semantic keyword ranking.</p>[cite: 1]
+              <p>Comprehensive technical optimization and semantic keyword ranking.</p>
             </div>
           </div>
 
@@ -2697,7 +2702,7 @@
             </div>
             <div class="slide-info">
               <h4>E-Commerce Store Setup</h4>
-              <p>High-converting product funnels with Razorpay and UPI checkout.</p>[cite: 1]
+              <p>High-converting product funnels with Razorpay and UPI checkout.</p>
             </div>
           </div>
 
@@ -2707,7 +2712,7 @@
             </div>
             <div class="slide-info">
               <h4>WordPress & Elementor Pro</h4>
-              <p>Clean design system with custom post structures and speedy loading.</p>[cite: 1]
+              <p>Clean design system with custom post structures and speedy loading.</p>
             </div>
           </div>
         </div>
@@ -2731,7 +2736,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>Starter websites (3–5 pages) take roughly 3 to 5 business days[cite: 1]. Business websites take 5 to 8 days, while complex custom or e-commerce platforms take 10 to 18 business days depending on feature scope[cite: 1].</p>
+            <p>Starter websites (3–5 pages) take roughly 3 to 5 business days. Business websites take 5 to 8 days, while complex custom or e-commerce platforms take 10 to 18 business days depending on feature scope.</p>
           </div>
         </div>
 
@@ -2751,7 +2756,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>Every website we build is 100% responsive across phones, tablets, and wide monitors[cite: 1]. We strictly optimize assets, eliminate render-blocking code, and configure caching to target green 90+ Core Web Vitals scores[cite: 1].</p>
+            <p>Every website we build is 100% responsive across phones, tablets, and wide monitors. We strictly optimize assets, eliminate render-blocking code, and configure caching to target green 90+ Core Web Vitals scores.</p>
           </div>
         </div>
 
@@ -2774,13 +2779,13 @@
       <div class="text-center">
         <span class="section-tag"><i class="fa-solid fa-envelope-open-text"></i> Direct Inquiry & Updates</span>
         <h2 class="section-title">Let’s Discuss Your Next Big Project</h2>
-        <p class="section-desc">Get a personalized project quote or subscribe to our weekly SEO & tech insights newsletter.</p>[cite: 1]
+        <p class="section-desc">Get a personalized project quote or subscribe to our weekly SEO & tech insights newsletter.</p>
       </div>
 
       <div class="pre-footer-grid">
         <div class="clean-card form-card-box">
           <h3><i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan); margin-right: 8px;"></i> Request a Custom Quote</h3>
-          <p>Fill out this form to connect with our development & SEO team immediately.</p>[cite: 1]
+          <p>Fill out this form to connect with our development & SEO team immediately.</p>
           <form onsubmit="handleFormSubmit(event)">
             <div class="form-group">
               <label for="name">Your Name / Company</label>
@@ -2793,12 +2798,12 @@
             <div class="form-group">
               <label for="service">Select Requirement</label>
               <select id="service" class="form-control">
-                <option value="Starter Website (₹5,999 - ₹9,999)">Starter Website (₹5,999 - ₹9,999)</option>[cite: 1]
-                <option value="Business Website (₹11,999 - ₹24,999)">Business Website (₹11,999 - ₹24,999)</option>[cite: 1]
-                <option value="Professional Website (₹29,999 - ₹49,999)">Professional Website (₹29,999 - ₹49,999)</option>[cite: 1]
-                <option value="E-Commerce Website (₹39,999 - ₹79,999+)">E-Commerce Website (₹39,999 - ₹79,999+)</option>[cite: 1]
-                <option value="Custom Website (₹59,999+)">Custom Website (₹59,999+)</option>[cite: 1]
-                <option value="Monthly SEO Retainer (Starts ₹4,999/mo)">Monthly SEO Retainer (Starts ₹4,999/mo)</option>[cite: 1]
+                <option value="Starter Website (₹5,999 - ₹9,999)">Starter Website (₹5,999 - ₹9,999)</option>
+                <option value="Business Website (₹11,999 - ₹24,999)">Business Website (₹11,999 - ₹24,999)</option>
+                <option value="Professional Website (₹29,999 - ₹49,999)">Professional Website (₹29,999 - ₹49,999)</option>
+                <option value="E-Commerce Website (₹39,999 - ₹79,999+)">E-Commerce Website (₹39,999 - ₹79,999+)</option>
+                <option value="Custom Website (₹59,999+)">Custom Website (₹59,999+)</option>
+                <option value="Monthly SEO Retainer (Starts ₹4,999/mo)">Monthly SEO Retainer (Starts ₹4,999/mo)</option>
               </select>
             </div>
             <div class="form-group">
@@ -2815,7 +2820,7 @@
           <div>
             <div class="newsletter-badge"><i class="fa-solid fa-fire"></i> Weekly Tech Insights</div>
             <h3>Join Our Newsletter</h3>
-            <p>Get actionable Google ranking tricks, website speed hacks, and conversion strategies delivered straight to your inbox.</p>[cite: 1]
+            <p>Get actionable Google ranking tricks, website speed hacks, and conversion strategies delivered straight to your inbox.</p>
             
             <form onsubmit="handleNewsletterSubmit(event)">
               <div class="form-group">
@@ -2826,7 +2831,7 @@
                 <i class="fa-solid fa-envelope-open-text"></i> Subscribe Free
               </button>
               <div id="newsletter-success" style="display: none; color: #22c55e; font-size: 0.85rem; margin-top: 10px;">
-                <i class="fa-solid fa-circle-check"></i> Thank you! You've subscribed to Codex Crunch updates.[cite: 1]
+                <i class="fa-solid fa-circle-check"></i> Thank you! You've subscribed to Codex Crunch updates.
               </div>
             </form>
           </div>
@@ -2834,15 +2839,15 @@
           <div class="quick-contact-pills">
             <div class="pill-item">
               <i class="fa-solid fa-phone"></i>
-              <span>Direct Call: <strong>+91 7995137513</strong></span>[cite: 1]
+              <span>Direct Call: <strong>+91 7995137513</strong></span>
             </div>
             <div class="pill-item">
               <i class="fa-solid fa-envelope"></i>
-              <span>Official Mail: <strong>codexcrunch@gmail.com</strong></span>[cite: 1]
+              <span>Official Mail: <strong>codexcrunch@gmail.com</strong></span>
             </div>
             <div class="pill-item">
               <i class="fa-solid fa-globe"></i>
-              <span>Domain: <strong>codexcrunch.com</strong></span>[cite: 1]
+              <span>Domain: <strong>codexcrunch.com</strong></span>
             </div>
           </div>
         </div>
@@ -2858,22 +2863,22 @@
           <a href="https://www.codexcrunch.com/" class="logo-container">
             <img src="Assets/CodexCrunch-logo.png" alt="Codex Crunch Footer Logo" class="brand-footer-logo-img">
           </a>
-          <p>Codex Crunch is a digital agency specializing in high-performance web development and search engine optimization (SEO) that scales your online presence.</p>[cite: 1]
+          <p>Codex Crunch is a digital agency specializing in high-performance web development and search engine optimization (SEO) that scales your online presence.</p>
           <div class="footer-social-strip">
-            <a href="https://instagram.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>[cite: 1]
-            <a href="https://facebook.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>[cite: 1]
-            <a href="https://twitter.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>[cite: 1]
-            <a href="https://linkedin.com/company/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>[cite: 1]
+            <a href="https://instagram.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com/company/codexcrunch" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
-            <li><a href="https://www.codexcrunch.com/">Home</a></li>[cite: 1]
+            <li><a href="https://www.codexcrunch.com/">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#process">Process</a></li>
-            <li><a href="about.html">About Us</a></li>[cite: 1]
+            <li><a href="about.html">About Us</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -2884,26 +2889,26 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul class="footer-links">
-            <li><a href="webdevelopment.html">Web Development</a></li>[cite: 1]
-            <li><a href="seo.html">SEO Service</a></li>[cite: 1]
-            <li><a href="smm.html">SMM Service</a></li>[cite: 1]
+            <li><a href="webdevelopment.html">Web Development</a></li>
+            <li><a href="seo.html">SEO Service</a></li>
+            <li><a href="smm.html">SMM Service</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Get in Touch</h4>
           <ul class="footer-links">
-            <li><a href="tel:7995137513"><i class="fa-solid fa-phone" style="color: var(--primary-blue); margin-right: 6px;"></i> +91 7995137513</a></li>[cite: 1]
-            <li><a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch@gmail.com</a></li>[cite: 1]
-            <li><a href="https://codexcrunch.com"><i class="fa-solid fa-globe" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch.com</a></li>[cite: 1]
-            <li><span style="color: #64748b;"><i class="fa-solid fa-hashtag" style="color: var(--primary-blue); margin-right: 6px;"></i> @codexcrunch</span></li>[cite: 1]
+            <li><a href="tel:7995137513"><i class="fa-solid fa-phone" style="color: var(--primary-blue); margin-right: 6px;"></i> +91 7995137513</a></li>
+            <li><a href="mailto:codexcrunch@gmail.com"><i class="fa-solid fa-envelope" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch@gmail.com</a></li>
+            <li><a href="https://codexcrunch.com"><i class="fa-solid fa-globe" style="color: var(--primary-blue); margin-right: 6px;"></i> codexcrunch.com</a></li>
+            <li><span style="color: #64748b;"><i class="fa-solid fa-hashtag" style="color: var(--primary-blue); margin-right: 6px;"></i> @codexcrunch</span></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Codex Crunch (codexcrunch.com). All rights reserved.</div>[cite: 1]
-        <div>Engineered for Speed, Scalability, and Google #1 Rankings.</div>[cite: 1]
+        <div>© 2026 Codex Crunch (codexcrunch.com). All rights reserved.</div>
+        <div>Engineered for Speed, Scalability, and Google #1 Rankings.</div>
       </div>
     </div>
 
@@ -2913,8 +2918,8 @@
         <div class="views-strip-content">
           <div class="views-strip-left">
             <i class="fa-solid fa-chart-line"></i>
-            <span><strong>Total Page Views & Visits:</strong> Verified Traffic Counter</span>[cite: 1]
-            <span class="visitor-live-dot"><span class="live-pulse"></span> Global Active Counter</span>[cite: 1]
+            <span><strong>Total Page Views & Visits:</strong> Verified Traffic Counter</span>
+            <span class="visitor-live-dot"><span class="live-pulse"></span> Global Active Counter</span>
           </div>
 
           <div class="visitor-counter-digits" id="visitorCounter">
@@ -2937,18 +2942,18 @@
 
   <!-- Chatbot Toggler & Panel -->
   <button class="chatbot-toggler" onclick="toggleChatbot()" aria-label="Open Codex Crunch Assistant">
-    <img src="Assets/CodexCrunch-site-logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Codex Crunch Bot Logo" class="toggler-logo-img">[cite: 1]
+    <img src="Assets/CodexCrunch-site-logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Codex Crunch Bot Logo" class="toggler-logo-img">
   </button>
 
   <div class="chatbot-panel" id="chatbotPanel">
     <div class="chatbot-header">
       <div class="bot-header-info">
         <div class="bot-avatar-header-wrap">
-          <img src="Assets/CodexCrunch-site-logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Bot Logo" class="bot-avatar-header">[cite: 1]
+          <img src="Assets/CodexCrunch-site-logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Bot Logo" class="bot-avatar-header">
         </div>
         <div class="bot-status-wrap">
           <h3>Codex Crunch AI</h3>
-          <span><span class="bot-status-dot"></span> Online • Instant Answers</span>[cite: 1]
+          <span><span class="bot-status-dot"></span> Online • Instant Answers</span>
         </div>
       </div>
       <button onclick="toggleChatbot()" aria-label="Close Chat"><i class="fa-solid fa-xmark"></i></button>
@@ -2957,23 +2962,23 @@
     <div class="chatbot-messages" id="chatMessages">
       <div class="msg-row bot-row">
         <div class="bot-inline-avatar-wrap">
-          <img src="Assets/CodexCrunch-site-logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Bot" class="bot-inline-avatar">[cite: 1]
+          <img src="Assets/CodexCrunch-site-logo.png" onerror="this.onerror=null; this.src='Assets/Codex%20Crunch%20site%20logo.png';" alt="Bot" class="bot-inline-avatar">
         </div>
         <div class="chat-msg bot">
-          Hello! 👋 Welcome to <strong>Codex Crunch</strong>. I can answer <strong>any question</strong> about our website development packages, monthly SEO plans, pricing, tech stack, or live portfolio.[cite: 1]
+          Hello! 👋 Welcome to <strong>Codex Crunch</strong>. I can answer <strong>any question</strong> about our website development packages, monthly SEO plans, pricing, tech stack, or live portfolio.
           <div class="bot-quick-chips">
-            <span class="bot-chip" onclick="quickAsk('Web Pricing')">💰 Web Pricing</span>[cite: 1]
-            <span class="bot-chip" onclick="quickAsk('SEO Packages')">🚀 SEO Retainers</span>[cite: 1]
-            <span class="bot-chip" onclick="quickAsk('Live Portfolio')">📁 Portfolio</span>[cite: 1]
-            <span class="bot-chip" onclick="quickAsk('WordPress vs Custom')">⚡ WordPress vs Code</span>[cite: 1]
-            <span class="bot-chip" onclick="quickAsk('Delivery Time')">⏱️ Timelines</span>[cite: 1]
+            <span class="bot-chip" onclick="quickAsk('Web Pricing')">💰 Web Pricing</span>
+            <span class="bot-chip" onclick="quickAsk('SEO Packages')">🚀 SEO Retainers</span>
+            <span class="bot-chip" onclick="quickAsk('Live Portfolio')">📁 Portfolio</span>
+            <span class="bot-chip" onclick="quickAsk('WordPress vs Custom')">⚡ WordPress vs Code</span>
+            <span class="bot-chip" onclick="quickAsk('Delivery Time')">⏱️ Timelines</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="chatbot-input-area">
-      <input type="text" id="chatInput" placeholder="Ask anything (Pricing, SEO, Time, Tech)..." onkeypress="handleChatKey(event)">[cite: 1]
+      <input type="text" id="chatInput" placeholder="Ask anything (Pricing, SEO, Time, Tech)..." onkeypress="handleChatKey(event)">
       <button onclick="sendChatMessage()" aria-label="Send Message"><i class="fa-solid fa-paper-plane"></i></button>
     </div>
   </div>
@@ -3006,7 +3011,7 @@
     }
 
     /* 3. Form Dispatch Handling */
-    const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFSMBGNVNdSnfPe4ovzzA_RYshi4LuIjpNXQ6dyOOIANpxQUKnTD7hWS_QmO_z4m4f/exec";[cite: 1]
+    const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFSMBGNVNdSnfPe4ovzzA_RYshi4LuIjpNXQ6dyOOIANpxQUKnTD7hWS_QmO_z4m4f/exec";
 
     function handleFormSubmit(e) {
       e.preventDefault();
@@ -3068,8 +3073,8 @@
 
     /* 4. Global Counter Synchronization */
     async function syncGlobalCrossDeviceCounter() {
-      const primaryUrl = 'https://abacus.jasoncameron.dev/hit/codexcrunch.com/totalviews';[cite: 1]
-      const secondaryUrl = 'https://api.counterapi.dev/v1/codexcrunch_global/views/up';[cite: 1]
+      const primaryUrl = 'https://abacus.jasoncameron.dev/hit/codexcrunch.com/totalviews';
+      const secondaryUrl = 'https://api.counterapi.dev/v1/codexcrunch_global/views/up';
 
       let rendered = false;
 
@@ -3098,7 +3103,7 @@
       }
 
       if (!rendered) {
-        let fallbackCount = parseInt(localStorage.getItem('cc_last_known_global') || '1', 10) + 1;[cite: 1]
+        let fallbackCount = parseInt(localStorage.getItem('cc_last_known_global') || '1', 10) + 1;
         renderDigits(fallbackCount);
       }
     }
@@ -3170,8 +3175,8 @@
     });
 
     /* 5. Chatbot Engine */
-    const BOT_LOGO_SRC = 'Codex Crunch logo.png';[cite: 1]
-    const BOT_FALLBACK_IMG = 'Assets/Codex%20Crunch%20site%20logo.png';[cite: 1]
+    const BOT_LOGO_SRC = 'Codex Crunch logo.png';
+    const BOT_FALLBACK_IMG = 'Assets/Codex%20Crunch%20site%20logo.png';
 
     function toggleChatbot() {
       const panel = document.getElementById('chatbotPanel');
@@ -3237,78 +3242,78 @@
 
     function generateUniversalBotReply(q) {
       if (/^(hi|hello|hey|hola|namaste|morning|evening|wassup|yo)\b/.test(q)) {
-        return `Hello! How can I assist you with your website or digital marketing today? You can ask about our <strong>Pricing, SEO Packages, Timelines, Technologies</strong>, or explore our <strong>Portfolio</strong>!`;[cite: 1]
+        return `Hello! How can I assist you with your website or digital marketing today? You can ask about our <strong>Pricing, SEO Packages, Timelines, Technologies</strong>, or explore our <strong>Portfolio</strong>!`;
       }
       
       if (q.includes('who are you') || q.includes('what are you') || q.includes('your name')) {
-        return `I am <strong>Codex Crunch AI</strong>, the virtual assistant for <strong>Codex Crunch</strong> (codexcrunch.com). We engineer high-performance websites and execute data-backed SEO to get your business ranked #1 on Google!`;[cite: 1]
+        return `I am <strong>Codex Crunch AI</strong>, the virtual assistant for <strong>Codex Crunch</strong> (codexcrunch.com). We engineer high-performance websites and execute data-backed SEO to get your business ranked #1 on Google!`;
       }
 
       if (q.includes('starter') || q.includes('5999') || q.includes('9999') || q.includes('small website')) {
-        return `🟢 <strong>Starter Website Plan:</strong><br>• <strong>Price:</strong> ₹5,999 - ₹9,999<br>• <strong>Best For:</strong> Individuals, startups & small businesses.<br>• <strong>Includes:</strong> 3-5 high-speed pages, 100% mobile responsive, contact form & basic technical SEO setup.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Starter%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Starter Plan</a>`;[cite: 1]
+        return `🟢 <strong>Starter Website Plan:</strong><br>• <strong>Price:</strong> ₹5,999 - ₹9,999<br>• <strong>Best For:</strong> Individuals, startups & small businesses.<br>• <strong>Includes:</strong> 3-5 high-speed pages, 100% mobile responsive, contact form & basic technical SEO setup.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Starter%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Starter Plan</a>`;
       }
 
       if (q.includes('business plan') || q.includes('11999') || q.includes('24999')) {
-        return `🔵 <strong>Business Website Plan (Most Popular):</strong><br>• <strong>Price:</strong> ₹11,999 - ₹24,999<br>• <strong>Best For:</strong> Growing brands & service companies.<br>• <strong>Includes:</strong> 5-10 pages, WhatsApp direct chat, lead forms, advanced on-page SEO, and Google Analytics/Search Console setup.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Business%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Business Plan</a>`;[cite: 1]
+        return `🔵 <strong>Business Website Plan (Most Popular):</strong><br>• <strong>Price:</strong> ₹11,999 - ₹24,999<br>• <strong>Best For:</strong> Growing brands & service companies.<br>• <strong>Includes:</strong> 5-10 pages, WhatsApp direct chat, lead forms, advanced on-page SEO, and Google Analytics/Search Console setup.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Business%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Business Plan</a>`;
       }
 
       if (q.includes('pro') || q.includes('professional') || q.includes('29999') || q.includes('49999')) {
-        return `🟣 <strong>Professional Website Plan:</strong><br>• <strong>Price:</strong> ₹29,999 - ₹49,999<br>• <strong>Best For:</strong> Established brands & enterprise portals.<br>• <strong>Includes:</strong> 10-20 custom pages, custom UI/UX animations, deep Core Web Vitals speed tuning, and advanced SEO architecture.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Professional%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Professional Plan</a>`;[cite: 1]
+        return `🟣 <strong>Professional Website Plan:</strong><br>• <strong>Price:</strong> ₹29,999 - ₹49,999<br>• <strong>Best For:</strong> Established brands & enterprise portals.<br>• <strong>Includes:</strong> 10-20 custom pages, custom UI/UX animations, deep Core Web Vitals speed tuning, and advanced SEO architecture.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20am%20interested%20in%20the%20Professional%20Website%20Plan" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Book Professional Plan</a>`;
       }
 
       if (q.includes('ecommerce') || q.includes('e-commerce') || q.includes('store') || q.includes('shop') || q.includes('cart') || q.includes('payment gateway')) {
-        return `🟠 <strong>E-Commerce Website Plan:</strong><br>• <strong>Price:</strong> ₹39,999 - ₹79,999+<br>• <strong>Features:</strong> Unlimited products, cart & checkout, Razorpay/UPI/Card integration, order & stock management, and e-commerce SEO.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20want%20to%20build%20an%20E-commerce%20Store" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Discuss E-Commerce Store</a>`;[cite: 1]
+        return `🟠 <strong>E-Commerce Website Plan:</strong><br>• <strong>Price:</strong> ₹39,999 - ₹79,999+<br>• <strong>Features:</strong> Unlimited products, cart & checkout, Razorpay/UPI/Card integration, order & stock management, and e-commerce SEO.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20want%20to%20build%20an%20E-commerce%20Store" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Discuss E-Commerce Store</a>`;
       }
 
       if (q.includes('custom') || q.includes('portal') || q.includes('dashboard') || q.includes('api') || q.includes('database')) {
-        return `🔴 <strong>Custom Web Architecture (₹59,999+):</strong><br>We build tailor-made platforms with custom dashboards, API integrations, authentication, and high-load databases tailored to your custom specifications.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20need%20a%20Custom%20Web%20Platform" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Request Custom Quote</a>`;[cite: 1]
+        return `🔴 <strong>Custom Web Architecture (₹59,999+):</strong><br>We build tailor-made platforms with custom dashboards, API integrations, authentication, and high-load databases tailored to your custom specifications.<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20need%20a%20Custom%20Web%20Platform" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Request Custom Quote</a>`;
       }
 
       if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('package') || q.includes('charges') || q.includes('how much')) {
-        return `Here is our <strong>Web & SEO Pricing Summary</strong>:<br><br><strong>Web Development:</strong><br>• 🟢 Starter: ₹5,999 - ₹9,999<br>• 🔵 Business: ₹11,999 - ₹24,999<br>• 🟣 Pro: ₹29,999 - ₹49,999<br>• 🟠 E-Commerce: ₹39,999 - ₹79,999+<br><br><strong>Monthly SEO Plans:</strong><br>• Starter: ₹4,999/mo | Growth: ₹9,999/mo<br>• Pro: ₹19,999/mo | Enterprise: Custom`;[cite: 1]
+        return `Here is our <strong>Web & SEO Pricing Summary</strong>:<br><br><strong>Web Development:</strong><br>• 🟢 Starter: ₹5,999 - ₹9,999<br>• 🔵 Business: ₹11,999 - ₹24,999<br>• 🟣 Pro: ₹29,999 - ₹49,999<br>• 🟠 E-Commerce: ₹39,999 - ₹79,999+<br><br><strong>Monthly SEO Plans:</strong><br>• Starter: ₹4,999/mo | Growth: ₹9,999/mo<br>• Pro: ₹19,999/mo | Enterprise: Custom`;
       }
 
       if (q.includes('seo') || q.includes('google rank') || q.includes('backlink') || q.includes('ranking') || q.includes('keyword')) {
-        return `🚀 <strong>Monthly SEO Retainers:</strong><br>1. <strong>SEO Starter (₹4,999/mo):</strong> 10 keywords, Meta & On-page fixes, GSC monitoring.<br>2. <strong>SEO Growth (₹9,999/mo):</strong> 25 keywords, Local GMB Map Pack, Backlinks, Content tuning.<br>3. <strong>SEO Pro (₹19,999/mo):</strong> 50+ keywords, Competitor theft, cluster strategy, weekly strategy calls.<br>4. <strong>SEO Enterprise (Custom):</strong> Unlimited scale & programmatic SEO.`;[cite: 1]
+        return `🚀 <strong>Monthly SEO Retainers:</strong><br>1. <strong>SEO Starter (₹4,999/mo):</strong> 10 keywords, Meta & On-page fixes, GSC monitoring.<br>2. <strong>SEO Growth (₹9,999/mo):</strong> 25 keywords, Local GMB Map Pack, Backlinks, Content tuning.<br>3. <strong>SEO Pro (₹19,999/mo):</strong> 50+ keywords, Competitor theft, cluster strategy, weekly strategy calls.<br>4. <strong>SEO Enterprise (Custom):</strong> Unlimited scale & programmatic SEO.`;
       }
 
       if (q.includes('gmb') || q.includes('local') || q.includes('map') || q.includes('google business')) {
-        return `📍 <strong>Local SEO & Google Business Profile (GMB):</strong><br>We optimize your business profile with localized keywords, categories, NAP consistency, local citation building, and review workflows to rank you in Google's Top 3 Map Pack!`;[cite: 1]
+        return `📍 <strong>Local SEO & Google Business Profile (GMB):</strong><br>We optimize your business profile with localized keywords, categories, NAP consistency, local citation building, and review workflows to rank you in Google's Top 3 Map Pack!`;
       }
 
       if (q.includes('portfolio') || q.includes('work') || q.includes('sample') || q.includes('client') || q.includes('examples') || q.includes('projects')) {
-        return `📁 <strong>Our Live Client Projects:</strong><br>• <a href="https://banksadda.com" target="_blank" style="color: #01b4ff;">banksadda.com</a> (Fintech & Finance)<br>• <a href="https://loanloop.in" target="_blank" style="color: #01b4ff;">loanloop.in</a> (DSA & Loan Aggregator)<br>• <a href="https://dsaloanagent.in" target="_blank" style="color: #01b4ff;">dsaloanagent.in</a> (Agent Portal)<br>• <a href="https://ottloop.com" target="_blank" style="color: #01b4ff;">ottloop.com</a> (OTT Media Platform)<br>• <a href="https://rjsportsclub.com" target="_blank" style="color: #01b4ff;">rjsportsclub.com</a> (Sports Club Management)<br>• <a href="https://beeway.in" target="_blank" style="color: #01b4ff;">beeway.in</a> (Corporate Logistics)`;[cite: 1]
+        return `📁 <strong>Our Live Client Projects:</strong><br>• <a href="https://banksadda.com" target="_blank" style="color: #01b4ff;">banksadda.com</a> (Fintech & Finance)<br>• <a href="https://loanloop.in" target="_blank" style="color: #01b4ff;">loanloop.in</a> (DSA & Loan Aggregator)<br>• <a href="https://dsaloanagent.in" target="_blank" style="color: #01b4ff;">dsaloanagent.in</a> (Agent Portal)<br>• <a href="https://ottloop.com" target="_blank" style="color: #01b4ff;">ottloop.com</a> (OTT Media Platform)<br>• <a href="https://rjsportsclub.com" target="_blank" style="color: #01b4ff;">rjsportsclub.com</a> (Sports Club Management)<br>• <a href="https://beeway.in" target="_blank" style="color: #01b4ff;">beeway.in</a> (Corporate Logistics)`;
       }
 
       if (q.includes('wordpress') || q.includes('elementor')) {
-        return `⚡ <strong>WordPress & Elementor Pro:</strong><br>Yes! We specialize in highly optimized WordPress sites built with Elementor Pro. We ensure zero bloat, high security, schema markups, and PageSpeed scores over 90+.`;[cite: 1]
+        return `⚡ <strong>WordPress & Elementor Pro:</strong><br>Yes! We specialize in highly optimized WordPress sites built with Elementor Pro. We ensure zero bloat, high security, schema markups, and PageSpeed scores over 90+.`;
       }
 
       if (q.includes('code') || q.includes('html') || q.includes('react') || q.includes('javascript') || q.includes('custom code')) {
-        return `💻 <strong>Custom Coding:</strong><br>We write semantic HTML5, modern CSS3, and JavaScript with clean architectures. Custom coded sites provide the fastest load times and zero dependency overhead.`;[cite: 1]
+        return `💻 <strong>Custom Coding:</strong><br>We write semantic HTML5, modern CSS3, and JavaScript with clean architectures. Custom coded sites provide the fastest load times and zero dependency overhead.`;
       }
 
       if (q.includes('tools') || q.includes('software') || q.includes('semrush') || q.includes('analytics')) {
-        return `🛠️ <strong>Our Power Tools:</strong><br>• <strong>Development:</strong> HTML5, CSS3, JavaScript, WordPress, Elementor Pro.<br>• <strong>SEO & Analytics:</strong> SEMrush, Ahrefs, Yoast SEO, Google Analytics (GA4), Google Search Console.<br>• <strong>AI & Creative:</strong> ChatGPT, Claude AI, Canva Pro.`;[cite: 1]
+        return `🛠️ <strong>Our Power Tools:</strong><br>• <strong>Development:</strong> HTML5, CSS3, JavaScript, WordPress, Elementor Pro.<br>• <strong>SEO & Analytics:</strong> SEMrush, Ahrefs, Yoast SEO, Google Analytics (GA4), Google Search Console.<br>• <strong>AI & Creative:</strong> ChatGPT, Claude AI, Canva Pro.`;
       }
 
       if (q.includes('time') || q.includes('how long') || q.includes('duration') || q.includes('days') || q.includes('delivery')) {
-        return `⏱️ <strong>Project Timelines:</strong><br>• <strong>Starter Site (3-5 pages):</strong> 3 to 5 business days.<br>• <strong>Business Site (5-10 pages):</strong> 5 to 8 business days.<br>• <strong>E-Commerce / Pro Site:</strong> 10 to 18 business days.<br>• <strong>Custom Platforms:</strong> Based on feature scope.`;[cite: 1]
+        return `⏱️ <strong>Project Timelines:</strong><br>• <strong>Starter Site (3-5 pages):</strong> 3 to 5 business days.<br>• <strong>Business Site (5-10 pages):</strong> 5 to 8 business days.<br>• <strong>E-Commerce / Pro Site:</strong> 10 to 18 business days.<br>• <strong>Custom Platforms:</strong> Based on feature scope.`;
       }
 
       if (q.includes('domain') || q.includes('hosting') || q.includes('server') || q.includes('ssl')) {
-        return `🌐 <strong>Domain & Hosting Guidance:</strong><br>We guide you with the best domain selection and super-fast cloud hosting (Hostinger, Cloudways, AWS). Every plan includes free SSL integration and DNS routing.`;[cite: 1]
+        return `🌐 <strong>Domain & Hosting Guidance:</strong><br>We guide you with the best domain selection and super-fast cloud hosting (Hostinger, Cloudways, AWS). Every plan includes free SSL integration and DNS routing.`;
       }
 
       if (q.includes('support') || q.includes('maintenance') || q.includes('amc') || q.includes('update') || q.includes('after')) {
-        return `🛠️ <strong>Ongoing Support:</strong><br>All our projects come with complimentary post-launch support and bug-fixing. We also offer affordable Monthly AMC & website maintenance retainers.`;[cite: 1]
+        return `🛠️ <strong>Ongoing Support:</strong><br>All our projects come with complimentary post-launch support and bug-fixing. We also offer affordable Monthly AMC & website maintenance retainers.`;
       }
 
       if (q.includes('contact') || q.includes('phone') || q.includes('number') || q.includes('whatsapp') || q.includes('email') || q.includes('address') || q.includes('call')) {
-        return `📞 <strong>Direct Contact Channels:</strong><br>• <strong>Phone / WhatsApp:</strong> +91 7995137513<br>• <strong>Email:</strong> codexcrunch@gmail.com<br>• <strong>Website:</strong> codexcrunch.com<br>• <strong>Social Media:</strong> @codexcrunch (IG, FB, X, LinkedIn)<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20an%20inquiry" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Chat with Us Directly</a>`;[cite: 1]
+        return `📞 <strong>Direct Contact Channels:</strong><br>• <strong>Phone / WhatsApp:</strong> +91 7995137513<br>• <strong>Email:</strong> codexcrunch@gmail.com<br>• <strong>Website:</strong> codexcrunch.com<br>• <strong>Social Media:</strong> @codexcrunch (IG, FB, X, LinkedIn)<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20an%20inquiry" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Chat with Us Directly</a>`;
       }
 
-      return `Thank you for asking! At <strong>Codex Crunch</strong>, we cater to custom requirements in web development, SEO ranking, speed optimization, and e-commerce.<br><br>Would you like to speak directly with our lead developer for a personalized answer?<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20a%20question:%20${encodeURIComponent(q)}" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+91 7995137513)</a>`;[cite: 1]
+      return `Thank you for asking! At <strong>Codex Crunch</strong>, we cater to custom requirements in web development, SEO ranking, speed optimization, and e-commerce.<br><br>Would you like to speak directly with our lead developer for a personalized answer?<br><a href="https://wa.me/917995137513?text=Hi%20Codex%20Crunch,%20I%20have%20a%20question:%20${encodeURIComponent(q)}" target="_blank" class="bot-btn-action"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+91 7995137513)</a>`;
     }
   </script>
 </body>
